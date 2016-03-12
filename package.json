@@ -30,5 +30,8 @@
     "serve-index": "^1.1.4",
     "lazypipe": "^0.2.1",
     "opn": "*"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3"
   }
 }

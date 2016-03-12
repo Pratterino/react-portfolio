@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Blabber",
+    "image": "blabber.png",
+    "link": "//blabber.pratterino.se",
+    "description": "Twitter-liknande social webbapplikation. Hashtags, användarprenumeration och statusuppdateringar",
+    "tags": [
+      "AngularJS",
+      "jQuery",
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "Oauth"
+    ]
+  },
+  {
+    "title": "Tärningsapplikation",
+    "image": "dice.png",
+    "link": "//dice.pratterino.se",
+    "description": "Webbapplikation där obegränsat antal drag-and-drop-fönster kan skapas och interageras med. Tärningarna kan kastas och visar den sammanlagda summan i det aktiva fönstret.",
+    "tags": [
+      "JavaScript",
+      "CSS3"
+    ]
+  },
+  {
+    "title": "API Mashup",
+    "image": "maps.png",
+    "link": "//maps.pratterino.se/",
+    "description": "Kartvy där en användare kan skriva microblogg-inlägg som delas publikt med en valfri bild som tagits i området inlägget 'skrevs'",
+    "tags": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Google Maps API",
+      "Flickr API"
+    ]
+  },
+  {
+    "title": "Safaristaden",
+    "image": "safari.png",
+    "link": "//safari.pratterino.se/",
+    "description": "Barnspel till tablets med målgruppen 4-6 åringar.",
+    "tags": [
+      "ActionScript 3",
+      "Flash",
+      "Adobe AIR"
+    ]
+  },
+  {
+    "title": "Dwarven Conflicts",
+    "image": "dw.png",
+    "link": "//shieldwebdev.com/dwacon.html",
+    "description": "Ett actionfyllt arkadspel med tvåspelarläge för arkadmaskinen Evertron på Linnéuniversitetet, Växjö. Skapade musiken, HUD-programmering, grafik, omslag och animationer",
+    "tags": [
+      "ActionScript 3",
+      "Blender",
+      "Flash",
+      "Illustrator"
+    ]
+  }
+]

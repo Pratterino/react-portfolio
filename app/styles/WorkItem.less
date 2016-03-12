@@ -1,0 +1,202 @@
+@item-size: 320px;
+
+.visibleOnHoverOnly {
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tagList {
+  display: inline-block;
+  background: rgba(255, 200, 15, 0.5);
+  padding: 0 2px;
+  margin: 1px 2px;
+  border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+    background: rgb(62, 172, 255);
+  }
+  &.active {
+    background: #ffdc04;
+    &:hover {
+      background: rgba(255, 200, 15, 0.85);
+    }
+  }
+  transition: background 0.35s;
+}
+
+.Project {
+  @itemPadding: 10pt;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  min-height: 130pt !important;
+
+  .project-header {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    color: #fff;
+    padding: 15pt 5pt;
+    text-align: center;
+    background: #333;
+    min-height: 45pt;
+
+    .searchbar {
+    }
+    .header {
+      margin: 0 20px;
+      color: #FFEBCD;
+      text-shadow: rgba(238, 232, 16, .8) -1px 1px 1px, rgba(237, 28, 120, .8) 1px 1px 1px;
+    }
+
+    .tags {
+      width: 50%;
+      text-align: left;
+      color: #363636;
+      li {
+        .tagList();
+        font-size: 10pt;
+      }
+    }
+  }
+
+  .bg-image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(10, 10, 10, .5),
+      rgba(250, 250, 250, 0)
+    ), no-repeat fixed;
+    filter: grayscale(0.9);
+    background-size: cover;
+
+    &:after {
+      content: "";
+      z-index: -1;
+    }
+  }
+
+  .flex-container {
+    &.work {
+      width: 100%;
+    }
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+
+    a.work-item-container {
+      position: relative;
+      flex: 1 1 33%;
+      min-width: @item-size;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      margin: auto;
+      background-size: cover;
+      transition: all 0.5s ease;
+      box-shadow: inset 0 0 20px #000000;
+
+      .item-image {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(0.65);
+        background: rgba(43, 61, 202, 250);
+        background-blend-mode: exclusion;
+        box-shadow: inset 10px 0 60px #333;
+        background-size: cover;
+        transition: all 0.5s ease;
+
+        &:after {
+          z-index: -1;
+        }
+      }
+
+      .item-header {
+        position: absolute;
+        top: calc(50% - @itemPadding);
+        width: 100%;
+        font-weight: 800;
+        transition: all 0.4s ease;
+        color: #F0F8FF;
+        font-size: 14pt;
+        text-shadow: #eee810 -1px 1px, #ed1c78 1px 1px, #016 -4px -1px !important;
+        span {
+          background: rgba(0, 0, 0, 0.2);
+          padding: 5px 10px;
+        }
+      }
+
+      &:hover .item-header {
+        top: @itemPadding;
+      }
+      &:hover .item-image {
+        background-blend-mode: normal;
+        filter: sepia(0.3);
+      }
+
+      .item-content {
+        position: relative;
+        display: flex;
+        padding: @itemPadding;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: (@item-size/1.2);
+        transition: visibility 0s, opacity 0.45s ease;
+        .visibleOnHoverOnly();
+
+        &:hover .item {
+          .item-tags-container, .item-desc {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        .item {
+          font-size: 11pt;
+          background: rgba(255, 255, 255, 0.7);
+
+          .item-desc {
+            padding: @itemPadding;
+            color: #363636;
+            .hide();
+          }
+
+          .item-tags-container {
+            position: absolute;
+            width: calc(100% - @itemPadding * 2);
+            bottom: @itemPadding;
+            transition-delay: 0.3s;
+            .hide();
+
+            .item-read-more {
+              text-align: center;
+              text-decoration: none;
+            }
+            ul.item-tags {
+              text-align: left;
+              color: #363636;
+              li {
+                .tagList();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

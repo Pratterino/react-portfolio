@@ -18,38 +18,37 @@ var gulp = require('gulp'),
   serveStatic = require('serve-static'),
   serveIndex = require('serve-index');
 
-/* browserify */ 
-gulp.task('browserify', function() {
+/* browserify */
+gulp.task('browserify', function () {
 
   var bundler = browserify({
-        entries: ['./app/scripts/main.js'], // Only need initial file, browserify finds the deps
-        transform: [reactify], // Convert JSX to normal javascript
-        debug: true, cache: {}, packageCache: {}, fullPaths: true
-    });
+    entries: ['./app/scripts/main.js'], // Only need initial file, browserify finds the deps
+    transform: [reactify], // Convert JSX to normal javascript
+    debug: true, cache: {}, packageCache: {}, fullPaths: true
+  });
 
-    var watcher  = watchify(bundler);
+  var watcher = watchify(bundler);
 
-    return watcher
+  return watcher
     .on('update', function () { // When any files updates
-        var updateStart = Date.now();
-        console.log('Updating!');
-        watcher.bundle()
+      var updateStart = Date.now();
+      console.log('Updating!');
+      watcher.bundle()
         .pipe(source('app.js'))
         // This is where you add uglifying etc.
         .pipe(gulp.dest('./app/scripts/'));
-        console.log('Updated!', (Date.now() - updateStart) + 'ms');
+      console.log('Updated!', (Date.now() - updateStart) + 'ms');
     })
-    .bundle() // Create the initial bundle when starting the task 
+    .bundle() // Create the initial bundle when starting the task
     .pipe(source('app.js'))
     .pipe(gulp.dest('./app/scripts/'));
 });
 
 
 /* styles */
-gulp.task('styles', function () { 
-  
+gulp.task('styles', function () {
 
-  
+
   return gulp.src('app/styles/main.less')
     .pipe(plumber())
     .pipe(less({
@@ -57,7 +56,7 @@ gulp.task('styles', function () {
       precision: 10
     }))
     .pipe(autoprefixer({browsers: ['last 1 version']}))
-    .pipe(gulp.dest('app/styles')); 
+    .pipe(gulp.dest('app/styles'));
 
 });
 
@@ -88,7 +87,7 @@ gulp.task('connect', ['styles', 'browserify'], function () {
 
 /* serve */
 gulp.task('serve', ['watch'], function () {
-    require('opn')('http://localhost:9000');
+  require('opn')('http://localhost:9000');
 });
 
 
@@ -104,9 +103,8 @@ gulp.task('watch', ['connect'], function () {
     'app/images/**/*'
   ]).on('change', livereload.changed);
 
-  
-  
-    gulp.watch('app/styles/**/*.less', ['styles']); 
+
+  gulp.watch('app/styles/**/*.less', ['styles']);
 });
 
 
@@ -120,10 +118,10 @@ gulp.task('build', ['styles'], function () {
     .pipe(size({title: 'build', gzip: true}));
 
   /* html */
-  var opts = {comments:true,spare:true, quotes: true};
+  var opts = {comments: true, spare: true, quotes: true};
   gulp.src('dist/*.html')
     .pipe(minifyHtml(opts))
-    .pipe(gulp.dest('dist'));    
+    .pipe(gulp.dest('dist'));
 });
 
 /* default */
