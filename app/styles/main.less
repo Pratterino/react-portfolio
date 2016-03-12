@@ -2,7 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
 }
+@color1: #FCFFE3;
+@color2: #C6E774;
+@color3: #f39264;
+@color4: #f2606f;
+@color5: #383E4B;
 
 @import "Text";
 @import "Navbar";
@@ -12,7 +21,6 @@
 @import "Footer";
 
 @import "FullSection";
-
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 

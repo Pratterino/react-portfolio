@@ -8,37 +8,28 @@ var Project;
 module.exports = Project = React.createClass({
 
   getWorkData: function (work) {
-    var bg =  {
+    var bg = {
       backgroundImage: 'url(./images/bg/' + work.image + ')'
     };
 
     return (
-      <div className='work flex-container'>
-        <a href={work.link} className='work-item-container'>
-          <div className='bg-color'></div>
+      <a href={work.link} className='work-item-container'>
+        <div className='item-image' style={bg}></div>
+        <div className='item-header'>
+          <h2>
+            <span>{work.title}</span>
+          </h2>
+        </div>
 
-          <div className='item-image' style={bg}></div>
-
-          <div className='item-header'>
-            <h2>
-              <span>{work.title}</span>
-            </h2>
-          </div>
-
-          <div className='item-content'>
-            <div className='item'>
-              <div className='item-desc'>
-                <p>{work.description}</p>
-              </div>
-              <div className='item-tags-container'>
-                <div className='item-read-more'>
-                  <p>Läs mer <i className='fa fa-arrow-right'> </i></p>
-                </div>
-              </div>
+        <div className='item-content'>
+          <div className='item'>
+            <div className='item-desc'>
+              <p>{work.description}</p>
             </div>
+            <div className='item-tags-container'></div>
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
     )
   },
 
@@ -47,9 +38,11 @@ module.exports = Project = React.createClass({
       var items = this.props.works.map(this.getWorkData);
 
       return (
-        <div className='Project'>
-          {items}
-        </div>
+        <section className="work-view">
+          <div className='work flex-container'>
+            {items}
+          </div>
+        </section>
       );
     } else {
       return (

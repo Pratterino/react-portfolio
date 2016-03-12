@@ -1,3 +1,45 @@
 footer {
-  background: #ffeeaa;
+  background: #333;
+  padding: 50px;
+  min-height: 150pt;
+
+  .dwarf {
+    position: relative;
+    bottom: 118px;
+    float: right;
+  }
+  ul {
+    text-align: left;
+    list-style: none;
+    display: inline-block;
+    min-width: 150pt;
+    padding: 25pt 15pt;
+
+    li:hover i {
+      &.fa-linkedin-square {
+        color: #006DA6;
+      }
+      &.fa-youtube-play {
+        color: #E62117;
+      }
+      &.fa-github {
+        color: #333;
+      }
+      &.fa-envelope {
+        color: #fff;
+      }
+      transition: color 0.3s ease;
+    }
+
+    a, li {
+      color: #dfffe4;
+
+      i {
+        color: #8c8b88;
+      }
+      span {
+        margin-left: 2pt;
+      }
+    }
+  }
 }

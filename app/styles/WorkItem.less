@@ -31,7 +31,9 @@
   transition: background 0.35s;
 }
 
-.Project {
+section.work-view {
+  @borderColor: @color1;
+
   @itemPadding: 10pt;
   overflow: hidden;
   position: relative;
@@ -78,7 +80,6 @@
       rgba(10, 10, 10, .5),
       rgba(250, 250, 250, 0)
     ), no-repeat fixed;
-    filter: grayscale(0.9);
     background-size: cover;
 
     &:after {
@@ -96,8 +97,10 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
+    border: 5px solid @borderColor;
 
     a.work-item-container {
+      border: 5px solid @borderColor;
       position: relative;
       flex: 1 1 33%;
       min-width: @item-size;
@@ -114,12 +117,11 @@
         display: block;
         width: 100%;
         height: 100%;
-        filter: grayscale(0.65);
+        filter: grayscale(.9);
         background: rgba(43, 61, 202, 250);
-        background-blend-mode: exclusion;
-        box-shadow: inset 10px 0 60px #333;
         background-size: cover;
         transition: all 0.5s ease;
+        box-shadow: inset 0 0px 10px @color5;
 
         &:after {
           z-index: -1;
@@ -128,24 +130,22 @@
 
       .item-header {
         position: absolute;
-        top: calc(50% - @itemPadding);
+        bottom: 10px;
         width: 100%;
         font-weight: 800;
         transition: all 0.4s ease;
-        color: #F0F8FF;
+        color: @color1;
         font-size: 14pt;
-        text-shadow: #eee810 -1px 1px, #ed1c78 1px 1px, #016 -4px -1px !important;
-        span {
-          background: rgba(0, 0, 0, 0.2);
-          padding: 5px 10px;
-        }
+        text-shadow: @color5 -2px 2px, @color5 0 0 2px !important;
       }
 
       &:hover .item-header {
         top: @itemPadding;
+        background: transparent;
       }
       &:hover .item-image {
         background-blend-mode: normal;
+        box-shadow: inset 1px 0 40px @color5;
         filter: sepia(0.3);
       }
 
@@ -168,11 +168,11 @@
         }
         .item {
           font-size: 11pt;
-          background: rgba(255, 255, 255, 0.7);
+          background: rgba(0, 0, 0, 0.7);
 
           .item-desc {
             padding: @itemPadding;
-            color: #363636;
+            color: #fff;
             .hide();
           }
 

@@ -1,12 +1,44 @@
-@text_white: #FFF;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700);
+
+@text_white: #e1e1e1;
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  background: @color5;
+  padding: 1px 3px;
+  color: @color1;
+  text-decoration: none;
+
+  &:hover {
+    color: @color5;
+    background: @color1;
+  }
+}
 
 .desc-text {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 
-  color: @color5;
-  text-shadow: #FFF -1px 1px 1px;
+  color: @text_white;
+  text-shadow: #000 0px 1px 1px;
+
+  .desc-item {
+    margin-top: 35px;
+  }
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: -0.3em;
 }
 
 .center {

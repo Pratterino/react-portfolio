@@ -1,12 +1,12 @@
 'use strict';
 
-var React = require('react');
+var React       = require('react');
 var ProjectView = require('./ProjectView.jsx');
-var ContactView = require('./ContactView.jsx');
-var DescText = require('./Text.jsx');
-var Column = require('./Column.jsx');
+var DescText    = require('./Text.jsx');
+var Column      = require('./Column.jsx');
 var FullSection = require('./FullSection.jsx');
-var Navbar = require('./Navbar.jsx');
+var Navbar      = require('./Navbar.jsx');
+var Footer      = require('./Footer.jsx');
 
 var MainView;
 
@@ -15,8 +15,6 @@ module.exports = MainView = React.createClass({
     return (
       <div className="MainView">
         <FullSection>
-          <Navbar />
-
           <Column width={30} bgClass="paer"/>
           <Column width={70} bgClass="crazy-gradient">
             <DescText />
@@ -24,12 +22,12 @@ module.exports = MainView = React.createClass({
 
         </FullSection>
 
-        <FullSection>
+        <FullSection styles={{height: "auto"}}>
           <ProjectView />
         </FullSection>
 
-        <FullSection>
-          <ContactView />
+        <FullSection styles={{height: "auto", padding: "5px 0px"}}>
+          <Footer />
         </FullSection>
       </div>
     );

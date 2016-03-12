@@ -1,14 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  background: #383E4B;
+  padding: 1px 3px;
+  color: #FCFFE3;
+  text-decoration: none;
+}
+a:hover {
+  color: #383E4B;
+  background: #FCFFE3;
+}
 .desc-text {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  color: #462255;
-  text-shadow: #FFF -1px 1px 1px;
+  color: #e1e1e1;
+  text-shadow: #000 0px 1px 1px;
+}
+.desc-text .desc-item {
+  margin-top: 35px;
+}
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: -0.3em;
 }
 .center {
   text-align: center;
@@ -18,14 +49,15 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: #AA4465;
+  background: #f2606f;
   z-index: 10;
 }
 .ContactView {
   background: #1EAEDB;
 }
 .ProjectView {
-  background: #c94a4a;
+  padding: 35px 0px;
+  background: #FCFFE3;
 }
 .visibleOnHoverOnly {
   opacity: 0;
@@ -55,13 +87,13 @@
 .tagList.active:hover {
   background: rgba(255, 200, 15, 0.85);
 }
-.Project {
+section.work-view {
   overflow: hidden;
   position: relative;
   z-index: 100;
   min-height: 130pt !important;
 }
-.Project .project-header {
+section.work-view .project-header {
   display: flex;
   align-content: center;
   align-items: center;
@@ -73,17 +105,17 @@
   background: #333;
   min-height: 45pt;
 }
-.Project .project-header .header {
+section.work-view .project-header .header {
   margin: 0 20px;
   color: #FFEBCD;
   text-shadow: rgba(238, 232, 16, 0.8) -1px 1px 1px, rgba(237, 28, 120, 0.8) 1px 1px 1px;
 }
-.Project .project-header .tags {
+section.work-view .project-header .tags {
   width: 50%;
   text-align: left;
   color: #363636;
 }
-.Project .project-header .tags li {
+section.work-view .project-header .tags li {
   display: inline-block;
   background: rgba(255, 200, 15, 0.5);
   padding: 0 2px;
@@ -92,41 +124,41 @@
   transition: background 0.35s;
   font-size: 10pt;
 }
-.Project .project-header .tags li:hover {
+section.work-view .project-header .tags li:hover {
   cursor: pointer;
   background: #3eacff;
 }
-.Project .project-header .tags li.active {
+section.work-view .project-header .tags li.active {
   background: #ffdc04;
 }
-.Project .project-header .tags li.active:hover {
+section.work-view .project-header .tags li.active:hover {
   background: rgba(255, 200, 15, 0.85);
 }
-.Project .bg-image {
+section.work-view .bg-image {
   position: absolute;
   display: block;
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(250, 250, 250, 0)), no-repeat fixed;
-  -webkit-filter: grayscale(0.9);
-          filter: grayscale(0.9);
   background-size: cover;
 }
-.Project .bg-image:after {
+section.work-view .bg-image:after {
   content: "";
   z-index: -1;
 }
-.Project .flex-container {
+section.work-view .flex-container {
   display: inline-flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  border: 5px solid #FCFFE3;
 }
-.Project .flex-container.work {
+section.work-view .flex-container.work {
   width: 100%;
 }
-.Project .flex-container a.work-item-container {
+section.work-view .flex-container a.work-item-container {
+  border: 5px solid #FCFFE3;
   position: relative;
   flex: 1 1 33%;
   min-width: 320px;
@@ -138,45 +170,42 @@
   transition: all 0.5s ease;
   box-shadow: inset 0 0 20px #000000;
 }
-.Project .flex-container a.work-item-container .item-image {
+section.work-view .flex-container a.work-item-container .item-image {
   position: absolute;
   display: block;
   width: 100%;
   height: 100%;
-  -webkit-filter: grayscale(0.65);
-          filter: grayscale(0.65);
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
   background: #2b3dca;
-  background-blend-mode: exclusion;
-  box-shadow: inset 10px 0 60px #333;
   background-size: cover;
   transition: all 0.5s ease;
+  box-shadow: inset 0 0px 10px #383E4B;
 }
-.Project .flex-container a.work-item-container .item-image:after {
+section.work-view .flex-container a.work-item-container .item-image:after {
   z-index: -1;
 }
-.Project .flex-container a.work-item-container .item-header {
+section.work-view .flex-container a.work-item-container .item-header {
   position: absolute;
-  top: calc(40%);
+  bottom: 10px;
   width: 100%;
   font-weight: 800;
   transition: all 0.4s ease;
-  color: #F0F8FF;
+  color: #FCFFE3;
   font-size: 14pt;
-  text-shadow: #eee810 -1px 1px, #ed1c78 1px 1px, #016 -4px -1px !important;
+  text-shadow: #383E4B -2px 2px, #383E4B 0 0 2px !important;
 }
-.Project .flex-container a.work-item-container .item-header span {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 5px 10px;
-}
-.Project .flex-container a.work-item-container:hover .item-header {
+section.work-view .flex-container a.work-item-container:hover .item-header {
   top: 10pt;
+  background: transparent;
 }
-.Project .flex-container a.work-item-container:hover .item-image {
+section.work-view .flex-container a.work-item-container:hover .item-image {
   background-blend-mode: normal;
+  box-shadow: inset 1px 0 40px #383E4B;
   -webkit-filter: sepia(0.3);
           filter: sepia(0.3);
 }
-.Project .flex-container a.work-item-container .item-content {
+section.work-view .flex-container a.work-item-container .item-content {
   position: relative;
   display: flex;
   padding: 10pt;
@@ -187,25 +216,25 @@
   transition: visibility 0s, opacity 0.45s ease;
   opacity: 0;
 }
-.Project .flex-container a.work-item-container .item-content:hover {
+section.work-view .flex-container a.work-item-container .item-content:hover {
   opacity: 1;
 }
-.Project .flex-container a.work-item-container .item-content:hover .item .item-tags-container,
-.Project .flex-container a.work-item-container .item-content:hover .item .item-desc {
+section.work-view .flex-container a.work-item-container .item-content:hover .item .item-tags-container,
+section.work-view .flex-container a.work-item-container .item-content:hover .item .item-desc {
   opacity: 1;
   visibility: visible;
 }
-.Project .flex-container a.work-item-container .item-content .item {
+section.work-view .flex-container a.work-item-container .item-content .item {
   font-size: 11pt;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
-.Project .flex-container a.work-item-container .item-content .item .item-desc {
+section.work-view .flex-container a.work-item-container .item-content .item .item-desc {
   padding: 10pt;
-  color: #363636;
+  color: #fff;
   visibility: hidden;
   opacity: 0;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container {
   position: absolute;
   width: calc(80%);
   bottom: 10pt;
@@ -213,15 +242,15 @@
   visibility: hidden;
   opacity: 0;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container .item-read-more {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container .item-read-more {
   text-align: center;
   text-decoration: none;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags {
   text-align: left;
   color: #363636;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li {
   display: inline-block;
   background: rgba(255, 200, 15, 0.5);
   padding: 0 2px;
@@ -229,22 +258,63 @@
   border-radius: 3px;
   transition: background 0.35s;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li:hover {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li:hover {
   cursor: pointer;
   background: #3eacff;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li.active {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li.active {
   background: #ffdc04;
 }
-.Project .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li.active:hover {
+section.work-view .flex-container a.work-item-container .item-content .item .item-tags-container ul.item-tags li.active:hover {
   background: rgba(255, 200, 15, 0.85);
 }
 footer {
-  background: #ffeeaa;
+  background: #333;
+  padding: 50px;
+  min-height: 150pt;
+}
+footer .dwarf {
+  position: relative;
+  bottom: 118px;
+  float: right;
+}
+footer ul {
+  text-align: left;
+  list-style: none;
+  display: inline-block;
+  min-width: 150pt;
+  padding: 25pt 15pt;
+}
+footer ul li:hover i {
+  transition: color 0.3s ease;
+}
+footer ul li:hover i.fa-linkedin-square {
+  color: #006DA6;
+}
+footer ul li:hover i.fa-youtube-play {
+  color: #E62117;
+}
+footer ul li:hover i.fa-github {
+  color: #333;
+}
+footer ul li:hover i.fa-envelope {
+  color: #fff;
+}
+footer ul a,
+footer ul li {
+  color: #dfffe4;
+}
+footer ul a i,
+footer ul li i {
+  color: #8c8b88;
+}
+footer ul a span,
+footer ul li span {
+  margin-left: 2pt;
 }
 .full-section {
   height: 100vh;
-  background: #DDFFF7;
+  background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
 }
 .full-section .image {
   height: 100%;
@@ -254,14 +324,22 @@ footer {
   display: inline-block;
   height: 100%;
 }
-.full-section .column.fade {
-  background: linear-gradient(135deg, #DDFFF7, #93E1D8);
-}
 .full-section .column.paer {
   background-image: url("../images/paer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
+  box-shadow: 0 0 80px #383E4B;
+  transition: 0.5s all ease-in-out;
+  opacity: 0.7;
+  -webkit-filter: saturate(0.25);
+          filter: saturate(0.25);
+}
+.full-section .column.paer:hover {
+  -webkit-filter: saturate(1);
+          filter: saturate(1);
+  opacity: 0.9;
+  box-shadow: 0 0 40px #383E4B;
 }
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

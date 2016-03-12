@@ -1,13 +1,8 @@
-@color1: #DDFFF7;
-@color2: #93E1D8;
-@color3: #FFA69E;
-@color4: #AA4465;
-@color5: #462255;
 
 
 .full-section {
   height: 100vh;
-  background: @color1;
+  background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
 
   .image {
     height: 100%;
@@ -19,7 +14,7 @@
     height: 100%;
 
     &.fade {
-      background: linear-gradient(135deg, @color1, @color2);
+      //background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
     }
 
     &.paer {
@@ -27,6 +22,17 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
+      box-shadow: 0 0 80px @color5;
+
+      transition: 0.5s all ease-in-out;
+      opacity: 0.7;
+      filter: saturate(0.25);
+
+      &:hover {
+        filter: saturate(1);
+        opacity: 0.9;
+        box-shadow: 0 0 40px @color5;
+      }
     }
   }
 }

@@ -25,7 +25,9 @@ module.exports = ProjectView = React.createClass({
 
   render: function () {
     return (
-      <Project works={this.state.work} />
+      <div className="ProjectView">
+        <Project works={this.state.work}/>
+      </div>
     );
   }
 });
