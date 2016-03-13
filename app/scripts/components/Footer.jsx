@@ -33,7 +33,7 @@ module.exports = Footer = React.createClass({
             </a>
           </li>
         </ul>
-        <div className="dwarf"><img src="img/dwco/dwarf.png"/></div>
+        <div className="dwarf"><img src="images/dwarf.png"/></div>
       </footer>
     );
   }

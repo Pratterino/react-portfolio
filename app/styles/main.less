@@ -7,6 +7,42 @@
     box-sizing: border-box;
   }
 }
+
+.vert-aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vert-aligner-item {
+  max-width: 50%;
+}
+
+.vert-aligner-item--top {
+  align-self: flex-start;
+}
+
+.vert-aligner-item--bottom {
+  align-self: flex-end;
+}
+
+body, html {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  min-height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: relative; /* needed for footer positioning*/
+  margin: 0 auto; /* center, not in IE5 */
+  min-height: 100%; /* real browsers */
+}
+
 @color1: #FCFFE3;
 @color2: #C6E774;
 @color3: #f39264;
@@ -36,8 +72,36 @@
 @media (min-width: 750px) {
 }
 
-/* Larger than desktop */
-@media (min-width: 1000px) {
+/* Smaller than desktop */
+@media (max-width: 1100px) {
+  .column {
+    width: 100% !important;
+
+    h1, h2 {
+      span {
+        color: @color1;
+        border-color: @color1;
+        background: @color4;
+      }
+    }
+
+    span, sub {
+      color: @color1;
+      background: rgba(56, 62, 75, 0.85);
+    }
+
+    &.paer {
+      position: absolute !important;
+      padding-top: 0 !important;
+      height: 50% !important;
+    }
+
+    &.fade {
+      position: relative !important;
+      left: 0;
+      z-index: 100;
+    }
+  }
 }
 
 /* Larger than Desktop HD */

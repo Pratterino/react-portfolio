@@ -31,9 +31,10 @@
   transition: background 0.35s;
 }
 
-section.work-view {
-  @borderColor: @color1;
-
+.work-view {
+  @borderColor: @color5;
+  background: @borderColor;
+  padding: 5px 0;
   @itemPadding: 10pt;
   overflow: hidden;
   position: relative;
@@ -89,6 +90,10 @@ section.work-view {
   }
 
   .flex-container {
+    a {
+      padding: 0 !important;
+    }
+
     &.work {
       width: 100%;
     }
@@ -97,20 +102,19 @@ section.work-view {
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    border: 5px solid @borderColor;
 
     a.work-item-container {
-      border: 5px solid @borderColor;
       position: relative;
       flex: 1 1 33%;
       min-width: @item-size;
       text-align: center;
       text-decoration: none;
       overflow: hidden;
+      border: 4px solid @borderColor;
       margin: auto;
       background-size: cover;
       transition: all 0.5s ease;
-      box-shadow: inset 0 0 20px #000000;
+      box-shadow: inset 0 0 5px @color1;
 
       .item-image {
         position: absolute;
@@ -121,7 +125,7 @@ section.work-view {
         background: rgba(43, 61, 202, 250);
         background-size: cover;
         transition: all 0.5s ease;
-        box-shadow: inset 0 0px 10px @color5;
+        box-shadow: inset 0 0px 4px @borderColor;
 
         &:after {
           z-index: -1;
@@ -130,13 +134,17 @@ section.work-view {
 
       .item-header {
         position: absolute;
-        bottom: 10px;
+        top: calc(65% - @itemPadding);
         width: 100%;
         font-weight: 800;
         transition: all 0.4s ease;
         color: @color1;
         font-size: 14pt;
         text-shadow: @color5 -2px 2px, @color5 0 0 2px !important;
+        span {
+          padding: 5px 10px;
+          background: @color2;
+        }
       }
 
       &:hover .item-header {

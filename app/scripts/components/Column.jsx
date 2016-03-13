@@ -1,18 +1,23 @@
 'use strict';
 
-var React       = require('react');
-var classNames  = require('classnames');
+var React = require('react');
+var classNames = require('classnames');
+var $ = require('jquery');
 var Navbar;
 
 module.exports = Navbar = React.createClass({
-  getDefaultProps: function() {
+  getDefaultProps: function () {
     return {
-      width: '100%'
+      width: 'auto'
     };
   },
 
-  propTypes: function () {
+  propTypes: {
     width: React.PropTypes.number
+  },
+
+  componentDidMount: function () {
+    $(".paer").css({height: $('.full-section').outerHeight(true) + 26}); //TODO Resize listener
   },
 
   render: function () {

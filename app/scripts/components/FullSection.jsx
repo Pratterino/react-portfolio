@@ -7,7 +7,7 @@ var FullSection;
 module.exports = FullSection = React.createClass({
   getInitialProps: function () {
     return {
-      height: "100vh"
+      minHeight: "auto"
     }
   },
 
@@ -15,9 +15,9 @@ module.exports = FullSection = React.createClass({
 
     var classesString = this.props.addClass ? "full-section " + this.props.addClass : "full-section";
     return (
-      <div className={classesString} style={this.props.styles}>
+      <section className={classesString} style={this.props.styles}>
         {this.props.children}
-      </div>
+      </section>
     );
   }
 });

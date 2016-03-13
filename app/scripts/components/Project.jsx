@@ -38,11 +38,11 @@ module.exports = Project = React.createClass({
       var items = this.props.works.map(this.getWorkData);
 
       return (
-        <section className="work-view">
+        <div className="work-view">
           <div className='work flex-container'>
             {items}
           </div>
-        </section>
+        </div>
       );
     } else {
       return (

@@ -7,36 +7,58 @@ var Text;
 module.exports = Text = React.createClass({
   render: function () {
     return (
-      <div className="desc-text center">
-        <div>
-          <h1>Pär Strandberg</h1>
-          <sub>Frontend-utvecklare</sub>
-        </div>
-
-        <div className="desc-item">
-          <h2>Om mig</h2>
-          <p>Frontend-utvecklare från Umeå, numera bosatt i Stockholm.</p>
-          <p>Älskar speldesign, häftiga JavaScript-ramverk och har alltid en kopp kaffe i handen.</p>
-        </div>
-
-        <div className="desc-item">
-          <h2>Bakgrund</h2>
-          <p>Studerade Interaktiva digitala medier på Linnéuniversitetet i Växjö (2011-2014).</p>
-          <p>Arbetar på <a href="//cygni.se">Cygni</a> sedan november 2014</p>
-          <br />
-          <p>Har konsultat på arbetsplatser som:</p>
+      <div className="desc-text center vert-aligner">
+        <div className="desc-wrapper">
           <div>
-            [<a href="//weahead.se">WeAhead</a>,
-            <a href="//comhem.se">Com hem</a>,
-            <a href="//eniro.se">Eniro</a>,
-            <a href="//telenor.se">Telenor</a>]
+            <h1>
+              <span>Pär Strandberg</span>
+            </h1>
+            <sub>Frontend-utvecklare</sub>
           </div>
-        </div>
 
-        <div className="desc-item">
-          <h2>Vad gör Pär nu?</h2>
-          <p>Färdigställer just nu min C-uppsats, som kort sagt handlar om att motverka</p>
-          <p>glukossvängningar hos typ-2 diabetiker med hjälp av en app.</p>
+          <div className="desc-item">
+            <h2><span>Om mig</span></h2>
+            <p><span>Frontend-utvecklare från Umeå, numera bosatt i Stockholm.</span></p>
+            <p><span>Älskar speldesign, häftiga JavaScript-ramverk och har alltid en kopp kaffe i handen.</span></p>
+          </div>
+
+          <div className="desc-item">
+            <h2>
+              <span>Bakgrund</span>
+            </h2>
+            <p>
+              <span>Studerade Interaktiva digitala medier på Linnéuniversitetet i Växjö (2011-2014).</span>
+            </p>
+            <p>
+              <span>Arbetar på <a href="//cygni.se">Cygni</a> sedan november 2014, men har tjänstledigt för studier nu.</span>
+            </p>
+
+
+            <br />
+            <p>
+              <span>Har konsultat på arbetsplatser som:</span>
+            </p>
+            <div>
+              [<a href="//weahead.se">WeAhead</a>,
+              <a href="//comhem.se">Com hem</a>,
+              <a href="//eniro.se">Eniro</a>,
+              <a href="//telenor.se">Telenor</a>]
+            </div>
+
+            <br />
+            <p><span>Trivs väldigt bra med ReactJS, Angular, Git, SCSS  &amp; LESS</span></p>
+            <p><span>Kanban, Jira</span></p>
+          </div>
+
+          <div className="desc-item">
+            <h2>
+              <span>
+                Vad pysslar Pär med nu?
+              </span>
+            </h2>
+            <p><span>Färdigställer just nu min C-uppsats, som kort sagt handlar om att motverka</span></p>
+            <p><span>glukossvängningar hos typ-2 diabetiker med hjälp av en app.</span></p>
+          </div>
         </div>
       </div>
     );
