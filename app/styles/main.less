@@ -26,10 +26,15 @@
   align-self: flex-end;
 }
 
-body, html {
+body, html, .page-wrapper {
+  position: relative;
   height: 100%;
   width: 100%;
   background: @color5;
+}
+
+.page-wrapper {
+  margin-bottom: 100px;
 }
 
 section {
@@ -37,11 +42,6 @@ section {
   width: 100%;
 }
 
-.content {
-  position: relative; /* needed for footer positioning*/
-  margin: 0 auto; /* center, not in IE5 */
-  min-height: 100%; /* real browsers */
-}
 
 @color1: #FCFFE3;
 @color2: #C6E774;
@@ -100,6 +100,16 @@ section {
       position: relative !important;
       left: 0;
       z-index: 100;
+    }
+  }
+
+  .dwarf {
+    display: none;
+  }
+
+  footer {
+    ul {
+      width: 100%;
     }
   }
 }

@@ -13,16 +13,18 @@ var MainView;
 module.exports = MainView = React.createClass({
   render: function () {
     return (
-      <div className="content">
-        <FullSection>
+      <div className="page-wrapper">
+        <div className="content">
+          <FullSection>
             <Column width={30} bgClass="paer"/>
             <Column width={70} bgClass="crazy-gradient">
               <DescText />
             </Column>
-          <div style={{clear: "both"}} />
-        </FullSection>
+            <div style={{clear: "both"}}/>
+          </FullSection>
 
-        <ProjectView />
+          <ProjectView />
+        </div>
         <Footer />
       </div>
     );

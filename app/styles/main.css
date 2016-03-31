@@ -23,22 +23,19 @@
   align-self: flex-end;
 }
 body,
-html {
+html,
+.page-wrapper {
+  position: relative;
   height: 100%;
   width: 100%;
   background: #383E4B;
 }
+.page-wrapper {
+  margin-bottom: 100px;
+}
 section {
   min-height: 100%;
   width: 100%;
-}
-.content {
-  position: relative;
-  /* needed for footer positioning*/
-  margin: 0 auto;
-  /* center, not in IE5 */
-  min-height: 100%;
-  /* real browsers */
 }
 html,
 body {
@@ -351,16 +348,20 @@ sub {
   background: rgba(255, 200, 15, 0.85);
 }
 footer {
-  position: relative;
+  position: inherit;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
   background: #383E4B;
-  padding: 50px;
+  padding: 0 50px;
   min-height: 150pt;
 }
 footer .dwarf {
   z-index: 100;
-  position: relative;
-  bottom: 118px;
-  float: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 footer ul {
   text-align: left;
@@ -467,6 +468,12 @@ footer ul li span {
     position: relative !important;
     left: 0;
     z-index: 100;
+  }
+  .dwarf {
+    display: none;
+  }
+  footer ul {
+    width: 100%;
   }
 }
 /* Larger than Desktop HD */
