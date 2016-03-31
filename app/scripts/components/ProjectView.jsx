@@ -1,15 +1,18 @@
 'use strict';
 
-var React = require('react');
-var $ = require('jquery');
-var Project = require('./Project.jsx');
+var React         = require('react');
+var $             = require('jquery');
+var _             = require('lodash');
+var Project       = require('./Project.jsx');
+var ProjectSearch = require('./ProjectSearch.jsx');
 
 var ProjectView;
 
 module.exports = ProjectView = React.createClass({
   getInitialState: function () {
     return {
-      work: null
+      work: null,
+      tags: []
     };
   },
 
@@ -23,9 +26,46 @@ module.exports = ProjectView = React.createClass({
     });
   },
 
+  toggleItem: function (tag) {
+    var item = this.isActiveTag(tag);
+    var tempTags = this.state.tags;
+
+    if (item.inactive) {
+      tempTags.push(tag);
+    } else {
+      tempTags.splice(item.index, 1);
+    }
+    this.setState({
+      tags: tempTags
+    });
+    console.info(tag, this.state.tags);
+  },
+
+  isActiveTag: function (tag) {
+    var self = this;
+    var index = _.indexOf(self.state.tags, tag);
+    return {
+      inactive: index === -1,
+      index: index
+    };
+  },
+
   render: function () {
     return (
-      <Project works={this.state.work}/>
+      <section>
+        <ProjectSearch
+          toggleItem={this.toggleItem}
+          works={this.state.work}
+          isActiveTag={this.isActiveTag}
+          activeTags={this.state.tags}
+        />
+        <Project
+          toggleItem={this.toggleItem}
+          works={this.state.work}
+          isActiveTag={this.isActiveTag}
+          activeTags={this.state.tags}
+        />
+      </section>
     );
   }
 });

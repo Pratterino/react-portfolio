@@ -1,46 +1,83 @@
 'use strict';
 
-var React = require('react');
-var _ = require('lodash');
+var React       = require('react');
+var _           = require('lodash');
+var $           = require('jquery');
+var classNames  = require('classnames');
 
 var Project;
 
 module.exports = Project = React.createClass({
 
-  getWorkData: function (work) {
-    var bg = {
-      backgroundImage: 'url(./images/bg/' + work.image + ')'
-    };
+  getTags: function (work) {
+    var self = this;
+    return _.map(work.tags, function (tag, i) {
+      var classes = classNames({
+        active: !self.props.isActiveTag(tag).inactive
+      });
 
-    return (
-      <a href={work.link} className='work-item-container'>
-        <div className='item-image' style={bg}></div>
-        <div className='item-header'>
-          <h2>
-            <span>{work.title}</span>
-          </h2>
-        </div>
+      return (
+        <li key={i}
+            className={classes}
+            onClick={self.onClick}
+            title="Klicka för att filtrera med denna kunskap">#{tag}</li>
+      );
+    });
+  },
 
-        <div className='item-content'>
-          <div className='item'>
-            <div className='item-desc'>
-              <p>{work.description}</p>
+  onClick: function (e) {
+    e.preventDefault();
+
+    var tag = $(e.target).text();
+    this.props.toggleItem(tag);
+  },
+
+  getWorkData: function () {
+    var self = this;
+
+    return _.map(self.props.works, function (work, i) {
+      var bg = {
+        backgroundImage: 'url(./images/bg/' + work.image + ')'
+      };
+
+      var isActive = _.any(work.tags, function (tag) {
+          return !self.props.isActiveTag(tag).inactive
+      });
+
+      if (isActive || self.props.activeTags.length === 0) {
+        return (
+          <a key={i} href={work.link} stopPropagation={true} className='work-item-container'>
+            <div className='item-image' style={bg}></div>
+            <div className='item-header'>
+              <h2>
+                <span>{work.title}</span>
+              </h2>
             </div>
-            <div className='item-tags-container'></div>
-          </div>
-        </div>
-      </a>
-    )
+
+            <div className='item-content'>
+              <div className='item'>
+                <div className='item-desc'>
+                  <p>{work.description}</p>
+                </div>
+                <div className='item-tags-container'>
+                  <ul className="item-tags">
+                    {self.getTags(work)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      }
+    });
   },
 
   render: function () {
     if (this.props.works) {
-      var items = this.props.works.map(this.getWorkData);
-
       return (
         <section className="work-view">
           <div className='work flex-container'>
-            {items}
+            {this.getWorkData()}
           </div>
         </section>
       );

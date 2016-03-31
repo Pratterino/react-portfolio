@@ -1,4 +1,6 @@
 @item-size: 320px;
+@itemPadding: 10pt;
+@borderColor: @color5;
 
 .visibleOnHoverOnly {
   opacity: 0;
@@ -32,10 +34,8 @@
 }
 
 .work-view {
-  @borderColor: @color5;
   background: @borderColor;
   padding: 5px 0;
-  @itemPadding: 10pt;
   overflow: hidden;
   position: relative;
   z-index: 100;
@@ -53,8 +53,6 @@
     background: #333;
     min-height: 45pt;
 
-    .searchbar {
-    }
     .header {
       margin: 0 20px;
       color: #FFEBCD;
@@ -103,7 +101,7 @@
     align-content: center;
     align-items: center;
 
-    a.work-item-container {
+    .work-item-container {
       position: relative;
       flex: 1 1 33%;
       min-width: @item-size;
@@ -157,6 +155,12 @@
         filter: sepia(0.3);
       }
 
+      .item-tags-container {
+        position: absolute;
+        width: calc(100% - @itemPadding * 2);
+        bottom: @itemPadding;
+      }
+
       .item-content {
         position: relative;
         display: flex;
@@ -183,28 +187,26 @@
             color: #fff;
             .hide();
           }
-
-          .item-tags-container {
-            position: absolute;
-            width: calc(100% - @itemPadding * 2);
-            bottom: @itemPadding;
-            transition-delay: 0.3s;
-            .hide();
-
-            .item-read-more {
-              text-align: center;
-              text-decoration: none;
-            }
-            ul.item-tags {
-              text-align: left;
-              color: #363636;
-              li {
-                .tagList();
-              }
-            }
-          }
         }
       }
+    }
+  }
+}
+
+.item-tags-container {
+  transition-delay: 0.3s;
+  z-index: 400;
+
+  .item-read-more {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .item-tags {
+    text-align: left;
+    color: #363636;
+    li {
+      .tagList();
     }
   }
 }
