@@ -16,18 +16,21 @@
 
 .tagList {
   display: inline-block;
-  background: rgba(255, 200, 15, 0.5);
+  background: @color5;
+  color: @color1;
   padding: 0 2px;
   margin: 1px 2px;
   border-radius: 3px;
   &:hover {
     cursor: pointer;
-    background: rgb(62, 172, 255);
+    background: @color1;
+    color: @color5;
   }
   &.active {
-    background: #ffdc04;
+    background: @color3;
+    color: @color5;
     &:hover {
-      background: rgba(255, 200, 15, 0.85);
+      background: @color4;
     }
   }
   transition: background 0.35s;
@@ -170,22 +173,25 @@
         width: 100%;
         height: (@item-size/1.2);
         transition: visibility 0s, opacity 0.45s ease;
-        .visibleOnHoverOnly();
+
+        .item-desc {
+          .hide();
+        }
 
         &:hover .item {
-          .item-tags-container, .item-desc {
+          background: rgba(0, 0, 0, 0.7);
+          .item-desc {
             opacity: 1;
             visibility: visible;
           }
         }
         .item {
           font-size: 11pt;
-          background: rgba(0, 0, 0, 0.7);
+          background: transparent;
 
           .item-desc {
             padding: @itemPadding;
             color: #fff;
-            .hide();
           }
         }
       }
@@ -196,6 +202,10 @@
 .item-tags-container {
   transition-delay: 0.3s;
   z-index: 400;
+
+  .item-desc {
+    opacity: 0;
+  }
 
   .item-read-more {
     text-align: center;
