@@ -47,6 +47,24 @@ html, body {
   .desc-item {
     width: 100%;
     margin-top: 55px;
+    padding: inherit;
+    border-radius: 5px;
+
+    &:hover {
+      a.span, p, h2, h1 {
+        color: @color1;
+        span {
+          border-color: @color1;
+        }
+      }
+
+      span {
+        background: transparent;
+      }
+
+      background: rgba(70, 34, 85, .3); //@COLOR5
+      transition: all 0.4s ease;
+    }
   }
 }
 

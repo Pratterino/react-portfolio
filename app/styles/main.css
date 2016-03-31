@@ -24,9 +24,9 @@
 }
 body,
 html {
-  position: absolute;
   height: 100%;
   width: 100%;
+  background: #383E4B;
 }
 section {
   min-height: 100%;
@@ -84,6 +84,27 @@ body {
 .desc-text .desc-item {
   width: 100%;
   margin-top: 55px;
+  padding: inherit;
+  border-radius: 5px;
+}
+.desc-text .desc-item:hover {
+  background: rgba(70, 34, 85, 0.3);
+  transition: all 0.4s ease;
+}
+.desc-text .desc-item:hover a.span,
+.desc-text .desc-item:hover p,
+.desc-text .desc-item:hover h2,
+.desc-text .desc-item:hover h1 {
+  color: #FCFFE3;
+}
+.desc-text .desc-item:hover a.span span,
+.desc-text .desc-item:hover p span,
+.desc-text .desc-item:hover h2 span,
+.desc-text .desc-item:hover h1 span {
+  border-color: #FCFFE3;
+}
+.desc-text .desc-item:hover span {
+  background: transparent;
 }
 sup,
 sub {
