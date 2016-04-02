@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react');
-var classNames = require('classnames');
 var $ = require('jquery');
 var Navbar;
 
@@ -17,7 +16,8 @@ module.exports = Navbar = React.createClass({
   },
 
   componentDidMount: function () {
-    $(".paer").css({height: $('.full-section').outerHeight(true) + 26}); //TODO Resize listener
+    $('.column.paer').css({height: $('.column.fade').outerHeight(true) + 28});
+    $('.parallax-wrapper').css({height: window.innerHeight/2});
   },
 
   render: function () {

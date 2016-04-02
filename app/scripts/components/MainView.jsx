@@ -15,18 +15,20 @@ module.exports = MainView = React.createClass({
     return (
       <div className="page-wrapper">
         <div className="content">
-          <FullSection>
+          <FullSection addClass="no-min-height">
             <Column width={30} bgClass="paer"/>
             <Column width={70} bgClass="fade">
               <DescText />
             </Column>
-            <div style={{clear: "both"}}/>
+            <div style={{clear: "both"}}></div>
           </FullSection>
 
           <ProjectView type="web"/>
-          <FullSection>
-            <Column width={100} bgClass="outdoors" />
-          </FullSection>
+
+          <div className="parallax-wrapper">
+            <Column width={100} bgClass="outdoors"/>
+          </div>
+
           <ProjectView type="game"/>
         </div>
         <Footer />

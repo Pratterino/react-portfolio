@@ -10,23 +10,15 @@
 }
 
 .game {
-  @gameColor: #0cee10;
+  @gameColor: #FFEB00;
   border-color: @gameColor;
-  background: @gameColor;
-
-  .work-item-container {
-    border: 4px solid @gameColor;
-  }
+  background: linear-gradient(@gameColor, #F3C164);
 }
 
 .web {
-  @webColor: #eeeb29;
+  @webColor: #66FAFF;
   border-color: @webColor;
-  background: @webColor;
-
-  .work-item-container {
-    border: 4px solid @webColor;
-  }
+  background: linear-gradient(@webColor, #72D4D8);
 }
 
 .hide {
@@ -36,6 +28,7 @@
 
 .tagList {
   display: inline-block;
+
   background: @color5;
   color: @color1;
   padding: 0 2px;
@@ -57,7 +50,6 @@
 }
 
 .work-view {
-  background: inherit;
   overflow: hidden;
   position: relative;
   z-index: 100;
@@ -110,10 +102,6 @@
   }
 
   .flex-container {
-    a {
-      padding: 0 !important;
-    }
-
     &.work {
       width: 100%;
     }
@@ -133,18 +121,17 @@
       margin: auto;
       background-size: cover;
       transition: all 0.5s ease;
-      box-shadow: inset 0 0 5px @color1;
 
       .item-image {
         position: absolute;
         display: block;
         width: 100%;
         height: 100%;
-        filter: grayscale(.9);
+        filter: sepia(.9);
         background: rgba(43, 61, 202, 250);
         background-size: cover;
         transition: all 0.5s ease;
-        box-shadow: inset 0 0px 4px @borderColor;
+        box-shadow: inset 0 0 5px @borderColor;
 
         &:after {
           z-index: -1;
@@ -173,7 +160,7 @@
       }
       &:hover .item-image {
         background-blend-mode: normal;
-        box-shadow: inset 1px 0 40px @color5;
+        box-shadow: inset 0 0 40px @color5;
         filter: sepia(0.3);
       }
 

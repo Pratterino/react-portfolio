@@ -7,7 +7,6 @@
       "description": "Simpelt Point-and-click spel där du ska identifiera och hitta Pärs händer på tid.",
       "date": "2015",
       "tags": [
-        "GAME",
         "Phaser",
         "JavaScript",
         "Adobe Photoshop"
@@ -20,7 +19,6 @@
       "description": "Ett actionfyllt arkadspel med tvåspelarläge för arkadmaskinen Evertron på Linnéuniversitetet, Växjö. Skapade musiken, HUD-programmering, grafik, omslag och animationer",
       "date": "2013-06-01",
       "tags": [
-        "GAME",
         "ActionScript 3",
         "Blender",
         "Adobe Flash",
@@ -34,7 +32,6 @@
       "description": "Barnspel till tablets med målgruppen 4-6 åringar.",
       "date": "2012",
       "tags": [
-        "GAME",
         "ActionScript 3",
         "Adobe Flash",
         "Adobe AIR"
@@ -49,6 +46,8 @@
       "description": "Twitter-liknande social webbapplikation. Hashtags, användarprenumeration och statusuppdateringar",
       "date": "",
       "tags": [
+        "Frontend",
+        "Backend",
         "AngularJS",
         "jQuery",
         "JavaScript",
@@ -65,6 +64,8 @@
       "description": "Kartvy där en användare kan skriva microblogg-inlägg som delas publikt med en valfri bild som tagits i området inlägget 'skrevs'",
       "date": "2012",
       "tags": [
+        "Frontend",
+        "Backend",
         "PHP",
         "MySQL",
         "JavaScript",
@@ -79,8 +80,8 @@
       "description": "Webbapplikation där obegränsat antal drag-and-drop-fönster kan skapas och interageras med. Tärningarna kan kastas och visar den sammanlagda summan i det aktiva fönstret.",
       "date": "2011",
       "tags": [
-        "JavaScript",
-        "CSS3"
+        "Frontend",
+        "JavaScript"
       ]
     }
   ]

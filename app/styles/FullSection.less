@@ -2,9 +2,31 @@
   background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
 }
 
+.no-min-height {
+  min-height: 0 !important;
+}
+
+.parallax-wrapper {
+    box-shadow: 0 0 200px @color5 inset;
+
+  .react-parallax {
+    height: 100% !important;
+
+    .parallax-child {
+
+      img {
+      }
+    }
+  }
+}
+
 .full-section {
   min-height: 100vh;
   width: 100%;
+
+  &.half-sized {
+    min-height: 200px !important;
+  }
 
   .column {
     position: relative;
@@ -29,7 +51,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
-      box-shadow: 0 0 80px @color5;
 
       transition: 0.5s all ease-in-out;
       opacity: 0.7;
@@ -41,21 +62,22 @@
         box-shadow: 0 0 40px @color5;
       }
     }
+  }
+}
 
-    &.outdoors {
-      background-image: url("../images/outdoors.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: center;
-      box-shadow: 0 0 200px @color5 inset;
+.outdoors {
+  height: 100%;
+  background-image: url("../images/outdoors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  box-shadow: 0 0 200px @color5 inset;
 
-      transition: 0.5s all ease-in-out;
-      filter: sepia(1);
+  transition: 0.5s all ease-in-out;
+  filter: sepia(.5);
 
-      &:hover {
-        box-shadow: 0 0 100px @color4 inset;
-        filter: sepia(0.8);
-      }
-    }
+  &:hover {
+    box-shadow: 0 0 100px @color5 inset;
+    filter: sepia(0.1);
   }
 }

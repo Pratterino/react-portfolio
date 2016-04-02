@@ -6,7 +6,7 @@ var Footer;
 module.exports = Footer = React.createClass({
   render: function () {
     return (
-      <footer className="center">
+      <footer className="center vert-aligner">
         <ul>
           <li>
             <a href="https://github.com/pratterino">

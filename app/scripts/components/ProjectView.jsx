@@ -56,7 +56,7 @@ module.exports = ProjectView = React.createClass({
   render: function () {
     var classes = {
       parent: "project-wrapper " + this.props.type,
-      divider: "project-divider vert-aligner " + this.props.type
+      divider: "project-divider vert-aligner"
     };
 
     return (
