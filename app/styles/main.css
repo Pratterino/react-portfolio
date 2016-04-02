@@ -80,7 +80,7 @@ body {
 .desc-text .desc-item {
   width: 100%;
   margin-top: 55px;
-  padding: inherit;
+  padding: 20px;
   border-radius: 5px;
 }
 .desc-text .desc-item:hover {
@@ -182,7 +182,7 @@ sub {
   display: inline-block;
   background: #383E4B;
   color: #FCFFE3;
-  padding: 0 2px;
+  padding: 2px 4px;
   margin: 1px 2px;
   border-radius: 3px;
   transition: background 0.35s;
@@ -231,7 +231,7 @@ sub {
   display: inline-block;
   background: #383E4B;
   color: #FCFFE3;
-  padding: 0 2px;
+  padding: 2px 4px;
   margin: 1px 2px;
   border-radius: 3px;
   transition: background 0.35s;
@@ -351,6 +351,7 @@ sub {
 .work-view .flex-container .work-item-container .item-content .item {
   font-size: 11pt;
   background: transparent;
+  border-radius: 5px;
 }
 .work-view .flex-container .work-item-container .item-content .item .item-desc {
   padding: 10pt;
@@ -375,7 +376,7 @@ sub {
   display: inline-block;
   background: #383E4B;
   color: #FCFFE3;
-  padding: 0 2px;
+  padding: 2px 4px;
   margin: 1px 2px;
   border-radius: 3px;
   transition: background 0.35s;
