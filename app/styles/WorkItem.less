@@ -9,6 +9,26 @@
   }
 }
 
+.game {
+  @gameColor: #0cee10;
+  border-color: @gameColor;
+  background: @gameColor;
+
+  .work-item-container {
+    border: 4px solid @gameColor;
+  }
+}
+
+.web {
+  @webColor: #eeeb29;
+  border-color: @webColor;
+  background: @webColor;
+
+  .work-item-container {
+    border: 4px solid @webColor;
+  }
+}
+
 .hide {
   visibility: hidden;
   opacity: 0;
@@ -37,8 +57,7 @@
 }
 
 .work-view {
-  background: @borderColor;
-  padding: 5px 0;
+  background: inherit;
   overflow: hidden;
   position: relative;
   z-index: 100;
@@ -111,7 +130,6 @@
       text-align: center;
       text-decoration: none;
       overflow: hidden;
-      border: 4px solid @borderColor;
       margin: auto;
       background-size: cover;
       transition: all 0.5s ease;
@@ -135,16 +153,17 @@
 
       .item-header {
         position: absolute;
-        top: calc(65% - @itemPadding);
+        top: calc(53% - @itemPadding);
         width: 100%;
         font-weight: 800;
         transition: all 0.4s ease;
         color: @color1;
         font-size: 14pt;
-        text-shadow: @color5 -2px 2px, @color5 0 0 2px !important;
+        text-shadow: @color4 -2px 2px, @color2 0 0 2px !important;
         span {
           padding: 5px 10px;
-          background: @color2;
+          background: @color3;
+          border-radius: 5px;
         }
       }
 

@@ -17,13 +17,17 @@ module.exports = MainView = React.createClass({
         <div className="content">
           <FullSection>
             <Column width={30} bgClass="paer"/>
-            <Column width={70} bgClass="crazy-gradient">
+            <Column width={70} bgClass="fade">
               <DescText />
             </Column>
             <div style={{clear: "both"}}/>
           </FullSection>
 
-          <ProjectView />
+          <ProjectView type="web"/>
+          <FullSection>
+            <Column width={100} bgClass="outdoors" />
+          </FullSection>
+          <ProjectView type="game"/>
         </div>
         <Footer />
       </div>

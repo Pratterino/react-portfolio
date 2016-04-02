@@ -4,7 +4,9 @@ var React         = require('react');
 var $             = require('jquery');
 var _             = require('lodash');
 var Project       = require('./Project.jsx');
+var FullSection   = require('./FullSection.jsx');
 var ProjectSearch = require('./ProjectSearch.jsx');
+var classNames    = require('classnames');
 
 var ProjectView;
 
@@ -20,8 +22,9 @@ module.exports = ProjectView = React.createClass({
     var self = this;
     $.getJSON("api/work.json", function (data) {
       console.info(data);
+
       self.setState({
-        work: data
+        work: data[self.props.type]
       });
     });
   },
@@ -51,8 +54,21 @@ module.exports = ProjectView = React.createClass({
   },
 
   render: function () {
+    var classes = {
+      parent: "project-wrapper " + this.props.type,
+      divider: "project-divider vert-aligner " + this.props.type
+    };
+
     return (
-      <section>
+      <section className={classes.parent}>
+          <div className={classes.divider}>
+            <i className="fa fa-arrow-down">&nbsp;&nbsp;</i>
+            <h2>
+              <span>{this.props.type === "game" ? "Spelutveckling" : "Webbutveckling"}</span>
+            </h2>
+            &nbsp;&nbsp;
+            <i className="fa fa-arrow-down"></i>
+          </div>
         <ProjectSearch
           toggleItem={this.toggleItem}
           works={this.state.work}

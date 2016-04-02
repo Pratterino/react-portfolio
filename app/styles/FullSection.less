@@ -1,19 +1,21 @@
+.fade {
+  background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
+}
 
 .full-section {
-  min-height: 100% !important;
+  min-height: 100vh;
   width: 100%;
-  background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
 
   .column {
     position: relative;
     display: inline-block;
-    height: 100%;
+    height: 100vh;
 
     &.fade {
       position: relative;
       float: right;
-      top:0;
-      right:0;
+      top: 0;
+      right: 0;
       height: 100%;
     }
 
@@ -37,6 +39,22 @@
         filter: saturate(1);
         opacity: 0.9;
         box-shadow: 0 0 40px @color5;
+      }
+    }
+
+    &.outdoors {
+      background-image: url("../images/outdoors.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      box-shadow: 0 0 200px @color5 inset;
+
+      transition: 0.5s all ease-in-out;
+      filter: sepia(1);
+
+      &:hover {
+        box-shadow: 0 0 100px @color4 inset;
+        filter: sepia(0.8);
       }
     }
   }

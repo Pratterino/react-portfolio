@@ -21,15 +21,10 @@ module.exports = Navbar = React.createClass({
   },
 
   render: function () {
+    var classString = "column " + this.props.bgClass;
     var styles = {
       width: this.props.width + "%"
     };
-
-    var classString = classNames({
-      column: true,
-      paer: this.props.bgClass === 'paer',
-      fade: this.props.bgClass === 'crazy-gradient'
-    });
 
     return (
       <div className={classString} style={styles}>

@@ -1,83 +1,87 @@
-[
-  {
-    "title": "Hitta Pärs händer",
-    "image": "hands.png",
-    "link": "//pratterino.se/games/hands",
-    "description": "Simpelt Point-and-click spel där du ska identifiera och hitta Pärs händer på tid.",
-    "date": "2015",
-    "tags": [
-      "GAME",
-      "Phaser",
-      "JavaScript",
-      "Adobe Photoshop"
-    ]
-  },
-  {
-    "title": "Dwarven Conflicts",
-    "image": "dw.png",
-    "link": "//shieldwebdev.com/dwacon.html",
-    "description": "Ett actionfyllt arkadspel med tvåspelarläge för arkadmaskinen Evertron på Linnéuniversitetet, Växjö. Skapade musiken, HUD-programmering, grafik, omslag och animationer",
-    "date": "2013-06-01",
-    "tags": [
-      "GAME",
-      "ActionScript 3",
-      "Blender",
-      "Adobe Flash",
-      "Adobe Illustrator"
-    ]
-  },
-  {
-    "title": "Blabber",
-    "image": "blabber.png",
-    "link": "//blabber.pratterino.se",
-    "description": "Twitter-liknande social webbapplikation. Hashtags, användarprenumeration och statusuppdateringar",
-    "date": "",
-    "tags": [
-      "AngularJS",
-      "jQuery",
-      "JavaScript",
-      "PHP",
-      "MySQL",
-      "Bootstrap",
-      "Oauth"
-    ]
-  },
-  {
-    "title": "API Mashup",
-    "image": "maps.png",
-    "link": "//maps.pratterino.se/",
-    "description": "Kartvy där en användare kan skriva microblogg-inlägg som delas publikt med en valfri bild som tagits i området inlägget 'skrevs'",
-    "date": "2012",
-    "tags": [
-      "PHP",
-      "MySQL",
-      "JavaScript",
-      "Google Maps API",
-      "Flickr API"
-    ]
-  },
-  {
-    "title": "Safaristaden",
-    "image": "safari.png",
-    "link": "//pratterino.se/games/safari",
-    "description": "Barnspel till tablets med målgruppen 4-6 åringar.",
-    "date": "2012",
-    "tags": [
-      "GAME",
-      "ActionScript 3",
-      "Adobe Flash",
-      "Adobe AIR"
-    ]
-  },
-  {
-    "title": "Tärningsapplikation",
-    "image": "dice.png",
-    "link": "//dice.pratterino.se",
-    "description": "Webbapplikation där obegränsat antal drag-and-drop-fönster kan skapas och interageras med. Tärningarna kan kastas och visar den sammanlagda summan i det aktiva fönstret.",
-    "date": "2011",
-    "tags": [
-      "JavaScript",
-      "CSS3"
-    ]
-  }
-]
+{
+  "game": [
+    {
+      "title": "Hitta Pärs händer",
+      "image": "hands.png",
+      "link": "//pratterino.se/games/hands",
+      "description": "Simpelt Point-and-click spel där du ska identifiera och hitta Pärs händer på tid.",
+      "date": "2015",
+      "tags": [
+        "GAME",
+        "Phaser",
+        "JavaScript",
+        "Adobe Photoshop"
+      ]
+    },
+    {
+      "title": "Dwarven Conflicts",
+      "image": "dw.png",
+      "link": "//shieldwebdev.com/dwacon.html",
+      "description": "Ett actionfyllt arkadspel med tvåspelarläge för arkadmaskinen Evertron på Linnéuniversitetet, Växjö. Skapade musiken, HUD-programmering, grafik, omslag och animationer",
+      "date": "2013-06-01",
+      "tags": [
+        "GAME",
+        "ActionScript 3",
+        "Blender",
+        "Adobe Flash",
+        "Adobe Illustrator"
+      ]
+    },
+    {
+      "title": "Safaristaden",
+      "image": "safari.png",
+      "link": "//pratterino.se/games/safari",
+      "description": "Barnspel till tablets med målgruppen 4-6 åringar.",
+      "date": "2012",
+      "tags": [
+        "GAME",
+        "ActionScript 3",
+        "Adobe Flash",
+        "Adobe AIR"
+      ]
+    }
+  ],
+  "web": [
+    {
+      "title": "Blabber",
+      "image": "blabber.png",
+      "link": "//blabber.pratterino.se",
+      "description": "Twitter-liknande social webbapplikation. Hashtags, användarprenumeration och statusuppdateringar",
+      "date": "",
+      "tags": [
+        "AngularJS",
+        "jQuery",
+        "JavaScript",
+        "PHP",
+        "MySQL",
+        "Bootstrap",
+        "Oauth"
+      ]
+    },
+    {
+      "title": "API Mashup",
+      "image": "maps.png",
+      "link": "//maps.pratterino.se/",
+      "description": "Kartvy där en användare kan skriva microblogg-inlägg som delas publikt med en valfri bild som tagits i området inlägget 'skrevs'",
+      "date": "2012",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "Google Maps API",
+        "Flickr API"
+      ]
+    },
+    {
+      "title": "Tärningsapplikation",
+      "image": "dice.png",
+      "link": "//dice.pratterino.se",
+      "description": "Webbapplikation där obegränsat antal drag-and-drop-fönster kan skapas och interageras med. Tärningarna kan kastas och visar den sammanlagda summan i det aktiva fönstret.",
+      "date": "2011",
+      "tags": [
+        "JavaScript",
+        "CSS3"
+      ]
+    }
+  ]
+}
