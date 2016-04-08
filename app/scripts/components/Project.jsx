@@ -4,6 +4,7 @@ var React       = require('react');
 var _           = require('lodash');
 var $           = require('jquery');
 var classNames  = require('classnames');
+var MusicItem   = require('./MusicItem.jsx');
 
 var Project;
 
@@ -30,6 +31,15 @@ module.exports = Project = React.createClass({
 
     var tag = $(e.target).text();
     this.props.toggleItem(tag);
+  },
+
+  renderMusicItems: function () {
+    var self = this;
+    return _.map(self.props.works, function (work, i) {
+      return (
+        <MusicItem work={work} key={i} />
+      );
+    })
   },
 
   getWorkData: function () {
@@ -77,7 +87,7 @@ module.exports = Project = React.createClass({
       return (
         <section className="work-view">
           <div className='work flex-container'>
-            {this.getWorkData()}
+            {this.props.type === "music" ? this.renderMusicItems() : this.getWorkData()}
           </div>
         </section>
       );

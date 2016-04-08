@@ -6,7 +6,6 @@ var _             = require('lodash');
 var Project       = require('./Project.jsx');
 var FullSection   = require('./FullSection.jsx');
 var ProjectSearch = require('./ProjectSearch.jsx');
-var classNames    = require('classnames');
 
 var ProjectView;
 
@@ -59,29 +58,43 @@ module.exports = ProjectView = React.createClass({
       divider: "project-divider vert-aligner"
     };
 
-    return (
-      <section className={classes.parent}>
+    if (this.props.type === "music") {
+      return (
+        <section className={classes.parent}>
           <div className={classes.divider}>
-            <i className="fa fa-arrow-down">&nbsp;&nbsp;</i>
+            <h2>
+              <span>{"Musik"}</span>
+            </h2>
+          </div>
+          <Project
+            type={this.props.type}
+            works={this.state.work}
+          />
+        </section>
+      );
+    } else {
+      return (
+        <section className={classes.parent}>
+          <div className={classes.divider}>
             <h2>
               <span>{this.props.type === "game" ? "Spelutveckling" : "Webbutveckling"}</span>
             </h2>
-            &nbsp;&nbsp;
-            <i className="fa fa-arrow-down"></i>
           </div>
-        <ProjectSearch
-          toggleItem={this.toggleItem}
-          works={this.state.work}
-          isActiveTag={this.isActiveTag}
-          activeTags={this.state.tags}
-        />
-        <Project
-          toggleItem={this.toggleItem}
-          works={this.state.work}
-          isActiveTag={this.isActiveTag}
-          activeTags={this.state.tags}
-        />
-      </section>
-    );
+          <ProjectSearch
+            toggleItem={this.toggleItem}
+            works={this.state.work}
+            isActiveTag={this.isActiveTag}
+            activeTags={this.state.tags}
+          />
+          <Project
+            type={this.props.type}
+            toggleItem={this.toggleItem}
+            works={this.state.work}
+            isActiveTag={this.isActiveTag}
+            activeTags={this.state.tags}
+          />
+        </section>
+      );
+    }
   }
 });

@@ -30,6 +30,7 @@ module.exports = MainView = React.createClass({
           </div>
 
           <ProjectView type="game"/>
+          <ProjectView type="music"/>
         </div>
         <Footer />
       </div>

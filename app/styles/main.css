@@ -142,14 +142,15 @@ sub {
 }
 .project-wrapper {
   padding: 4px 0;
-  padding-bottom: 10px;
-}
-.project-wrapper.game {
-  padding-bottom: 150px !important;
+  padding-bottom: 2px;
 }
 .project-wrapper.game .item-tags li {
   border-color: #8C621F;
   background: #8C621F;
+}
+.project-wrapper.music .item-tags li {
+  border-color: #AAE66B;
+  background: #AAE66B;
 }
 .project-wrapper.web .item-tags li {
   border-color: #52A3A7;
@@ -169,6 +170,10 @@ sub {
 .game {
   border-color: #FFEB00;
   background: linear-gradient(#FFEB00, #F3C164);
+}
+.music {
+  border-color: #AAE66B;
+  background: linear-gradient(#AAE66B, #7EAF4B);
 }
 .web {
   border-color: #66FAFF;
@@ -281,6 +286,35 @@ sub {
   margin: auto;
   background-size: cover;
   transition: all 0.5s ease;
+}
+.work-view .flex-container .work-item-container.container-music {
+  height: 509px !important;
+  background: #FCFFE3;
+}
+.work-view .flex-container .work-item-container .item-actionbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+  padding: 8px 10px;
+  background: #383E4B;
+  box-shadow: inset 0 0 20px #000;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-right: none;
+  border-left: none;
+}
+.work-view .flex-container .work-item-container .item-actionbar button {
+  padding: 10px;
+  background-color: #f39264;
+  border: none;
+  border-radius: 8px;
+  color: #FCFFE3;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  text-shadow: #f2606f -2px 2px, #C6E774 0 0 2px !important;
 }
 .work-view .flex-container .work-item-container .item-image {
   position: absolute;
@@ -563,5 +597,8 @@ footer ul li span {
   footer ul {
     width: 100%;
   }
+}
+.cursor {
+  cursor: pointer;
 }
 /* Larger than Desktop HD */
