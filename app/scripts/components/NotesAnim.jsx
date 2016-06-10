@@ -7,9 +7,16 @@ var NotesAnim;
 module.exports = NotesAnim = React.createClass({
 
   componentDidMount: function () {
-    console.log("BUUBBLES", this.refs.parent);
+    var x = $('#parent-wrapper');
+
+    console.log(x.width());
+    if (x.width() > 1100) {
+      this.renderBubbles();
+    }
+  },
+
+  renderBubbles: function () {
     var $bubbles = $(this.refs.parent);
-    // Settings
     var min_bubble_count = 4, // Minimum number of bubbles
       max_bubble_count = 8, // Maximum number of bubbles
       min_bubble_size = 2, // Smallest possible bubble diameter (px)
@@ -81,13 +88,11 @@ module.exports = NotesAnim = React.createClass({
         'height': size_rand + 'px'
       });
     });
-
   },
 
   render: function () {
-    var classes = "notes-container";
     return (
-      <div ref="parent" className={classes}>
+      <div ref="parent" className="notes-container">
         <div className="bubbles"></div>
       </div>
     );

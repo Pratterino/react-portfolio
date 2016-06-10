@@ -43,11 +43,23 @@ module.exports = Project = React.createClass({
   },
 
   getWorkData: function () {
-    var self = this;
+    var self = this,
+        colors;
+    switch (this.props.type) {
+      case "web":
+        colors = "rgba(250, 50, 150, .5), rgba(200, 125, 120, .9)";
+        break;
+      case "music":
+        colors = "rgba(100, 100, 100, .5), rgba(255, 100, 200, 1)";
+        break;
+      case "game":
+        colors = "rgba(245, 250, 0, .5), rgba(230, 215, 0, .9)";
+        break;
+    }
 
     return _.map(self.props.works, function (work, i) {
       var bg = {
-        backgroundImage: 'url(./images/bg/' + work.image + ')'
+        background: 'linear-gradient('+ colors +'), url(./images/bg/' + work.image + ')'
       };
 
       var isActive = _.any(work.tags, function (tag) {

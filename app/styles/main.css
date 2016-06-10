@@ -322,12 +322,11 @@ sub {
   display: block;
   width: 100%;
   height: 100%;
-  -webkit-filter: hue-rotate(300deg);
-          filter: hue-rotate(300deg);
-  background: #2b3dca;
-  background-size: cover;
+  -webkit-filter: hue-rotate(350deg);
+          filter: hue-rotate(350deg);
+  background: #000;
+  background-size: cover !important;
   transition: all 0.5s ease;
-  box-shadow: inset 0 0 5px #383E4B;
 }
 .work-view .flex-container .work-item-container .item-image:after {
   z-index: -1;
