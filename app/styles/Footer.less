@@ -8,11 +8,26 @@ footer {
   padding: 0 50px;
   min-height: 200pt;
 
-  .dwarf {
-    z-index: 100;
+  .dwarf-container {
+    display: inline-block;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+
+    .dwarf {
+      z-index: 100;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      transition: all 0.3s;
+    }
+    &:hover {
+      .dwarf {
+        right: -250px;
+      }
+    }
   }
   ul {
     text-align: left;

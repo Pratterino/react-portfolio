@@ -22,9 +22,9 @@
 }
 
 .web {
-  @webColor: #66FAFF;
+  @webColor: #ff3199;
   border-color: @webColor;
-  background: linear-gradient(@webColor, #72D4D8);
+  background: linear-gradient(@webColor, #bbefff);
 }
 
 .hide {
@@ -166,7 +166,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        filter: sepia(.9);
+        filter: hue-rotate(300deg);
         background: rgba(43, 61, 202, 250);
         background-size: cover;
         transition: all 0.5s ease;
@@ -185,10 +185,10 @@
         transition: all 0.4s ease;
         color: @color1;
         font-size: 14pt;
-        text-shadow: @color4 -2px 2px, @color2 0 0 2px !important;
+        text-shadow: #000 -2px 2px, @color3 1px 1px 2px !important;
         span {
           padding: 5px 10px;
-          background: @color3;
+          background: rgba(0, 0, 0, .2);
           border-radius: 5px;
         }
       }

@@ -33,7 +33,9 @@ module.exports = Footer = React.createClass({
             </a>
           </li>
         </ul>
-        <div className="dwarf"><img src="images/dwarf.png"/></div>
+        <div className="dwarf-container">
+          <div className="dwarf"><img src="images/dwarf.png"/></div>
+        </div>
       </footer>
     );
   }

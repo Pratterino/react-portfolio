@@ -154,8 +154,8 @@ sub {
   background: #AAE66B;
 }
 .project-wrapper.web .item-tags li {
-  border-color: #52A3A7;
-  background: #52A3A7;
+  border-color: #ff64af;
+  background: #ff64af;
 }
 .search-view {
   position: relative;
@@ -177,8 +177,8 @@ sub {
   background: linear-gradient(#AAE66B, #7EAF4B);
 }
 .web {
-  border-color: #66FAFF;
-  background: linear-gradient(#66FAFF, #72D4D8);
+  border-color: #ff3199;
+  background: linear-gradient(#ff3199, #bbefff);
 }
 .hide {
   visibility: hidden;
@@ -322,8 +322,8 @@ sub {
   display: block;
   width: 100%;
   height: 100%;
-  -webkit-filter: sepia(0.9);
-          filter: sepia(0.9);
+  -webkit-filter: hue-rotate(300deg);
+          filter: hue-rotate(300deg);
   background: #2b3dca;
   background-size: cover;
   transition: all 0.5s ease;
@@ -340,11 +340,11 @@ sub {
   transition: all 0.4s ease;
   color: #FCFFE3;
   font-size: 14pt;
-  text-shadow: #f2606f -2px 2px, #C6E774 0 0 2px !important;
+  text-shadow: #000 -2px 2px, #f39264 1px 1px 2px !important;
 }
 .work-view .flex-container .work-item-container .item-header span {
   padding: 5px 10px;
-  background: #f39264;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 .work-view .flex-container .work-item-container:hover .item-header {
@@ -438,11 +438,23 @@ footer {
   padding: 0 50px;
   min-height: 200pt;
 }
-footer .dwarf {
+footer .dwarf-container {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+}
+footer .dwarf-container .dwarf {
   z-index: 100;
   position: absolute;
   bottom: 10px;
   right: 10px;
+  transition: all 0.3s;
+}
+footer .dwarf-container:hover .dwarf {
+  right: -250px;
 }
 footer ul {
   text-align: left;
