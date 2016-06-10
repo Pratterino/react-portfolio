@@ -5,7 +5,6 @@ var ProjectView = require('./ProjectView.jsx');
 var DescText = require('./Text.jsx');
 var Column = require('./Column.jsx');
 var FullSection = require('./FullSection.jsx');
-var Navbar = require('./Navbar.jsx');
 var Footer = require('./Footer.jsx');
 
 var MainView;
@@ -20,7 +19,6 @@ module.exports = MainView = React.createClass({
             <Column width={70} bgClass="fade">
               <DescText />
             </Column>
-            <div style={{clear: "both"}}></div>
           </FullSection>
 
           <ProjectView type="web"/>

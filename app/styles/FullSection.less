@@ -21,8 +21,9 @@
 }
 
 .full-section {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
+  display: flex;
 
   &.half-sized {
     min-height: 200px !important;
@@ -43,7 +44,7 @@
 
     &.paer {
       width: 30%;
-      height: 500px;
+      height: inherit;
       position: relative;
       float: left;
       overflow: hidden;

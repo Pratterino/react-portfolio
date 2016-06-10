@@ -5,6 +5,7 @@ var $             = require('jquery');
 var _             = require('lodash');
 var Project       = require('./Project.jsx');
 var FullSection   = require('./FullSection.jsx');
+var NotesAnimation= require('./NotesAnim.jsx');
 var ProjectSearch = require('./ProjectSearch.jsx');
 
 var ProjectView;
@@ -70,6 +71,7 @@ module.exports = ProjectView = React.createClass({
             type={this.props.type}
             works={this.state.work}
           />
+          <NotesAnimation {...this.props} />
         </section>
       );
     } else {
@@ -93,6 +95,7 @@ module.exports = ProjectView = React.createClass({
             isActiveTag={this.isActiveTag}
             activeTags={this.state.tags}
           />
+          <NotesAnimation {...this.props} />
         </section>
       );
     }

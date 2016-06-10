@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700);
 * {
   margin: 0;
   padding: 0;
@@ -32,16 +31,20 @@ html,
   height: 100%;
   width: 100%;
 }
+#parent-wrapper {
+  overflow: hidden;
+}
 section {
   min-height: 100%;
   width: 100%;
 }
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Courier New", serif;
 }
 .desc-wrapper {
   padding: 20px 0;
+  width: 100%;
 }
 .desc-wrapper a {
   background: #FCFFE3;
@@ -81,7 +84,6 @@ body {
   width: 100%;
   margin-top: 55px;
   padding: 20px;
-  border-radius: 5px;
 }
 .desc-text .desc-item:hover {
   background: rgba(70, 34, 85, 0.3);
@@ -141,8 +143,7 @@ sub {
   border-bottom: 4px solid #FCFFE3;
 }
 .project-wrapper {
-  padding: 4px 0;
-  padding-bottom: 2px;
+  overflow: hidden !important;
 }
 .project-wrapper.game .item-tags li {
   border-color: #8C621F;
@@ -479,6 +480,71 @@ footer ul a span,
 footer ul li span {
   margin-left: 2pt;
 }
+.notes-container {
+  height: 100%;
+  width: 100%;
+  position: static;
+  z-index: 1;
+  overflow: hidden;
+}
+.bubble-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+.bubble-toggle:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+.bubbles {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.bubble-container {
+  position: absolute;
+  bottom: 0;
+  animation: bubblerise 4s infinite ease-in;
+  opacity: 0;
+}
+.bubble {
+  width: 6px;
+  height: 6px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.2);
+  animation: bubblewobble .5s infinite ease;
+}
+@keyframes bubblerise {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  5% {
+    bottom: 0;
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+@keyframes bubblewobble {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 2px;
+  }
+}
 .fade {
   background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
 }
@@ -492,8 +558,9 @@ footer ul li span {
   height: 100% !important;
 }
 .full-section {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
+  display: flex;
 }
 .full-section.half-sized {
   min-height: 200px !important;
@@ -512,7 +579,7 @@ footer ul li span {
 }
 .full-section .column.paer {
   width: 30%;
-  height: 500px;
+  height: inherit;
   position: relative;
   float: left;
   overflow: hidden;

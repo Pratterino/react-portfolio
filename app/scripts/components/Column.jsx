@@ -16,7 +16,6 @@ module.exports = Navbar = React.createClass({
   },
 
   componentDidMount: function () {
-    $('.column.paer').css({height: $('.column.fade').outerHeight(true) + 28});
     $('.parallax-wrapper').css({height: window.innerHeight/2});
   },
 
