@@ -104,6 +104,46 @@ body {
 .desc-text .desc-item:hover span {
   background: transparent;
 }
+@media (max-width: 1100px) {
+  .desc-text .desc-item {
+    background: rgba(70, 34, 85, 0.3);
+    transition: all 0.4s ease;
+  }
+  .desc-text .desc-item a.span,
+  .desc-text .desc-item p,
+  .desc-text .desc-item h2,
+  .desc-text .desc-item h1 {
+    color: #FCFFE3;
+  }
+  .desc-text .desc-item a.span span,
+  .desc-text .desc-item p span,
+  .desc-text .desc-item h2 span,
+  .desc-text .desc-item h1 span {
+    border-color: #FCFFE3;
+  }
+  .desc-text .desc-item span {
+    background: transparent;
+  }
+}
+.hover-junkers {
+  background: rgba(70, 34, 85, 0.3);
+  transition: all 0.4s ease;
+}
+.hover-junkers a.span,
+.hover-junkers p,
+.hover-junkers h2,
+.hover-junkers h1 {
+  color: #FCFFE3;
+}
+.hover-junkers a.span span,
+.hover-junkers p span,
+.hover-junkers h2 span,
+.hover-junkers h1 span {
+  border-color: #FCFFE3;
+}
+.hover-junkers span {
+  background: transparent;
+}
 sup,
 sub {
   vertical-align: baseline;
@@ -143,6 +183,8 @@ sub {
   border-bottom: 4px solid #FCFFE3;
 }
 .project-wrapper {
+  border-top: 5px solid #FCFFE3;
+  border-bottom: 12px solid #FCFFE3;
   overflow: hidden !important;
 }
 .project-wrapper.game .item-tags li {
@@ -170,15 +212,15 @@ sub {
 }
 .game {
   border-color: #FFEB00;
-  background: linear-gradient(#FFEB00, #F3C164);
+  background: linear-gradient(rgba(255, 235, 0, 0.8), #F3C164), url(../images/bg/game_bg.jpg);
 }
 .music {
   border-color: #AAE66B;
-  background: linear-gradient(#AAE66B, #7EAF4B);
+  background: linear-gradient(rgba(170, 230, 107, 0.8), #7EAF4B), url(../images/bg/music_bg.jpg);
 }
 .web {
   border-color: #ff3199;
-  background: linear-gradient(#ff3199, #bbefff);
+  background: linear-gradient(rgba(255, 49, 153, 0.8), #bbefff), url(../images/bg/web_bg.jpg);
 }
 .hide {
   visibility: hidden;
@@ -632,6 +674,12 @@ footer ul li span {
 /* Larger than tablet */
 /* Smaller than desktop */
 @media (max-width: 1100px) {
+  footer {
+    padding: 0;
+  }
+  footer.vert-aligner {
+    display: table !important;
+  }
   .column {
     width: 100% !important;
   }

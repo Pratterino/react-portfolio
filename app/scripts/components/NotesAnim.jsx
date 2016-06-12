@@ -9,7 +9,6 @@ module.exports = NotesAnim = React.createClass({
   componentDidMount: function () {
     var x = $('#parent-wrapper');
 
-    console.log(x.width());
     if (x.width() > 1100) {
       this.renderBubbles();
     }
