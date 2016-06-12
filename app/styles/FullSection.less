@@ -55,7 +55,7 @@
 
       transition: 0.5s all ease-in-out;
       opacity: 0.7;
-      filter: saturate(0.25);
+      filter: saturate(0.15);
 
       &:hover {
         filter: saturate(1);
@@ -68,17 +68,15 @@
 
 .outdoors {
   height: 100%;
-  background-image: url("../images/outdoors.jpg");
-  background-repeat: no-repeat;
+  background: url("../images/outdoors.jpg") no-repeat;
   background-size: cover;
   background-position-x: center;
-  box-shadow: 0 0 200px @color5 inset;
 
   transition: 0.5s all ease-in-out;
-  filter: sepia(.5);
+  filter: grayscale(1);
 
   &:hover {
     box-shadow: 0 0 100px @color5 inset;
-    filter: sepia(0.1);
+    filter: grayscale(0.7);
   }
 }

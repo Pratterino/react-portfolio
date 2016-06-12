@@ -36,15 +36,18 @@ module.exports = Project = React.createClass({
   renderMusicItems: function () {
     var self = this;
     return _.map(self.props.works, function (work, i) {
+      var style = {
+        background: 'linear-gradient(' + self.getTypeFadeColors() + '), url(./images/bg/' + work.image + ')'
+      };
+
       return (
-        <MusicItem work={work} key={i} />
+        <MusicItem work={work} key={i} styling={style}/>
       );
     })
   },
 
-  getWorkData: function () {
-    var self = this,
-        colors;
+  getTypeFadeColors: function () {
+    var colors = "";
     switch (this.props.type) {
       case "web":
         colors = "rgba(250, 50, 150, .5), rgba(200, 125, 120, .9)";
@@ -57,7 +60,15 @@ module.exports = Project = React.createClass({
         break;
     }
 
+    return colors;
+  },
+
+  getWorkData: function () {
+    var self = this;
+
+
     return _.map(self.props.works, function (work, i) {
+      var colors = self.getTypeFadeColors();
       var bg = {
         background: 'linear-gradient('+ colors +'), url(./images/bg/' + work.image + ')'
       };

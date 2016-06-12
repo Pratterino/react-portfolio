@@ -22,7 +22,7 @@ module.exports = MusicItem = React.createClass({
 
   render: function () {
     var bg = {
-      backgroundImage: 'url(./images/bg/' + this.props.work.image + ')'
+      backgroundImage: 'linear-gradient(rgba(170, 230, 107, .2), rgba(126, 175, 75, .6)), url(./images/bg/' + this.props.work.image + ')'
     };
 
     if (this.state.embedActive) {
@@ -44,7 +44,7 @@ module.exports = MusicItem = React.createClass({
             </h2>
           </div>
 
-          <div className='item-content'>
+          <div className='item-content' style={{height: "100% !important"}}>
             <div className='item'>
               <div className='item-desc'>
                 <p>{this.props.work.description}</p>

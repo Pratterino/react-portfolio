@@ -212,15 +212,27 @@ sub {
 }
 .game {
   border-color: #FFEB00;
-  background: linear-gradient(rgba(255, 235, 0, 0.8), #F3C164), url(../images/bg/game_bg.jpg);
+  background: #F3C164;
+}
+.game .project-divider {
+  background-size: cover;
+  background-image: linear-gradient(rgba(255, 235, 0, 0.8), #F3C164), url(../images/bg/game_bg.jpg);
 }
 .music {
   border-color: #AAE66B;
-  background: linear-gradient(rgba(170, 230, 107, 0.8), #7EAF4B), url(../images/bg/music_bg.jpg);
+  background: #7EAF4B;
+}
+.music .project-divider {
+  background-size: cover;
+  background-image: linear-gradient(rgba(170, 230, 107, 0.8), #7EAF4B), url(../images/bg/music_bg.jpg);
 }
 .web {
   border-color: #ff3199;
-  background: linear-gradient(rgba(255, 49, 153, 0.8), #bbefff), url(../images/bg/web_bg.jpg);
+  background: #ff95ca;
+}
+.web .project-divider {
+  background-size: cover;
+  background-image: linear-gradient(rgba(255, 49, 153, 0.8), #ff95ca), url(../images/bg/web_bg.jpg);
 }
 .hide {
   visibility: hidden;
@@ -642,8 +654,8 @@ footer ul li span {
   background-position-x: center;
   transition: 0.5s all ease-in-out;
   opacity: 0.7;
-  -webkit-filter: saturate(0.25);
-          filter: saturate(0.25);
+  -webkit-filter: saturate(0.15);
+          filter: saturate(0.15);
 }
 .full-section .column.paer:hover {
   -webkit-filter: saturate(1);
@@ -653,19 +665,17 @@ footer ul li span {
 }
 .outdoors {
   height: 100%;
-  background-image: url("../images/outdoors.jpg");
-  background-repeat: no-repeat;
+  background: url("../images/outdoors.jpg") no-repeat;
   background-size: cover;
   background-position-x: center;
-  box-shadow: 0 0 200px #383E4B inset;
   transition: 0.5s all ease-in-out;
-  -webkit-filter: sepia(0.5);
-          filter: sepia(0.5);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 .outdoors:hover {
   box-shadow: 0 0 100px #383E4B inset;
-  -webkit-filter: sepia(0.1);
-          filter: sepia(0.1);
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
 }
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

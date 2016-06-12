@@ -10,18 +10,36 @@
 }
 
 .game {
+  @endColor: #F3C164;
   border-color: #FFEB00;
-  background: linear-gradient(rgba(255, 235, 0, .8), #F3C164), url(../images/bg/game_bg.jpg);
+  background: @endColor;
+
+  .project-divider {
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 235, 0, .8), @endColor), url(../images/bg/game_bg.jpg);
+  }
 }
 
 .music {
+  @endColor: #7EAF4B;
   border-color: #AAE66B;
-  background: linear-gradient(rgba(170, 230, 107, .8), #7EAF4B), url(../images/bg/music_bg.jpg);
+  background: @endColor;
+
+  .project-divider {
+    background-size: cover;
+    background-image: linear-gradient(rgba(170, 230, 107, .8), @endColor), url(../images/bg/music_bg.jpg);
+  }
 }
 
 .web {
+  @endColor: #ff95ca;
   border-color: #ff3199;
-  background: linear-gradient(rgba(255, 49, 153, .8), #bbefff), url(../images/bg/web_bg.jpg);
+  background: @endColor;
+
+  .project-divider {
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 49, 153, .8), @endColor), url(../images/bg/web_bg.jpg);
+  }
 }
 
 .hide {
@@ -167,7 +185,6 @@
         background: #000;
         background-size: cover !important;
         transition: all 0.5s ease;
-        //box-shadow: inset 0 0 5px @borderColor;
 
         &:after {
           z-index: -1;
