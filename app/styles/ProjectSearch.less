@@ -1,5 +1,5 @@
 .project-divider {
-  height: 250px;
+  min-height: 300px;
 
   h2 {
     text-align: center;
@@ -16,6 +16,20 @@
   border-top: 5px solid @color1;
   border-bottom: 12px solid @color1;
   overflow: hidden !important;
+
+  .project-desc {
+    margin-top: 20px;
+
+    div {
+      text-align: justify;
+      margin: 0 auto;
+      width: 55%;
+
+      p {
+        margin-bottom: 16px;
+      }
+    }
+  }
 
   //GAME SPECIFIC
   &.game {

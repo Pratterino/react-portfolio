@@ -51,14 +51,15 @@ body {
   padding: 1px 3px;
   color: #383E4B;
   text-decoration: none;
+  font-weight: 800;
 }
 .desc-wrapper a:hover {
   color: #FCFFE3;
   background: #383E4B;
 }
 .desc-text {
-  color: #383E4B;
-  padding: 15px 0px;
+  color: #FCFFE3;
+  padding: 15px 0;
   width: 100%;
   height: 100%;
 }
@@ -69,10 +70,10 @@ body {
 }
 .desc-text h2 span,
 .desc-text h1 span {
-  border: 4px solid #383E4B;
+  padding: 2px 10px;
+  border: 1px dashed rgba(250, 225, 190, 0.3);
   border-left: 0;
   border-right: 0;
-  background: transparent;
 }
 .desc-text span,
 .desc-text sub {
@@ -84,29 +85,33 @@ body {
   width: 100%;
   margin-top: 55px;
   padding: 20px;
-}
-.desc-text .desc-item:hover {
-  background: rgba(70, 34, 85, 0.3);
+  background: rgba(70, 34, 85, 0.18);
   transition: all 0.4s ease;
 }
-.desc-text .desc-item:hover a.span,
-.desc-text .desc-item:hover p,
-.desc-text .desc-item:hover h2,
-.desc-text .desc-item:hover h1 {
+.desc-text .desc-item a.span,
+.desc-text .desc-item p,
+.desc-text .desc-item h2,
+.desc-text .desc-item h1 {
   color: #FCFFE3;
 }
-.desc-text .desc-item:hover a.span span,
-.desc-text .desc-item:hover p span,
-.desc-text .desc-item:hover h2 span,
-.desc-text .desc-item:hover h1 span {
+.desc-text .desc-item a.span span,
+.desc-text .desc-item p span,
+.desc-text .desc-item h2 span,
+.desc-text .desc-item h1 span {
   border-color: #FCFFE3;
 }
-.desc-text .desc-item:hover span {
+.desc-text .desc-item span {
   background: transparent;
+}
+.desc-text .desc-item:hover {
+  background: rgba(220, 185, 100, 0.35);
+}
+.desc-text .desc-item:hover h2 > span {
+  background: rgba(235, 120, 120, 0.91);
 }
 @media (max-width: 1100px) {
   .desc-text .desc-item {
-    background: rgba(70, 34, 85, 0.3);
+    background: rgba(70, 34, 85, 0.18);
     transition: all 0.4s ease;
   }
   .desc-text .desc-item a.span,
@@ -124,9 +129,21 @@ body {
   .desc-text .desc-item span {
     background: transparent;
   }
+  .desc-text .desc-item:hover {
+    background: rgba(220, 185, 100, 0.35);
+  }
+  .desc-text .desc-item:hover h2 > span {
+    background: rgba(235, 120, 120, 0.91);
+  }
+}
+.desc-text .desc-item:hover {
+  transition: all 0.5s ease;
+}
+.desc-text .desc-item:hover span {
+  border-width: 0;
 }
 .hover-junkers {
-  background: rgba(70, 34, 85, 0.3);
+  background: rgba(70, 34, 85, 0.18);
   transition: all 0.4s ease;
 }
 .hover-junkers a.span,
@@ -143,6 +160,12 @@ body {
 }
 .hover-junkers span {
   background: transparent;
+}
+.hover-junkers:hover {
+  background: rgba(220, 185, 100, 0.35);
+}
+.hover-junkers:hover h2 > span {
+  background: rgba(235, 120, 120, 0.91);
 }
 sup,
 sub {
@@ -172,7 +195,7 @@ sub {
   background: #FCFFE3;
 }
 .project-divider {
-  height: 250px;
+  min-height: 300px;
 }
 .project-divider h2 {
   text-align: center;
@@ -186,6 +209,17 @@ sub {
   border-top: 5px solid #FCFFE3;
   border-bottom: 12px solid #FCFFE3;
   overflow: hidden !important;
+}
+.project-wrapper .project-desc {
+  margin-top: 20px;
+}
+.project-wrapper .project-desc div {
+  text-align: justify;
+  margin: 0 auto;
+  width: 55%;
+}
+.project-wrapper .project-desc div p {
+  margin-bottom: 16px;
 }
 .project-wrapper.game .item-tags li {
   border-color: #8C621F;
@@ -343,6 +377,7 @@ sub {
   transition: all 0.5s ease;
 }
 .work-view .flex-container .work-item-container.container-music {
+  flex: 1 1 50%;
   height: 509px !important;
   background: #FCFFE3;
 }
@@ -407,8 +442,6 @@ sub {
 .work-view .flex-container .work-item-container:hover .item-image {
   background-blend-mode: normal;
   box-shadow: inset 0 0 40px #383E4B;
-  -webkit-filter: sepia(0.3);
-          filter: sepia(0.3);
 }
 .work-view .flex-container .work-item-container .item-tags-container {
   position: absolute;
@@ -615,12 +648,6 @@ footer ul li span {
 }
 .no-min-height {
   min-height: 0 !important;
-}
-.parallax-wrapper {
-  box-shadow: 0 0 200px #383E4B inset;
-}
-.parallax-wrapper .react-parallax {
-  height: 100% !important;
 }
 .full-section {
   min-height: 100%;

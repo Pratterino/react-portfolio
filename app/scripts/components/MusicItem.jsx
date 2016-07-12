@@ -10,7 +10,8 @@ var MusicItem;
 module.exports = MusicItem = React.createClass({
   getInitialState: function () {
     return {
-      embedActive: false
+      embedActive: false,
+      hovering: false
     }
   },
 
@@ -20,11 +21,27 @@ module.exports = MusicItem = React.createClass({
     });
   },
 
-  render: function () {
-    var bg = {
-      backgroundImage: 'linear-gradient(rgba(170, 230, 107, .2), rgba(126, 175, 75, .6)), url(./images/bg/' + this.props.work.image + ')'
-    };
+  toggleClass: function (e, f) {
+    console.log(e);
 
+    this.setState({
+      hovering: e
+    });
+  },
+
+  getStyle: function (isHovering) {
+    var bg = {
+      normal: {
+        backgroundImage: 'linear-gradient(rgba(170, 230, 107, .2), rgba(126, 175, 75, .6)), url(./images/bg/' + this.props.work.image + ')'
+      },
+      hover: {
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(126, 175, 75, .35)), url(./images/bg/' + this.props.work.image + ')'
+      }
+    };
+    return !isHovering ? bg.normal : bg.hover;
+  },
+
+  render: function () {
     if (this.state.embedActive) {
       return (
         <div className='work-item-container container-music'>
@@ -36,8 +53,8 @@ module.exports = MusicItem = React.createClass({
       );
     } else {
       return (
-        <div onClick={this.toggleEmbed} className='work-item-container container-music cursor'>
-          <div className='item-image' style={bg}></div>
+        <div onClick={this.toggleEmbed} className='work-item-container container-music cursor' onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
+          <div className='item-image' style={this.getStyle(this.state.hovering)}></div>
           <div className='item-header'>
             <h2>
               <span>{this.props.work.title}</span>

@@ -1,11 +1,11 @@
 'use strict';
 
-var React         = require('react');
-var $             = require('jquery');
-var _             = require('lodash');
-var Project       = require('./Project.jsx');
-var FullSection   = require('./FullSection.jsx');
-var NotesAnimation= require('./NotesAnim.jsx');
+var React = require('react');
+var $ = require('jquery');
+var _ = require('lodash');
+var Project = require('./Project.jsx');
+var FullSection = require('./FullSection.jsx');
+var NotesAnimation = require('./NotesAnim.jsx');
 var ProjectSearch = require('./ProjectSearch.jsx');
 
 var ProjectView;
@@ -53,6 +53,35 @@ module.exports = ProjectView = React.createClass({
     };
   },
 
+  getDescriptionText() {
+    if (this.props.type === "game") {
+      return (
+        <div>
+          <p>Spelintresset sträcker sig tillbaka till barnsbenen.</p>
+          <p>Det handlar mindre om själva spelandet, utan mer om att komma på intressanta spelmekaniker, regelverk,
+            pussel, och intressanta spelmoment för andra att ta sig igenom</p>
+        </div>
+      );
+    } if (this.props.type === "web") {
+      return (
+        <div>
+          <p>Har varit väldigt intresserad av interaktiva medier sedan gymnasiet.</p>
+          <p>Programmering var en riktning som jag hamnade mer och mer i under universitetsperioden och verkligen
+            började tycka om.</p>
+          <p>Att hitta lösningar och kunna interagera med kod visuellt i klienten känns rätt magiskt.</p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <p>Fastnade för folkmusik och började spela piano, dragspel och sedan gitarr under gymnasiet har ett generellt intresse av att skapa saker. Musik är fantastiskt och något jag konsumerar i stora mängder. Har fortfarande drömmar om att spela i litet band, uppträda och allt vad det innebär.</p>
+          <p>Har långlivade planer på att spela in ett eget album åtminstonde, men det har inte riktigt blivit en verklighet ännu.</p>
+          <p>Jag drömmer vidare..</p>
+        </div>
+      );
+    }
+  },
+
   render: function () {
     var classes = {
       parent: "project-wrapper " + this.props.type,
@@ -63,9 +92,14 @@ module.exports = ProjectView = React.createClass({
       return (
         <section className={classes.parent}>
           <div className={classes.divider}>
-            <h2>
-              <span>{"Musik"}</span>
-            </h2>
+            <div>
+              <h2>
+                <span>{"Musik"}</span>
+              </h2>
+              <div className="project-desc">
+                {this.getDescriptionText()}
+              </div>
+            </div>
           </div>
           <Project
             type={this.props.type}
@@ -78,9 +112,14 @@ module.exports = ProjectView = React.createClass({
       return (
         <section className={classes.parent}>
           <div className={classes.divider}>
-            <h2>
-              <span>{this.props.type === "game" ? "Spelutveckling" : "Webbutveckling"}</span>
-            </h2>
+            <div>
+              <h2>
+                <span>{this.props.type === "game" ? "Spelutveckling" : "Webbutveckling"}</span>
+              </h2>
+              <div className="project-desc">
+                {this.getDescriptionText()}
+              </div>
+            </div>
           </div>
           <ProjectSearch
             toggleItem={this.toggleItem}
