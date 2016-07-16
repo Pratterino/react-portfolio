@@ -26,7 +26,7 @@ module.exports = Navbar = React.createClass({
     };
 
     return (
-      <div className={classString} style={styles}>
+      <div className={classString} style={styles} id={this.props.type}>
         {this.props.children}
       </div>
     );

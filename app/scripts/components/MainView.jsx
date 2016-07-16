@@ -16,19 +16,18 @@ module.exports = MainView = React.createClass({
         <div className="content">
           <FullSection addClass="no-min-height">
             <Column width={30} bgClass="paer"/>
-            <Column width={70} bgClass="fade">
+            <Column width={70} bgClass="fade" type="about">
               <DescText />
             </Column>
           </FullSection>
 
           <ProjectView type="web"/>
+          <ProjectView type="game"/>
+          <ProjectView type="music"/>
 
           <div className="parallax-wrapper">
             <Column width={100} bgClass="outdoors"/>
           </div>
-
-          <ProjectView type="game"/>
-          <ProjectView type="music"/>
         </div>
         <Footer />
       </div>

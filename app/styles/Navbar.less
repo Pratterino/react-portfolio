@@ -1,8 +1,56 @@
-.Navbar {
-  position: absolute;
+nav {
+  height: @navbar_size;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background: @color4;
-  z-index: 10;
+  z-index: 99999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+
+  header {
+    background: @color4;
+    text-align: right;
+
+    h5 {
+      margin-left: 10px;
+      color: #ff9cae;
+    }
+    ul li {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    a {
+      color: #FFF;
+      cursor: pointer;
+      padding: 5px;
+      border: 0;
+
+      &.active {
+        border-bottom: 2px solid #FFF;
+      }
+    }
+
+    .nav-link-group {
+      margin: 0 15px;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .nav-header {
+      display: inline-block;
+      text-align: left;
+      position: absolute;
+      left:0;
+
+      h1 {
+        line-height: @navbar_size;
+        color: #b22222;
+      }
+    }
+
+    .nav-right {
+      display: inline-block;
+    }
+  }
 }

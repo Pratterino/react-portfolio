@@ -57,12 +57,13 @@
   background: url("../images/outdoors.jpg") no-repeat;
   background-size: cover;
   background-position-x: center;
+  background-position-y: -15px;
 
   transition: 0.5s all ease-in-out;
   filter: grayscale(1);
 
   &:hover {
-    box-shadow: 0 0 100px @color5 inset;
+    background-position-y: -5px;
     filter: grayscale(0.7);
   }
 }

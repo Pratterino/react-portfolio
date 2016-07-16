@@ -41,7 +41,6 @@ module.exports = ProjectView = React.createClass({
     this.setState({
       tags: tempTags
     });
-    console.info(tag, this.state.tags);
   },
 
   isActiveTag: function (tag) {
@@ -57,26 +56,26 @@ module.exports = ProjectView = React.createClass({
     if (this.props.type === "game") {
       return (
         <div>
-          <p>Spelintresset sträcker sig tillbaka till barnsbenen.</p>
-          <p>Det handlar mindre om själva spelandet, utan mer om att komma på intressanta spelmekaniker, regelverk,
-            pussel, och intressanta spelmoment för andra att ta sig igenom</p>
+          <p><span>Spelintresset sträcker sig tillbaka till barndomsbenen.</span></p>
+          <p><span>Det handlar mindre om själva spelandet, utan mer om att komma på intressanta spelmekaniker, regelverk,
+            pussel, och intressanta spelmoment för andra att ta sig igenom.</span></p>
         </div>
       );
     } if (this.props.type === "web") {
       return (
         <div>
-          <p>Har varit väldigt intresserad av interaktiva medier sedan gymnasiet.</p>
-          <p>Programmering var en riktning som jag hamnade mer och mer i under universitetsperioden och verkligen
-            började tycka om.</p>
-          <p>Att hitta lösningar och kunna interagera med kod visuellt i klienten känns rätt magiskt.</p>
+          <p><span>Har varit väldigt intresserad av interaktiva medier sedan gymnasiet.</span></p>
+          <p><span>Programmering var en riktning som jag hamnade mer och mer i under universitetsperioden och verkligen
+            började tycka om.</span></p>
+          <p><span>Att hitta lösningar och kunna interagera med kod visuellt i klienten känns rätt magiskt.</span></p>
         </div>
       );
     } else {
       return (
         <div>
-          <p>Fastnade för folkmusik och började spela piano, dragspel och sedan gitarr under gymnasiet har ett generellt intresse av att skapa saker. Musik är fantastiskt och något jag konsumerar i stora mängder. Har fortfarande drömmar om att spela i litet band, uppträda och allt vad det innebär.</p>
-          <p>Har långlivade planer på att spela in ett eget album åtminstonde, men det har inte riktigt blivit en verklighet ännu.</p>
-          <p>Jag drömmer vidare..</p>
+          <p><span>Fastnade för folkmusik och började spela piano, dragspel och sedan gitarr under gymnasiet har ett generellt intresse av att skapa saker. Musik är fantastiskt och något jag konsumerar i stora mängder. Har fortfarande drömmar om att spela i litet band, uppträda och allt vad det innebär.</span></p>
+          <p><span>Har långlivade planer på att spela in ett eget album åtminstonde, men det har inte riktigt blivit en verklighet ännu.</span></p>
+          <p><span><i>Jag drömmer vidare..</i></span></p>
         </div>
       );
     }
@@ -90,7 +89,7 @@ module.exports = ProjectView = React.createClass({
 
     if (this.props.type === "music") {
       return (
-        <section className={classes.parent}>
+        <section className={classes.parent} id={this.props.type}>
           <div className={classes.divider}>
             <div>
               <h2>
@@ -110,7 +109,7 @@ module.exports = ProjectView = React.createClass({
       );
     } else {
       return (
-        <section className={classes.parent}>
+        <section className={classes.parent} id={this.props.type}>
           <div className={classes.divider}>
             <div>
               <h2>

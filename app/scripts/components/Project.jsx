@@ -50,13 +50,13 @@ module.exports = Project = React.createClass({
     var colors = "";
     switch (this.props.type) {
       case "web":
-        colors = "rgba(250, 50, 150, .5), rgba(200, 125, 120, .9)";
+        colors = "rgba(250, 50, 150, .15), rgba(200, 125, 120, .3)";
         break;
       case "music":
-        colors = "rgba(100, 100, 100, .5), rgba(255, 100, 200, 1)";
+        colors = "rgba(100, 100, 100, .15), rgba(255, 100, 200, 1)";
         break;
       case "game":
-        colors = "rgba(245, 250, 0, .5), rgba(230, 215, 0, .9)";
+        colors = "rgba(245, 250, 0, .15), rgba(230, 215, 0, .3)";
         break;
     }
 

@@ -32,6 +32,7 @@ html,
   width: 100%;
 }
 #parent-wrapper {
+  margin-top: 53px;
   overflow: hidden;
 }
 section {
@@ -77,7 +78,6 @@ body {
 }
 .desc-text span,
 .desc-text sub {
-  background: rgba(252, 255, 227, 0.2);
   line-height: 20pt;
   padding: 2px;
 }
@@ -85,29 +85,6 @@ body {
   width: 100%;
   margin-top: 55px;
   padding: 20px;
-  background: rgba(70, 34, 85, 0.18);
-  transition: all 0.4s ease;
-}
-.desc-text .desc-item a.span,
-.desc-text .desc-item p,
-.desc-text .desc-item h2,
-.desc-text .desc-item h1 {
-  color: #FCFFE3;
-}
-.desc-text .desc-item a.span span,
-.desc-text .desc-item p span,
-.desc-text .desc-item h2 span,
-.desc-text .desc-item h1 span {
-  border-color: #FCFFE3;
-}
-.desc-text .desc-item span {
-  background: transparent;
-}
-.desc-text .desc-item:hover {
-  background: rgba(220, 185, 100, 0.35);
-}
-.desc-text .desc-item:hover h2 > span {
-  background: rgba(235, 120, 120, 0.91);
 }
 @media (max-width: 1100px) {
   .desc-text .desc-item {
@@ -124,7 +101,7 @@ body {
   .desc-text .desc-item p span,
   .desc-text .desc-item h2 span,
   .desc-text .desc-item h1 span {
-    border-color: #FCFFE3;
+    border-color: #C6E774;
   }
   .desc-text .desc-item span {
     background: transparent;
@@ -132,11 +109,9 @@ body {
   .desc-text .desc-item:hover {
     background: rgba(220, 185, 100, 0.35);
   }
-  .desc-text .desc-item:hover h2 > span {
-    background: rgba(235, 120, 120, 0.91);
-  }
 }
 .desc-text .desc-item:hover {
+  background: rgba(10, 15, 12, 0.15);
   transition: all 0.5s ease;
 }
 .desc-text .desc-item:hover span {
@@ -156,16 +131,13 @@ body {
 .hover-junkers p span,
 .hover-junkers h2 span,
 .hover-junkers h1 span {
-  border-color: #FCFFE3;
+  border-color: #C6E774;
 }
 .hover-junkers span {
   background: transparent;
 }
 .hover-junkers:hover {
   background: rgba(220, 185, 100, 0.35);
-}
-.hover-junkers:hover h2 > span {
-  background: rgba(235, 120, 120, 0.91);
 }
 sup,
 sub {
@@ -179,13 +151,53 @@ sub {
 .center {
   text-align: center;
 }
-.Navbar {
-  position: absolute;
+nav {
+  height: 55px;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 99999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+nav header {
   background: #f2606f;
-  z-index: 10;
+  text-align: right;
+}
+nav header h5 {
+  margin-left: 10px;
+  color: #ff9cae;
+}
+nav header ul li {
+  display: inline-block;
+  padding: 10px;
+}
+nav header a {
+  color: #FFF;
+  cursor: pointer;
+  padding: 5px;
+  border: 0;
+}
+nav header a.active {
+  border-bottom: 2px solid #FFF;
+}
+nav header .nav-link-group {
+  margin: 0 15px;
+  display: inline-block;
+  text-align: left;
+}
+nav header .nav-header {
+  display: inline-block;
+  text-align: left;
+  position: absolute;
+  left: 0;
+}
+nav header .nav-header h1 {
+  line-height: 55px;
+  color: #b22222;
+}
+nav header .nav-right {
+  display: inline-block;
 }
 .ContactView {
   background: #1EAEDB;
@@ -202,24 +214,29 @@ sub {
   color: #383E4B;
 }
 .project-divider h2 span {
-  border-top: 4px solid #FCFFE3;
-  border-bottom: 4px solid #FCFFE3;
+  border-top: 4px solid #f2606f;
+  border-bottom: 4px solid #f2606f;
 }
 .project-wrapper {
-  border-top: 5px solid #FCFFE3;
-  border-bottom: 12px solid #FCFFE3;
   overflow: hidden !important;
+  padding: 20px 0 0 0;
 }
 .project-wrapper .project-desc {
   margin-top: 20px;
 }
 .project-wrapper .project-desc div {
-  text-align: justify;
   margin: 0 auto;
   width: 55%;
 }
 .project-wrapper .project-desc div p {
   margin-bottom: 16px;
+  padding: 2px;
+}
+.project-wrapper .project-desc div p span {
+  line-height: 20pt;
+  padding: 3px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.3);
 }
 .project-wrapper.game .item-tags li {
   border-color: #8C621F;
@@ -235,6 +252,7 @@ sub {
 }
 .search-view {
   position: relative;
+  background: inherit;
   padding: 15px 10px;
   width: 100%;
 }
@@ -246,27 +264,24 @@ sub {
 }
 .game {
   border-color: #FFEB00;
-  background: #F3C164;
+  background: rgba(255, 235, 0, 0.2);
 }
 .game .project-divider {
   background-size: cover;
-  background-image: linear-gradient(rgba(255, 235, 0, 0.8), #F3C164), url(../images/bg/game_bg.jpg);
 }
 .music {
   border-color: #AAE66B;
-  background: #7EAF4B;
+  background: rgba(170, 230, 107, 0.2);
 }
 .music .project-divider {
   background-size: cover;
-  background-image: linear-gradient(rgba(170, 230, 107, 0.8), #7EAF4B), url(../images/bg/music_bg.jpg);
 }
 .web {
   border-color: #ff3199;
-  background: #ff95ca;
+  background: rgba(255, 49, 153, 0.2);
 }
 .web .project-divider {
   background-size: cover;
-  background-image: linear-gradient(rgba(255, 49, 153, 0.8), #ff95ca), url(../images/bg/web_bg.jpg);
 }
 .hide {
   visibility: hidden;
@@ -695,12 +710,13 @@ footer ul li span {
   background: url("../images/outdoors.jpg") no-repeat;
   background-size: cover;
   background-position-x: center;
+  background-position-y: -15px;
   transition: 0.5s all ease-in-out;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
 .outdoors:hover {
-  box-shadow: 0 0 100px #383E4B inset;
+  background-position-y: -5px;
   -webkit-filter: grayscale(0.7);
           filter: grayscale(0.7);
 }

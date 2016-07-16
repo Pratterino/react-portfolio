@@ -21,18 +21,16 @@ module.exports = MusicItem = React.createClass({
     });
   },
 
-  toggleClass: function (e, f) {
-    console.log(e);
-
+  toggleClass: function (bool) {
     this.setState({
-      hovering: e
+      hovering: bool
     });
   },
 
   getStyle: function (isHovering) {
     var bg = {
       normal: {
-        backgroundImage: 'linear-gradient(rgba(170, 230, 107, .2), rgba(126, 175, 75, .6)), url(./images/bg/' + this.props.work.image + ')'
+        backgroundImage: 'linear-gradient(rgba(170, 230, 107, 0.1), rgba(126, 175, 75, 0.2)), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
         backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(126, 175, 75, .35)), url(./images/bg/' + this.props.work.image + ')'

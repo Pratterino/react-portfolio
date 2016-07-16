@@ -6,27 +6,33 @@
     color: @color5;
 
     span {
-      border-top: 4px solid @color1;
-      border-bottom: 4px solid @color1;
+      border-top: 4px solid @color4;
+      border-bottom: 4px solid @color4;
     }
   }
 }
 
 .project-wrapper {
-  border-top: 5px solid @color1;
-  border-bottom: 12px solid @color1;
   overflow: hidden !important;
+  padding: 20px 0 0 0;
 
   .project-desc {
     margin-top: 20px;
 
     div {
-      text-align: justify;
       margin: 0 auto;
       width: 55%;
 
       p {
         margin-bottom: 16px;
+        padding: 2px;
+
+        span {
+          line-height: 20pt;
+          padding: 3px;
+          color: #000;
+          background: rgba(255, 255, 255, 0.3);
+        }
       }
     }
   }
@@ -64,6 +70,7 @@
 
 .search-view {
   position: relative;
+  background: inherit;
   padding: 15px 10px;
   width: 100%;
 }

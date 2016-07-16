@@ -19,7 +19,8 @@ module.exports = Text = React.createClass({
           <div className="desc-item">
             <h2><span>Om mig</span></h2>
             <p><span>Frontend-utvecklare från Umeå, numera bosatt i Stockholm.</span></p>
-            <p><span>Älskar speldesign, häftiga JavaScript-ramverk och har alltid en kopp kaffe i handen.</span></p>
+            <p><span>Älskar speldesign, häftiga JavaScript-ramverk och du hittar mig <u>alltid</u> med en kopp kaffe i handen.</span>
+            </p>
           </div>
 
           <div className="desc-item">
@@ -30,19 +31,20 @@ module.exports = Text = React.createClass({
               <span>Studerade Interaktiva digitala medier på Linnéuniversitetet i Växjö (2011-2014).</span>
             </p>
             <p>
-              <span>Arbetar på <a href="//cygni.se">Cygni</a> sedan november 2014, men har tjänstledigt för studier nu.</span>
+              <span>Arbetar på <a href="//cygni.se">Cygni</a> sedan november 2014.</span>
             </p>
-
 
             <br />
             <p>
               <span>Har konsultat på arbetsplatser som:</span>
             </p>
             <div>
-              [<a href="//weahead.se">WeAhead</a>,
+              [
               <a href="//comhem.se">Com hem</a>,
+              <a href="//telenor.se">Telenor</a>,
               <a href="//eniro.se">Eniro</a>,
-              <a href="//telenor.se">Telenor</a>]
+              <a href="//weahead.se">WeAhead</a>
+              ]
             </div>
 
             <br />
@@ -56,8 +58,9 @@ module.exports = Text = React.createClass({
                 Vad pysslar Pär med nu?
               </span>
             </h2>
-            <p><span>Färdigställer just nu min C-uppsats, som kort sagt handlar om att motverka</span></p>
-            <p><span>glukossvängningar hos typ-2 diabetiker med hjälp av en app.</span></p>
+            <p><span>Sitter hos Com hem samt färdigställer min C-uppsats i medieteknik, som kort sagt handlar om att försöka
+              hitta och förutse matvanor som resulterar i glukossvängningar hos diabetiker med hjälp av en app.</span>
+            </p>
           </div>
         </div>
       </div>
