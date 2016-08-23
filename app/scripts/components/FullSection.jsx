@@ -13,6 +13,7 @@ module.exports = FullSection = React.createClass({
 
   render: function () {
     var classesString = this.props.addClass ? "full-section " + this.props.addClass : "full-section";
+        classesString += " " + this.props.type;
 
     return (
       <section className={classesString} style={this.props.styles}>

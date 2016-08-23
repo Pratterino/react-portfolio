@@ -1,0 +1,94 @@
+.hexagon-wrapper {
+  @height: 100px;
+  z-index: 200;
+  overflow: hidden;
+  position: absolute;
+  top: @height/2;
+  transition: all ease 500ms;
+
+  .beaker {
+    filter: drop-shadow(#424242 0px 1px 0px);
+    border-bottom: 2em solid #FFF;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-radius: .5em;
+    height: 0;
+    width: 1em;
+    position: absolute;
+    right: 0.7em;
+    bottom: 22%;
+    font-size: 0.6em;
+  }
+
+  .beaker::before {
+    border-left: .25em solid #FFF;
+    border-radius: .25em;
+    border-right: .25em solid #FFF;
+    content: '';
+    height: .25em;
+    left: -.25em;
+    position: absolute;
+    top: -1em;
+    width: 1em;
+  }
+
+  .beaker::after {
+    border-left: .25em solid #FFF;
+    border-right: .25em solid #FFF;
+    content: '';
+    height: 1em;
+    left: 0;
+    position: absolute;
+    top: -1em;
+    width: .5em;
+  }
+
+  .lab_item {
+    width: @height;
+    height: @height*2;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hexagon2 {
+    position: absolute;
+    width: @height;
+    height: @height*2;
+    top: -(@height/3);
+  }
+
+  .hexagon {
+    overflow: hidden;
+    visibility: hidden;
+
+    transform: rotate(120deg);
+    cursor: pointer;
+  }
+
+  .hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    transform: rotate(-60deg);
+  }
+
+  .hexagon-in2 {
+    box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: no-repeat 50%;
+
+    background-size: 125%;
+    visibility: visible;
+
+    transform: rotate(-60deg);
+    transition: all 0.5s ease;
+  }
+
+  .hexagon-in2:hover {
+    box-shadow: inset 0 0 0 0 #B0DAD4;
+  }
+
+}

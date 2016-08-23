@@ -2,9 +2,9 @@
 
 var React = require('react');
 var $ = require('jquery');
-var Navbar;
+var Column;
 
-module.exports = Navbar = React.createClass({
+module.exports = Column = React.createClass({
   getDefaultProps: function () {
     return {
       width: 'auto'

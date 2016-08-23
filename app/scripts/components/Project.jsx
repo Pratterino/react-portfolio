@@ -37,7 +37,7 @@ module.exports = Project = React.createClass({
     var self = this;
     return _.map(self.props.works, function (work, i) {
       var style = {
-        background: 'linear-gradient(' + self.getTypeFadeColors() + '), url(./images/bg/' + work.image + ')'
+        backgroundImage: 'url(./images/bg/' + work.image + ')'
       };
 
       return (
@@ -50,13 +50,13 @@ module.exports = Project = React.createClass({
     var colors = "";
     switch (this.props.type) {
       case "web":
-        colors = "rgba(250, 50, 150, .15), rgba(200, 125, 120, .3)";
+        colors = "rgba(250, 50, 150, .5), rgba(200, 125, 120, .35)";
         break;
       case "music":
-        colors = "rgba(100, 100, 100, .15), rgba(255, 100, 200, 1)";
+        colors = "rgba(100, 100, 100, .5), rgba(255, 100, 200, .35)";
         break;
       case "game":
-        colors = "rgba(245, 250, 0, .15), rgba(230, 215, 0, .3)";
+        colors = "rgba(245, 250, 0, .5), rgba(230, 215, 0, .35)";
         break;
     }
 

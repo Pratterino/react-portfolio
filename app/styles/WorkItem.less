@@ -1,4 +1,4 @@
-@item-size: 320px;
+@item-size: 420px;
 @itemPadding: 10pt;
 @borderColor: @color5;
 
@@ -128,7 +128,7 @@
 
     .work-item-container {
       position: relative;
-      flex: 1 1 33%;
+      flex: 1 1 50%;
       min-width: @item-size;
       text-align: center;
       text-decoration: none;
@@ -177,7 +177,7 @@
         width: 100%;
         height: 100%;
         filter: hue-rotate(350deg);
-        background: #000;
+        background-image: inherit;
         background-size: cover !important;
         transition: all 0.5s ease;
 
@@ -208,7 +208,8 @@
       }
       &:hover .item-image {
         background-blend-mode: normal;
-        box-shadow: inset 0 0 40px @color5;
+        box-shadow: inset 0 0 40px @color4;
+        background: none;
       }
 
       .item-tags-container {
@@ -240,6 +241,7 @@
             visibility: visible;
           }
         }
+
         .item {
           font-size: 11pt;
           background: transparent;
@@ -278,7 +280,7 @@
 }
 
 section#game .item-content .item-tags-container {
-  background: @gameColor;
+  background: fade(@gameColor, 85%);
 }
 
 section#web .item-content .item-tags-container {
