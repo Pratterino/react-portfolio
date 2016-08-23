@@ -1,5 +1,32 @@
 @navbar_size: 55px;
 
+//COLOR
+@gameColor: rgba(255, 235, 0, .2);
+@musicColor: rgba(170, 230, 107, .2);
+@webColor: rgba(255, 49, 153, 0.2);
+
+.getColorWithBgAndText(@color) {
+  background: fade(@color, 100%);
+
+  h1, h5 {
+    @color1: spin(fade(@color, 90%), -65);
+    color: @color1 !important;
+    text-shadow: -1px 1px fade(lighten(@color1, 40%), 50%);
+  }
+}
+
+.web_color {
+  .getColorWithBgAndText(@webColor);
+}
+
+.game_color {
+  .getColorWithBgAndText(@gameColor);
+}
+
+.music_color {
+  .getColorWithBgAndText(@musicColor);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -151,4 +178,5 @@ section {
 }
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}

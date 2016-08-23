@@ -22,7 +22,7 @@ module.exports = Navbar = React.createClass({
     var id = this.stripText(e.target.id);
     var target = document.getElementById(id);
     if (target) {
-      target.scrollIntoView({block: "end", behavior: "smooth"});
+      target.scrollIntoView({block: "start"});
     }
     this.setState({
       active: id
@@ -35,7 +35,7 @@ module.exports = Navbar = React.createClass({
 
   render: function () {
     return (
-      <header>
+      <header className={this.state.active + "_color"}>
         <div className="nav-header">
           <div className="nav-link-group">
             <h1>Pär Strandberg</h1>

@@ -1,3 +1,7 @@
+.spinColor(@color) {
+  border-color: spin(fade(@color, 90%), -65);
+}
+
 nav {
   height: @navbar_size;
   position: fixed;
@@ -21,13 +25,23 @@ nav {
     }
 
     a {
-      color: #FFF;
+      color: @color1;
       cursor: pointer;
       padding: 5px;
       border: 0;
 
       &.active {
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px dashed;
+      }
+
+      &#web_nav.active {
+        .spinColor(@webColor);
+      }
+      &#game_nav.active {
+        .spinColor(@gameColor);
+      }
+      &#music_nav.active {
+        .spinColor(@musicColor);
       }
     }
 

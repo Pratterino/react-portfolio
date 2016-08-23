@@ -10,9 +10,8 @@
 }
 
 .game {
-  @endColor: rgba(255, 235, 0, .2);
   border-color: #FFEB00;
-  background: @endColor;
+  background: @gameColor;
 
   .project-divider {
     background-size: cover;
@@ -20,9 +19,8 @@
 }
 
 .music {
-  @endColor: rgba(170, 230, 107, .2);
   border-color: #AAE66B;
-  background: @endColor;
+  background: @musicColor;
 
   .project-divider {
     background-size: cover;
@@ -30,9 +28,8 @@
 }
 
 .web {
-  @endColor: rgba(255, 49, 153, 0.2);
   border-color: #ff3199;
-  background: @endColor;
+  background: @webColor;
 
   .project-divider {
     background-size: cover;
@@ -216,8 +213,10 @@
 
       .item-tags-container {
         position: absolute;
-        width: calc(100% - @itemPadding * 2);
-        bottom: @itemPadding;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 10px 5px;
       }
 
       .item-content {
@@ -276,4 +275,12 @@
       .tagList();
     }
   }
+}
+
+section#game .item-content .item-tags-container {
+  background: @gameColor;
+}
+
+section#web .item-content .item-tags-container {
+  background: @webColor;
 }

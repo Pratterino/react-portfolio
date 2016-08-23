@@ -1,3 +1,27 @@
+.web_color {
+  background: #ff3199;
+}
+.web_color h1,
+.web_color h5 {
+  color: rgba(134, 49, 255, 0.9) !important;
+  text-shadow: -1px 1px rgba(254, 253, 255, 0.5);
+}
+.game_color {
+  background: #ffeb00;
+}
+.game_color h1,
+.game_color h5 {
+  color: rgba(255, 0, 41, 0.9) !important;
+  text-shadow: -1px 1px rgba(255, 204, 212, 0.5);
+}
+.music_color {
+  background: #aae66b;
+}
+.music_color h1,
+.music_color h5 {
+  color: rgba(230, 157, 107, 0.9) !important;
+  text-shadow: -1px 1px rgba(255, 255, 255, 0.5);
+}
 * {
   margin: 0;
   padding: 0;
@@ -173,13 +197,22 @@ nav header ul li {
   padding: 10px;
 }
 nav header a {
-  color: #FFF;
+  color: #FCFFE3;
   cursor: pointer;
   padding: 5px;
   border: 0;
 }
 nav header a.active {
-  border-bottom: 2px solid #FFF;
+  border-bottom: 2px dashed;
+}
+nav header a#web_nav.active {
+  border-color: rgba(134, 49, 255, 0.9);
+}
+nav header a#game_nav.active {
+  border-color: rgba(255, 0, 41, 0.9);
+}
+nav header a#music_nav.active {
+  border-color: rgba(230, 157, 107, 0.9);
 }
 nav header .nav-link-group {
   margin: 0 15px;
@@ -460,8 +493,10 @@ nav header .nav-right {
 }
 .work-view .flex-container .work-item-container .item-tags-container {
   position: absolute;
-  width: calc(80%);
-  bottom: 10pt;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 10px 5px;
 }
 .work-view .flex-container .work-item-container .item-content {
   position: relative;
@@ -528,6 +563,12 @@ nav header .nav-right {
 }
 .item-tags-container .item-tags li.active:hover {
   background: #f2606f;
+}
+section#game .item-content .item-tags-container {
+  background: rgba(255, 235, 0, 0.2);
+}
+section#web .item-content .item-tags-container {
+  background: rgba(255, 49, 153, 0.2);
 }
 footer {
   position: inherit;
