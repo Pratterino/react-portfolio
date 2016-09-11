@@ -52,29 +52,13 @@ module.exports = ProjectItem = React.createClass({
     })
   },
 
-  getTypeFadeColors: function () {
-    var colors = "";
-    switch (this.props.type) {
-      case "web":
-        colors = "rgba(200, 200, 200, 0.5), rgba(193, 233, 231, 0.3)";
-        break;
-      case "music":
-        colors = "rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)";
-        break;
-      case "game":
-        colors = "rgba(20, 100, 140, 0.5), rgba(30, 200, 100, 0.3)";
-        break;
-    }
-    return colors;
-  },
-
-  getStyle: function (imageUrl) {
+  getStyle: function () {
     var bg = {
       normal: {
-        background: 'linear-gradient(' + this.getTypeFadeColors() + '), url(./images/bg/' + imageUrl + ')'
+        background: 'linear-gradient(' + this.props.getTypeFadeColors() + '), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
-        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url(./images/bg/' + imageUrl + ')'
+        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url(./images/bg/' + this.props.work.image + ')'
       }
     };
     return this.state.hovering ? bg.hover : bg.normal;
@@ -90,7 +74,7 @@ module.exports = ProjectItem = React.createClass({
     return (
       <a href={this.props.work.link} stopPropagation={true} className='work-item-container'
          onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
-        <div className='item-image' style={this.getStyle(this.props.work.image)}></div>
+        <div className='item-image' style={this.getStyle()}></div>
         <div className='item-header'>
           <h2>
             <span>{this.props.work.title}</span>

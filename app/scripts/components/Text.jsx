@@ -48,18 +48,18 @@ module.exports = Text = React.createClass({
             </div>
 
             <br />
-            <p><span>Trivs väldigt bra med ReactJS, Angular, Git, SCSS  &amp; LESS</span></p>
-            <p><span>Kanban, Jira</span></p>
+            <p><span>Trivs väldigt bra med ReactJS, Angular, Git, SCSS &amp; LESS</span></p>
+            <p><span>Agila arbetssätt, Kanban, Jira</span></p>
           </div>
 
           <div className="desc-item">
             <h2>
               <span>
-                Vad pysslar Pär med nu?
+                Vad gör Pär just nu?
               </span>
             </h2>
-            <p><span>Sitter hos Com hem samt färdigställer min C-uppsats i medieteknik, som kort sagt handlar om att försöka
-              hitta och förutse matvanor som resulterar i glukossvängningar hos diabetiker med hjälp av en app.</span>
+            <p><span>Sitter hos Com hem samt färdigställer min C-uppsats i medieteknik vid sidan av, som kort sagt handlar om att försöka
+              identifiera och förutse matvanor som resulterar i glukossvängningar hos diabetiker med hjälp av en app.</span>
             </p>
           </div>
         </div>

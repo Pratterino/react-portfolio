@@ -1,57 +1,25 @@
 'use strict';
 
-var React       = require('react');
-var _           = require('lodash');
-var $           = require('jquery');
-var classNames  = require('classnames');
-var MusicItem   = require('./MusicItem.jsx');
+var React = require('react');
+var _ = require('lodash');
+var MusicItem = require('./MusicItem.jsx');
 var ProjectItem = require('./ProjectItem.jsx');
 
 var Project;
 
 module.exports = Project = React.createClass({
-  getInitialState: function () {
-    return {
-      hovering: false
-    }
-  },
-
-  getTags: function (work) {
-    var self = this;
-    return _.map(work.tags, function (tag, i) {
-      var classes = classNames({
-        active: !self.props.isActiveTag(tag).inactive
-      });
-
-      return (
-        <li key={i}
-            className={classes}
-            onClick={self.onClick}
-            title="Klicka för att filtrera med denna kunskap">#{tag}</li>
-      );
-    });
-  },
-
-  onClick: function (e) {
-    e.preventDefault();
-
-    var tag = $(e.target).text();
-    this.props.toggleItem(tag);
-  },
 
   renderMusicItems: function () {
-    var self = this;
-
-    return _.map(self.props.works, function (work, i) {
-    var colors = self.getTypeFadeColors();
+    return this.props.works.map(_.bind(function (work, i) {
+      var colors = this.getTypeFadeColors();
       var style = {
-        background: 'linear-gradient('+ colors +'), url(./images/bg/' + work.image + ')'
+        background: 'linear-gradient(' + colors + '), url(./images/bg/' + work.image + ')'
       };
 
       return (
         <MusicItem work={work} key={i} styling={style}/>
       );
-    })
+    }, this));
   },
 
   getTypeFadeColors: function () {
@@ -70,33 +38,14 @@ module.exports = Project = React.createClass({
     return colors;
   },
 
-  getStyle: function (imageUrl) {
-    var bg = {
-      normal: {
-        background: 'linear-gradient(' + this.getTypeFadeColors() + '), url(./images/bg/' + imageUrl + ')'
-      },
-      hover: {
-        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url(./images/bg/' + imageUrl + ')'
-      }
-    };
-    return this.state.hovering ? bg.hover : bg.normal;
-  },
-
-  toggleClass: function (bool) {
-    this.setState({
-      hovering: bool
-    });
-  },
-
   renderProjectItems: function () {
-    var self = this;
-    return _.map(self.props.works, _.bind(function (work, i) {
-      var isActive = _.any(work.tags, function (tag) {
-        return !self.props.isActiveTag(tag).inactive
-      });
+    return this.props.works.map(_.bind(function (work, i) {
+      var isActive = _.any(work.tags, _.bind(function (tag) {
+        return !this.props.isActiveTag(tag).inactive
+      }, this));
 
-      if (isActive || self.props.activeTags.length === 0) {
-        return <ProjectItem {...this.props} work={work} key={i} />
+      if (isActive || this.props.activeTags.length === 0) {
+        return <ProjectItem {...this.props} work={work} key={i} getTypeFadeColors={this.getTypeFadeColors} />
       } else {
         return null;
       }

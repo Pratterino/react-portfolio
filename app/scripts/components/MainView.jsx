@@ -24,7 +24,7 @@ module.exports = MainView = React.createClass({
       <div className="page-wrapper">
         <div className="content">
           <FullSection type={types.about}>
-            <Column width={40}>
+            <Column width={30}>
               <CenteredText type={types.about}>
                 <div>
                   <h3>Om mig</h3>
@@ -34,13 +34,13 @@ module.exports = MainView = React.createClass({
                 </div>
               </CenteredText>
             </Column>
-            <Column width={60} type={types.about}>
+            <Column width={70} type={types.about}>
               <DescText />
             </Column>
           </FullSection>
 
           <FullSection type={types.web}>
-            <ProjectView type={types.web} width={[40, 60]}>
+            <ProjectView type={types.web} width={[30, 70]}>
               <CenteredText type={types.web}>
                 <div>
                   <h3>Webb</h3>
@@ -57,7 +57,7 @@ module.exports = MainView = React.createClass({
           </FullSection>
 
           <FullSection type={types.game}>
-            <ProjectView type={types.game} width={[40, 60]}>
+            <ProjectView type={types.game} width={[30, 70]}>
               <CenteredText type={types.game}>
                 <div>
                   <h3>Spel</h3>
@@ -72,7 +72,7 @@ module.exports = MainView = React.createClass({
           </FullSection>
 
           <FullSection type={types.music}>
-            <ProjectView type={types.music} width={[40, 60]}>
+            <ProjectView type={types.music} width={[30, 70]}>
               <CenteredText type={types.music}>
                 <div>
                   <h3>Musik</h3>
@@ -88,11 +88,6 @@ module.exports = MainView = React.createClass({
               </CenteredText>
             </ProjectView>
           </FullSection>
-
-
-          <div className="parallax-wrapper">
-            <Column width={100} bgClass="outdoors"/>
-          </div>
         </div>
         <Footer />
       </div>

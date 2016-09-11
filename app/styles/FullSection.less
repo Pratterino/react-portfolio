@@ -9,11 +9,14 @@
 .full-section {
   &.web {
     border-color: @webColor;
-  } &.game{
+  }
+  &.game {
     border-color: @gameColor;
-  } &.music {
+  }
+  &.music {
     border-color: @musicColor;
-  } &.about {
+  }
+  &.about {
     border-color: @color2;
     background: @color3;
   }
@@ -21,11 +24,18 @@
   min-height: 100%;
   width: 100%;
   display: flex;
-  border: 5px none;
-  border-bottom-style: dashed;
+  border: 4px none;
+  border-bottom-style: dotted;
 
   &.half-sized {
     min-height: 200px !important;
+  }
+
+  .project-wrapper {
+    div[class~='column']:nth-of-type(even) {
+      border: 0;
+      border-left: 2px dotted rgba(255, 255, 250, 0.5);
+    }
   }
 
   .column {
