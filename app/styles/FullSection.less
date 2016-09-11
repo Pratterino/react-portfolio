@@ -1,5 +1,5 @@
 .fade {
-  background: radial-gradient(ellipse farthest-corner at center top, @color3 0%, @color4 100%);
+  background: radial-gradient(ellipse farthest-corner at center top, @color2 0%, @color3 100%);
 }
 
 .no-min-height {
@@ -7,22 +7,48 @@
 }
 
 .full-section {
+  &.web {
+    border-color: @webColor;
+  }
+  &.game {
+    border-color: @gameColor;
+  }
+  &.music {
+    border-color: @musicColor;
+  }
+  &.about {
+    border-color: @color2;
+    background: @color3;
+  }
+
   min-height: 100%;
   width: 100%;
   display: flex;
+  border: 4px none;
+  border-bottom-style: dotted;
 
   &.half-sized {
     min-height: 200px !important;
   }
 
+  .project-wrapper {
+    div[class~='column']:nth-of-type(even) {
+      border: 0;
+      border-left: 2px dotted rgba(255, 255, 250, 0.5);
+    }
+  }
+
   .column {
     position: relative;
     display: inline-block;
-    height: 100vh;
+    float: left;
+
+    &#about {
+      background: @color_white;
+    }
 
     &.fade {
       position: relative;
-      float: right;
       top: 0;
       right: 0;
       height: 100%;
@@ -46,7 +72,7 @@
       &:hover {
         filter: saturate(1);
         opacity: 0.9;
-        box-shadow: 0 0 40px @color5;
+        box-shadow: 0 0 40px @color_black;
       }
     }
   }

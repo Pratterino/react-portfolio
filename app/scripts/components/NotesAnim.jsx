@@ -1,13 +1,14 @@
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var $ = require('jquery');
 var NotesAnim;
 
 module.exports = NotesAnim = React.createClass({
 
   componentDidMount: function () {
-    var x = $('#parent-wrapper');
+    var x = $('body');
 
     if (x.width() > 1100) {
       this.renderBubbles();
@@ -15,7 +16,8 @@ module.exports = NotesAnim = React.createClass({
   },
 
   renderBubbles: function () {
-    var $bubbles = $(this.refs.parent);
+    var self = this;
+    var $bubbles = $(ReactDOM.findDOMNode(self));
     var min_bubble_count = 4, // Minimum number of bubbles
       max_bubble_count = 8, // Maximum number of bubbles
       min_bubble_size = 2, // Smallest possible bubble diameter (px)
@@ -91,7 +93,7 @@ module.exports = NotesAnim = React.createClass({
 
   render: function () {
     return (
-      <div ref="parent" className="notes-container">
+      <div className="notes-container">
         <div className="bubbles"></div>
       </div>
     );

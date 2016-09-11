@@ -1,6 +1,6 @@
-@item-size: 320px;
+@item-size: 420px;
 @itemPadding: 10pt;
-@borderColor: @color5;
+@borderColor: @color_black;
 
 .visibleOnHoverOnly {
   opacity: 0;
@@ -44,7 +44,7 @@
 .tagList {
   display: inline-block;
 
-  background: @color5;
+  background: @color_black;
   color: @color1;
   padding: 2px 4px;
   margin: 1px 2px;
@@ -52,13 +52,13 @@
   &:hover {
     cursor: pointer;
     background: @color1;
-    color: @color5;
+    color: @color_black;
   }
   &.active {
-    background: @color3;
-    color: @color5;
+    background: @color2;
+    color: @color_black;
     &:hover {
-      background: @color4;
+      background: @color3;
     }
   }
   transition: background 0.35s;
@@ -128,7 +128,7 @@
 
     .work-item-container {
       position: relative;
-      flex: 1 1 33%;
+      flex: 1 1 50%;
       min-width: @item-size;
       text-align: center;
       text-decoration: none;
@@ -150,7 +150,7 @@
         right: 0;
         text-align: right;
         padding: 8px 10px;
-        background: @color5;
+        background: @color_black;
         box-shadow: inset 0 0 20px #000;
         border: 2px dashed rgba(255, 255, 255, 0.35);
         border-right: none;
@@ -158,7 +158,7 @@
 
         button {
           padding: 10px;
-          background-color: @color3;
+          background-color: @color2;
           border: none;
           border-radius: 8px;
           color: @color1;
@@ -167,7 +167,7 @@
 
           font-size: 14px;
           font-weight: 800;
-          text-shadow: @color4 -2px 2px, @color2 0 0 2px !important;
+          text-shadow: @color3 -2px 2px, @color1 0 0 2px !important;
         }
       }
 
@@ -176,8 +176,8 @@
         display: block;
         width: 100%;
         height: 100%;
-        filter: hue-rotate(350deg);
-        background: #000;
+        //filter: hue-rotate(350deg);
+        background-image: inherit;
         background-size: cover !important;
         transition: all 0.5s ease;
 
@@ -192,9 +192,9 @@
         width: 100%;
         font-weight: 800;
         transition: all 0.4s ease;
-        color: @color1;
-        font-size: 14pt;
-        text-shadow: #000 -2px 2px, @color3 1px 1px 2px !important;
+        color: @color_white;
+        font-size: 16pt;
+        text-shadow: rgba(2, 250, 250, 0.6) -3px 1px 1px, rgb(248, 0, 0, 0.65) 2px -1px 1px !important;
         span {
           padding: 5px 10px;
           background: rgba(0, 0, 0, .2);
@@ -208,7 +208,8 @@
       }
       &:hover .item-image {
         background-blend-mode: normal;
-        box-shadow: inset 0 0 40px @color5;
+        box-shadow: 0 0 40px @color1;
+        background: none;
       }
 
       .item-tags-container {
@@ -240,6 +241,7 @@
             visibility: visible;
           }
         }
+
         .item {
           font-size: 11pt;
           background: transparent;
@@ -278,7 +280,7 @@
 }
 
 section#game .item-content .item-tags-container {
-  background: @gameColor;
+  background: fade(@gameColor, 85%);
 }
 
 section#web .item-content .item-tags-container {

@@ -9,9 +9,6 @@ var Navbar = require('./components/Navbar.jsx');
 
 $(function () {
   ReactDOM.render(
-    <Navbar />, document.getElementById('navbar')
-  );
-  ReactDOM.render(
     <MainView />, document.getElementById('parent-wrapper')
   );
 });

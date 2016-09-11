@@ -5,8 +5,10 @@ var $ = require('jquery');
 var _ = require('lodash');
 var Project = require('./Project.jsx');
 var FullSection = require('./FullSection.jsx');
+var Column = require('./Column.jsx');
 var NotesAnimation = require('./NotesAnim.jsx');
 var ProjectSearch = require('./ProjectSearch.jsx');
+var CenteredText = require('./CenteredText.jsx');
 
 var ProjectView;
 
@@ -61,7 +63,8 @@ module.exports = ProjectView = React.createClass({
             pussel, och intressanta spelmoment för andra att ta sig igenom.</span></p>
         </div>
       );
-    } if (this.props.type === "web") {
+    }
+    if (this.props.type === "web") {
       return (
         <div>
           <p><span>Har varit väldigt intresserad av interaktiva medier sedan gymnasiet.</span></p>
@@ -73,8 +76,10 @@ module.exports = ProjectView = React.createClass({
     } else {
       return (
         <div>
-          <p><span>Fastnade för folkmusik och började spela piano, dragspel och sedan gitarr under gymnasiet har ett generellt intresse av att skapa saker. Musik är fantastiskt och något jag konsumerar i stora mängder. Har fortfarande drömmar om att spela i litet band, uppträda och allt vad det innebär.</span></p>
-          <p><span>Har långlivade planer på att spela in ett eget album åtminstonde, men det har inte riktigt blivit en verklighet ännu.</span></p>
+          <p><span>Fastnade för folkmusik och började spela piano, dragspel och sedan gitarr under gymnasiet har ett generellt intresse av att skapa saker. Musik är fantastiskt och något jag konsumerar i stora mängder. Har fortfarande drömmar om att spela i litet band, uppträda och allt vad det innebär.</span>
+          </p>
+          <p><span>Har långlivade planer på att spela in ett eget album åtminstonde, men det har inte riktigt blivit en verklighet ännu.</span>
+          </p>
           <p><span><i>Jag drömmer vidare..</i></span></p>
         </div>
       );
@@ -90,49 +95,39 @@ module.exports = ProjectView = React.createClass({
     if (this.props.type === "music") {
       return (
         <section className={classes.parent} id={this.props.type}>
-          <div className={classes.divider}>
-            <div>
-              <h2>
-                <span>{"Musik"}</span>
-              </h2>
-              <div className="project-desc">
-                {this.getDescriptionText()}
-              </div>
-            </div>
-          </div>
-          <Project
-            type={this.props.type}
-            works={this.state.work}
-          />
-          <NotesAnimation {...this.props} />
+          <Column width={this.props.width[0]}>
+            {this.props.children}
+          </Column>
+          <Column width={this.props.width[1]}>
+            <Project
+              type={this.props.type}
+              works={this.state.work}
+            />
+            <NotesAnimation {...this.props} />
+          </Column>
         </section>
       );
     } else {
       return (
         <section className={classes.parent} id={this.props.type}>
-          <div className={classes.divider}>
-            <div>
-              <h2>
-                <span>{this.props.type === "game" ? "Spelutveckling" : "Webbutveckling"}</span>
-              </h2>
-              <div className="project-desc">
-                {this.getDescriptionText()}
-              </div>
-            </div>
-          </div>
-          <ProjectSearch
-            toggleItem={this.toggleItem}
-            works={this.state.work}
-            isActiveTag={this.isActiveTag}
-            activeTags={this.state.tags}
-          />
-          <Project
-            type={this.props.type}
-            toggleItem={this.toggleItem}
-            works={this.state.work}
-            isActiveTag={this.isActiveTag}
-            activeTags={this.state.tags}
-          />
+          <Column width={this.props.width[0]}>
+            {this.props.children}
+            <ProjectSearch
+              toggleItem={this.toggleItem}
+              works={this.state.work}
+              isActiveTag={this.isActiveTag}
+              activeTags={this.state.tags}
+            />
+          </Column>
+          <Column width={this.props.width[1]}>
+            <Project
+              type={this.props.type}
+              toggleItem={this.toggleItem}
+              works={this.state.work}
+              isActiveTag={this.isActiveTag}
+              activeTags={this.state.tags}
+            />
+          </Column>
           <NotesAnimation {...this.props} />
         </section>
       );

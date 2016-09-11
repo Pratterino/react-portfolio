@@ -1,10 +1,9 @@
 'use strict';
 
 var React = require('react');
-var $ = require('jquery');
-var Navbar;
+var Column;
 
-module.exports = Navbar = React.createClass({
+module.exports = Column = React.createClass({
   getDefaultProps: function () {
     return {
       width: 'auto'
@@ -12,15 +11,12 @@ module.exports = Navbar = React.createClass({
   },
 
   propTypes: {
-    width: React.PropTypes.number
-  },
-
-  componentDidMount: function () {
-    $('.parallax-wrapper').css({height: window.innerHeight/2});
+    width: React.PropTypes.number.isRequired,
+    type: React.PropTypes.string
   },
 
   render: function () {
-    var classString = "column " + this.props.bgClass;
+    var classString = "column type-" + this.props.type;
     var styles = {
       width: this.props.width + "%"
     };
