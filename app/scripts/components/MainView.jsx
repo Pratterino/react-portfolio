@@ -30,7 +30,7 @@ module.exports = MainView = React.createClass({
                   <h3>Om mig</h3>
                 </div>
                 <div>
-                  <Hexagon image="images/paer.png" />
+                  <Hexagon image="images/paer.png"/>
                 </div>
               </CenteredText>
             </Column>
@@ -59,7 +59,14 @@ module.exports = MainView = React.createClass({
           <FullSection type={types.game}>
             <ProjectView type={types.game} width={[40, 60]}>
               <CenteredText type={types.game}>
-                <h3>Spel</h3>
+                <div>
+                  <h3>Spel</h3>
+                </div>
+                <div>
+                  <p>Spelintresset sträcker sig tillbaka till barndomsbenen.</p>
+                  <p>Det handlar mindre om själva spelandet, utan mer om att komma på intressanta spelmekaniker,
+                    regelverk, pussel, och intressanta spelmoment för andra att ta sig igenom.</p>
+                </div>
               </CenteredText>
             </ProjectView>
           </FullSection>

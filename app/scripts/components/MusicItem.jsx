@@ -27,16 +27,16 @@ module.exports = MusicItem = React.createClass({
     });
   },
 
-  getStyle: function (isHovering) {
+  getStyle: function () {
     var bg = {
       normal: {
-        backgroundImage: 'linear-gradient(rgba(170, 230, 107, 0.1), rgba(126, 175, 75, 0.2)), url(./images/bg/' + this.props.work.image + ')'
+        backgroundImage: 'linear-gradient(rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(126, 175, 75, .35)), url(./images/bg/' + this.props.work.image + ')'
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(255, 100, 70, 0)), url(./images/bg/' + this.props.work.image + ')'
       }
     };
-    return !isHovering ? bg.normal : bg.hover;
+    return !this.state.hovering ? bg.normal : bg.hover;
   },
 
   render: function () {
@@ -52,7 +52,7 @@ module.exports = MusicItem = React.createClass({
     } else {
       return (
         <div onClick={this.toggleEmbed} className='work-item-container container-music cursor' onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
-          <div className='item-image' style={this.getStyle(this.state.hovering)}></div>
+          <div className='item-image' style={this.getStyle()}></div>
           <div className='item-header'>
             <h2>
               <span>{this.props.work.title}</span>

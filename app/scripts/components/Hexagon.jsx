@@ -17,7 +17,7 @@ module.exports = MainView = React.createClass({
     var offset = this.props.offset ? this.props.offset : "100";
 
     return (
-      <section className="hexagon-wrapper" style={{left: "calc(" + offset + "% - "+ imageSize +"px)"}}>
+      <div className="hexagon-wrapper" style={{left: "calc(" + offset + "% - "+ imageSize +"px)"}}>
         <article>
           <div className="lab_item">
             <div className="hexagon hexagon2">
@@ -28,7 +28,7 @@ module.exports = MainView = React.createClass({
             </div>
           </div>
         </article>
-      </section>
+      </div>
     );
   }
 });

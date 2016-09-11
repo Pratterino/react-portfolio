@@ -1,16 +1,16 @@
 @navbar_size: 55px;
 
 //COLOR
-@gameColor: rgba(255, 235, 0, .2);
-@musicColor: rgba(170, 230, 107, .2);
-@webColor: rgba(255, 49, 153, 0.2);
+@webColor: fade(@color1, 40%);
+@gameColor: fade(@color4, 40%);
+@musicColor: fade(@color3, 40%);
 
 .getColorWithBgAndText(@color) {
   background: fade(@color, 100%);
 
   h1, h5 {
     @color1: spin(fade(@color, 90%), -65);
-    color: @color1 !important;
+    color: @color_white !important;
     text-shadow: -1px 1px fade(lighten(@color1, 40%), 50%);
   }
 }
@@ -74,11 +74,13 @@ section {
   width: 100%;
 }
 
-@color1: #FCFFE3;
-@color2: #C6E774;
-@color3: #f39264;
-@color4: #f2606f;
-@color5: #383E4B;
+@color_white: #FCFFE3;
+@color_black: #383E4B;
+
+@color1: #9edcda;
+@color2: #f39264;
+@color3: #f2606f;
+@color4: #15648C;
 
 @import "Text";
 @import "ContactView";
@@ -122,7 +124,7 @@ section {
       span {
         color: @color1;
         border-color: @color1;
-        background: @color4;
+        background: @color3;
       }
     }
 
