@@ -21,15 +21,17 @@ html, body {
 }
 
 .desc-text {
-  color: @color_black;
+  color: @color_white;
   padding: 15px 0;
-  width: 100%;
+  margin: 0 auto;
+  width: 70%;
   height: 100%;
 
   h2, h1 {
     span {
       padding: 2px 10px;
       border: 1px dashed rgba(255, 61, 88, 0.3);
+      background: none;
       border-left: 0;
       border-right: 0;
     }
@@ -39,7 +41,8 @@ html, body {
 
   span, sub {
     line-height: 20pt;
-    padding: 2px;
+    padding: 5px;
+    background: rgba(20, 20, 20, 0.1);
   }
 
   .desc-item {
@@ -47,12 +50,10 @@ html, body {
     margin-top: 55px;
     padding: 20px;
 
-    @media (max-width: 1100px) {
-      .hover-junkers();
-    }
+    @media (max-width: 1100px) {}
 
     &:hover {
-      background: rgba(10, 15, 12, 0.15);
+      background: rgba(10, 15, 12, 0.5);
 
       span {
         border-width: 0;
@@ -60,29 +61,6 @@ html, body {
       transition: all 0.5s ease;
     }
   }
-}
-
-.hover-junkers {
-  a.span, p, h2, h1 {
-    color: @color1;
-    span {
-      border-color: @color1;
-    }
-  }
-
-  span {
-    background: transparent;
-  }
-
-  background: rgba(70, 34, 85, 0.18); //@COLOR5
-  &:hover {
-    background: rgba(220, 185, 100, 0.35); //@COLOR5
-
-    h2 > span {
-      //background: rgba(235, 120, 120, 0.91);
-    }
-  }
-  transition: all 0.4s ease;
 }
 
 sup, sub {

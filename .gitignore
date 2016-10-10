@@ -1,9 +1,10 @@
 /app/styles/main.css
+/app/scripts/app.js
 /.idea
 node_modules
 dist
 .tmp
 .sass-cache
+.psd
 bower_components
 test/bower_components
-/app/scripts/app.js

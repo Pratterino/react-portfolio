@@ -103,8 +103,8 @@ module.exports = ProjectView = React.createClass({
               type={this.props.type}
               works={this.state.work}
             />
-            <NotesAnimation {...this.props} />
           </Column>
+          <NotesAnimation type={this.props.type} />
         </section>
       );
     } else {
@@ -128,7 +128,7 @@ module.exports = ProjectView = React.createClass({
               activeTags={this.state.tags}
             />
           </Column>
-          <NotesAnimation {...this.props} />
+          <NotesAnimation type={this.props.type} />
         </section>
       );
     }

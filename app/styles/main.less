@@ -93,21 +93,9 @@ section {
 
 @import "CenteredText";
 @import "FullSection";
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-}
-
 /* Smaller than desktop */
 @media (max-width: 1100px) {
   footer {
@@ -120,27 +108,8 @@ section {
   .column {
     width: 100% !important;
 
-    h1, h2 {
-      span {
-        color: @color1;
-        border-color: @color1;
-        background: @color3;
-      }
-    }
-
-    span, sub {
-      color: @color1;
-      background: rgba(56, 62, 75, 0.85);
-    }
-
-    &.paer {
-      display: none;
-    }
-
-    &.fade {
-      position: relative !important;
-      left: 0;
-      z-index: 100;
+    .desc-text {
+      width: 100%;
     }
   }
 

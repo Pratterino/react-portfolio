@@ -7,12 +7,9 @@ var Text;
 module.exports = Text = React.createClass({
   render: function () {
     return (
-      <div className="desc-text center vert-aligner">
+      <div className="desc-text center">
         <div className="desc-wrapper">
           <div>
-            <h1>
-              <span>Pär Strandberg</span>
-            </h1>
             <sub>Frontend-utvecklare</sub>
           </div>
 

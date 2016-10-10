@@ -23,10 +23,8 @@ module.exports = NotesAnim = React.createClass({
       min_bubble_size = 2, // Smallest possible bubble diameter (px)
       max_bubble_size = 8; // Maximum bubble blur amount (px)
 
-    // Calculate a random number of bubbles based on our min/max
     var bubbleCount = min_bubble_count + Math.floor(Math.random() * (max_bubble_count + 1));
 
-    // Create the bubbles
     for (var i = 0; i < bubbleCount; i++) {
       var icon = "";
       switch (this.props.type) {
@@ -36,11 +34,14 @@ module.exports = NotesAnim = React.createClass({
         case "music":
           icon = "fa fa-music";
           break;
+        case "web":
+          icon = "fa fa-laptop";
+          break;
         default:
           icon = "fa fa-star";
           break;
       }
-      $bubbles.append('<div class="bubble-container"><div class="bubble"><i class="'+ icon +'" aria-hidden="false" /></div></div>');
+      $bubbles.append('<div class="bubble-container"><div class="bubble"><i class="'+ icon +'" aria-hidden="true" /></div></div>');
     }
 
     // Now randomise the various bubble elements

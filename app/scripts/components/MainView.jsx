@@ -7,6 +7,7 @@ var Column = require('./Column.jsx');
 var FullSection = require('./FullSection.jsx');
 var Footer = require('./Footer.jsx');
 var CenteredText = require('./CenteredText.jsx');
+var NotesAnimation = require('./NotesAnim.jsx');
 var Hexagon = require('./Hexagon.jsx');
 
 var MainView;
@@ -24,18 +25,14 @@ module.exports = MainView = React.createClass({
       <div className="page-wrapper">
         <div className="content">
           <FullSection type={types.about}>
-            <Column width={30}>
+            <Column width={100}>
               <CenteredText type={types.about}>
                 <div>
-                  <h3>Om mig</h3>
-                </div>
-                <div>
-                  <Hexagon image="images/paer.png"/>
+                  <h3>Pär Strandberg</h3>
+                <DescText />
                 </div>
               </CenteredText>
-            </Column>
-            <Column width={70} type={types.about}>
-              <DescText />
+              <NotesAnimation type={types.about}/>
             </Column>
           </FullSection>
 

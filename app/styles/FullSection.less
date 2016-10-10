@@ -19,23 +19,20 @@
   &.about {
     border-color: @color2;
     background: @color3;
+
+    overflow: hidden;
+    background: radial-gradient(rgba(180, 110, 220, 0.5), rgba(35, 50, 120, 0.6)), url(../images/outdoors.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   min-height: 100%;
   width: 100%;
   display: flex;
-  border: 4px none;
-  border-bottom-style: dotted;
 
   &.half-sized {
     min-height: 200px !important;
-  }
-
-  .project-wrapper {
-    div[class~='column']:nth-of-type(even) {
-      border: 0;
-      border-left: 2px dotted rgba(255, 255, 250, 0.5);
-    }
   }
 
   .column {
@@ -53,43 +50,5 @@
       right: 0;
       height: 100%;
     }
-
-    &.paer {
-      width: 30%;
-      height: inherit;
-      position: relative;
-      float: left;
-      overflow: hidden;
-      background-image: url("../images/paer.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: center;
-
-      transition: 0.5s all ease-in-out;
-      opacity: 0.7;
-      filter: saturate(0.15);
-
-      &:hover {
-        filter: saturate(1);
-        opacity: 0.9;
-        box-shadow: 0 0 40px @color_black;
-      }
-    }
-  }
-}
-
-.outdoors {
-  height: 100%;
-  background: url("../images/outdoors.jpg") no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: -15px;
-
-  transition: 0.5s all ease-in-out;
-  filter: grayscale(1);
-
-  &:hover {
-    background-position-y: -5px;
-    filter: grayscale(0.7);
   }
 }
