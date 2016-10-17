@@ -23,13 +23,8 @@ const Project = props => {
 
 const renderMusicItems = (props) => {
   return props.works.map(function (work, i) {
-    var colors = props.getTypeFadeColors(work.type);
-    var style = {
-      background: 'linear-gradient(' + colors + '), url(./images/bg/' + work.image + ')'
-    };
-
     return (
-      <MusicItem work={work} type={props.type} key={i} styling={style}/>
+      <MusicItem work={work} type={props.type} key={i} />
     );
   });
 };
@@ -41,7 +36,15 @@ const renderProjectItems = (props) => {
     });
 
     if (isActive || props.activeTags.length === 0) {
-      return <ProjectItem work={work} type={props.type} key={i} getTypeFadeColors={props.getTypeFadeColors.bind(this)}/>
+      return (
+        <ProjectItem
+          key={i}
+          work={work}
+          type={props.type}
+          getTypeFadeColors={props.getTypeFadeColors.bind(this)}
+          isActiveTag={props.isActiveTag.bind(this)}
+        />
+      );
     } else {
       return null;
     }

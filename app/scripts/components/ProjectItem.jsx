@@ -18,8 +18,7 @@ class ProjectItem extends React.Component {
   }
 
   getTags() {
-    var self = this;
-    return this.props.work.tags.map(() => function (tag, i) {
+    return this.props.work.tags.map(_.bind(function(tag, i) {
       var classes = classNames({
         active: !this.props.isActiveTag(tag).inactive
       });
@@ -27,10 +26,10 @@ class ProjectItem extends React.Component {
       return (
         <li key={i}
             className={classes}
-            onClick={this.onClick.bind(this)}
+            onClick={(e) => this.onClick}
             title="Klicka för att filtrera med denna kunskap">#{tag}</li>
       );
-    });
+    }, this));
   }
 
   onClick(e) {
@@ -41,10 +40,9 @@ class ProjectItem extends React.Component {
   }
 
   renderMusicItems() {
-    var self = this;
+    var colors = this.props.getTypeFadeColors(this.props.type);
 
-    return _.map(self.props.works, function (work, i) {
-      var colors = self.getTypeFadeColors();
+    return this.props.works.map(_.bind(function (work, i) {
       var style = {
         background: 'linear-gradient(' + colors + '), url(./images/bg/' + work.image + ')'
       };
@@ -52,16 +50,16 @@ class ProjectItem extends React.Component {
       return (
         <MusicItem work={work} key={i} styling={style}/>
       );
-    })
+    }, this));
   }
 
   getStyle() {
     const bg = {
       normal: {
-        background: 'linear-gradient(' + this.props.getTypeFadeColors(this.props.type) + '), url(./images/bg/' + this.props.work.image + ')'
+        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
-        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url(./images/bg/' + this.props.work.image + ')'
+        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(./images/bg/' + this.props.work.image + ')'
       }
     };
     return this.state.hovering ? bg.hover : bg.normal;

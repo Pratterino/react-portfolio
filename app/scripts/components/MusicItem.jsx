@@ -27,10 +27,10 @@ class MusicItem extends React.Component {
   getStyle() {
     var bg = {
       normal: {
-        backgroundImage: 'linear-gradient(rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)), url(./images/bg/' + this.props.work.image + ')'
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(255, 100, 70, 0)), url(./images/bg/' + this.props.work.image + ')'
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(./images/bg/' + this.props.work.image + ')'
       }
     };
     return !this.state.hovering ? bg.normal : bg.hover;

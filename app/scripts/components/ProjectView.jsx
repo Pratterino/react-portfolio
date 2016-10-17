@@ -116,6 +116,7 @@ class ProjectView extends React.Component {
             <Project
               type={this.props.type}
               works={this.state.work}
+              isActiveTag={this.isActiveTag.bind(this)}
               getTypeFadeColors={this.getTypeFadeColors.bind(this)}
             />
           </Column>

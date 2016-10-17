@@ -45,7 +45,7 @@
   display: inline-block;
 
   background: @color_black;
-  color: @color4;
+  color: @color_white;
   padding: 2px 4px;
   margin: 1px 2px;
   border-radius: 3px;
@@ -55,7 +55,6 @@
   }
   &.active {
     background: @color2;
-    color: @color_black;
     &:hover {
       background: @color3;
     }
@@ -187,10 +186,11 @@
         top: calc(53% - @itemPadding);
         width: 100%;
         font-weight: 800;
+        font-family: 'Amatic SC', cursive;
         transition: all 0.4s ease;
         color: @color_white;
-        font-size: 16pt;
-        text-shadow: rgba(2, 250, 250, 0.6) -3px 1px 1px, rgb(248, 0, 0, 0.65) 2px -1px 1px !important;
+        font-size: 30px;
+        text-shadow: rgba(2, 250, 250, 0.6) -3px 1px 1px;
         span {
           padding: 5px 10px;
           background: rgba(0, 0, 0, .2);
