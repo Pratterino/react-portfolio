@@ -23,8 +23,6 @@ class ProjectView extends React.Component {
   componentDidMount() {
     var self = this;
     $.getJSON("api/work.json", function (data) {
-      console.info(data);
-
       self.setState({
         work: data[self.props.type]
       });
@@ -108,7 +106,6 @@ class ProjectView extends React.Component {
       divider: classNames("project-divider", "vert-aligner")
     };
 
-    console.info(this);
     if (this.props.type === "music") {
       return (
         <section className={classes.parent} id={this.props.type}>
