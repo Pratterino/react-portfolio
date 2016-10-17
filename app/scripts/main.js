@@ -1,11 +1,10 @@
 /** @jsx React.DOM */
 'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var $ = require('jquery');
-var MainView = require('./components/MainView.jsx');
-var Navbar = require('./components/Navbar.jsx');
+const React = require('react'),
+      ReactDOM = require('react-dom'),
+      $ = require('jquery'),
+      MainView = require('./components/MainView.jsx');
 
 $(function () {
   ReactDOM.render(
