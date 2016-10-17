@@ -1,6 +1,6 @@
-/app/styles/main.css
-/app/scripts/app.js
-/.idea
+app/styles/main.css
+app/scripts/app.js
+.idea
 node_modules
 dist
 .tmp
