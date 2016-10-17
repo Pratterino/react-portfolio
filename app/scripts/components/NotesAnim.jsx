@@ -1,23 +1,18 @@
 'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var $ = require('jquery');
-var NotesAnim;
+const React = require('react'),
+      ReactDOM = require('react-dom'),
+      $ = require('jquery');
 
-module.exports = NotesAnim = React.createClass({
-
-  componentDidMount: function () {
-    var x = $('body');
-
-    if (x.width() > 1100) {
-      this.renderBubbles();
+const NotesAnim = (props) => {
+  var componentDidMount = () => {
+    if ($('body').width() > 1100) {
+      renderBubbles();
     }
-  },
+  };
 
-  renderBubbles: function () {
-    var self = this;
-    var $bubbles = $(ReactDOM.findDOMNode(self));
+  var renderBubbles = () => {
+    var $bubbles = $(ReactDOM.findDOMNode(this));
     var min_bubble_count = 4, // Minimum number of bubbles
       max_bubble_count = 8, // Maximum number of bubbles
       min_bubble_size = 2, // Smallest possible bubble diameter (px)
@@ -90,13 +85,13 @@ module.exports = NotesAnim = React.createClass({
         'height': size_rand + 'px'
       });
     });
-  },
+  };
 
-  render: function () {
-    return (
-      <div className="notes-container">
-        <div className="bubbles"></div>
-      </div>
-    );
-  }
-});
+  return (
+    <div className="notes-container">
+      <div className="bubbles"></div>
+    </div>
+  );
+};
+
+module.exports = NotesAnim;

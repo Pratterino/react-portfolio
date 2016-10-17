@@ -1,20 +1,17 @@
 'use strict';
 
-var React = require('react');
-var ProjectView = require('./ProjectView.jsx');
-var DescText = require('./Text.jsx');
-var Column = require('./Column.jsx');
-var FullSection = require('./FullSection.jsx');
-var Footer = require('./Footer.jsx');
-var CenteredText = require('./CenteredText.jsx');
-var NotesAnimation = require('./NotesAnim.jsx');
-var Hexagon = require('./Hexagon.jsx');
+const React = require('react'),
+  ProjectView = require('./ProjectView.jsx'),
+  DescText = require('./Text.jsx'),
+  Column = require('./Column.jsx'),
+  FullSection = require('./FullSection.jsx'),
+  Footer = require('./Footer.jsx'),
+  CenteredText = require('./CenteredText.jsx'),
+  NotesAnimation = require('./NotesAnim.jsx');
 
-var MainView;
-
-module.exports = MainView = React.createClass({
-  render: function () {
-    var types = {
+class MainView extends React.Component {
+  render() {
+    const types = {
       about: "about",
       game: "game",
       music: "music",
@@ -29,7 +26,7 @@ module.exports = MainView = React.createClass({
               <CenteredText type={types.about}>
                 <div>
                   <h3>Pär Strandberg</h3>
-                <DescText />
+                  <DescText />
                 </div>
               </CenteredText>
               <NotesAnimation type={types.about}/>
@@ -88,6 +85,8 @@ module.exports = MainView = React.createClass({
         </div>
         <Footer />
       </div>
-    );
-  }
-});
+    )
+  };
+}
+
+module.exports = MainView;

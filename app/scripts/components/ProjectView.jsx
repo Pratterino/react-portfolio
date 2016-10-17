@@ -1,26 +1,26 @@
 'use strict';
 
-var React = require('react');
-var $ = require('jquery');
-var _ = require('lodash');
-var Project = require('./Project.jsx');
-var FullSection = require('./FullSection.jsx');
-var Column = require('./Column.jsx');
-var NotesAnimation = require('./NotesAnim.jsx');
-var ProjectSearch = require('./ProjectSearch.jsx');
-var CenteredText = require('./CenteredText.jsx');
+const React = require('react'),
+      $ = require('jquery'),
+      _ = require('lodash'),
+      classNames = require('classnames'),
+      Project = require('./Project.jsx'),
+      FullSection = require('./FullSection.jsx'),
+      Column = require('./Column.jsx'),
+      NotesAnimation = require('./NotesAnim.jsx'),
+      ProjectSearch = require('./ProjectSearch.jsx'),
+      CenteredText = require('./CenteredText.jsx');
 
-var ProjectView;
-
-module.exports = ProjectView = React.createClass({
-  getInitialState: function () {
-    return {
+class ProjectView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       work: null,
       tags: []
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount() {
     var self = this;
     $.getJSON("api/work.json", function (data) {
       console.info(data);
@@ -29,9 +29,9 @@ module.exports = ProjectView = React.createClass({
         work: data[self.props.type]
       });
     });
-  },
+  };
 
-  toggleItem: function (tag) {
+  toggleItem(tag) {
     var item = this.isActiveTag(tag);
     var tempTags = this.state.tags;
 
@@ -43,16 +43,16 @@ module.exports = ProjectView = React.createClass({
     this.setState({
       tags: tempTags
     });
-  },
+  };
 
-  isActiveTag: function (tag) {
+  isActiveTag(tag) {
     var self = this;
     var index = _.indexOf(self.state.tags, tag);
     return {
       inactive: index === -1,
       index: index
     };
-  },
+  };
 
   getDescriptionText() {
     if (this.props.type === "game") {
@@ -84,14 +84,31 @@ module.exports = ProjectView = React.createClass({
         </div>
       );
     }
-  },
+  }
 
-  render: function () {
-    var classes = {
-      parent: "project-wrapper " + this.props.type,
-      divider: "project-divider vert-aligner"
+  getTypeFadeColors(type) {
+    var colors = "";
+      switch (type) {
+        case "web":
+          colors = "rgba(200, 200, 200, 0.5), rgba(193, 233, 231, 0.3)";
+          break;
+        case "music":
+          colors = "rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)";
+          break;
+        case "game":
+          colors = "rgba(20, 100, 140, 0.5), rgba(30, 200, 100, 0.3)";
+          break;
+      }
+    return colors;
+  }
+
+  render() {
+    const classes = {
+      parent: classNames("project-wrapper", this.props.type),
+      divider: classNames("project-divider", "vert-aligner")
     };
 
+    console.info(this);
     if (this.props.type === "music") {
       return (
         <section className={classes.parent} id={this.props.type}>
@@ -102,9 +119,10 @@ module.exports = ProjectView = React.createClass({
             <Project
               type={this.props.type}
               works={this.state.work}
+              getTypeFadeColors={this.getTypeFadeColors.bind(this)}
             />
           </Column>
-          <NotesAnimation type={this.props.type} />
+          <NotesAnimation type={this.props.type}/>
         </section>
       );
     } else {
@@ -113,24 +131,27 @@ module.exports = ProjectView = React.createClass({
           <Column width={this.props.width[0]}>
             {this.props.children}
             <ProjectSearch
-              toggleItem={this.toggleItem}
+              toggleItem={this.toggleItem.bind(this)}
               works={this.state.work}
-              isActiveTag={this.isActiveTag}
+              isActiveTag={this.isActiveTag.bind(this)}
               activeTags={this.state.tags}
             />
           </Column>
           <Column width={this.props.width[1]}>
             <Project
               type={this.props.type}
-              toggleItem={this.toggleItem}
+              toggleItem={this.toggleItem.bind(this)}
               works={this.state.work}
-              isActiveTag={this.isActiveTag}
+              isActiveTag={this.isActiveTag.bind(this)}
+              getTypeFadeColors={this.getTypeFadeColors.bind(this)}
               activeTags={this.state.tags}
             />
           </Column>
-          <NotesAnimation type={this.props.type} />
+          <NotesAnimation type={this.props.type}/>
         </section>
       );
     }
   }
-});
+}
+
+module.exports = ProjectView;

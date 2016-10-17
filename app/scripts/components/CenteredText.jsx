@@ -1,19 +1,18 @@
 'use strict';
 
-var React = require('react');
-var CenteredText;
+const React = require('react'),
+      classNames = require('classnames');
 
-module.exports = CenteredText = React.createClass({
+const CenteredText = (props) => {
+  var classes = classNames("centered-text", "centered-" + props.type);
 
-  render: function () {
-    var classes = "centered-text centered-" + this.props.type;
-
-    return (
-      <div className={classes}>
-        <div className="centered-wrapper">
-          {this.props.children}
-        </div>
+  return (
+    <div className={classes}>
+      <div className="centered-wrapper">
+        {props.children}
       </div>
-    );
-  }
-});
+    </div>
+  );
+};
+
+module.exports = CenteredText;

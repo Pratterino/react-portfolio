@@ -7,7 +7,6 @@ var gulp = require('gulp'),
   watchify = require('watchify'),
   source = require('vinyl-source-stream'),
   less = require('gulp-less'),
-  rubySass = require('gulp-ruby-sass'),
   plumber = require('gulp-plumber'),
   autoprefixer = require('gulp-autoprefixer'),
   cache = require('gulp-cache'),
@@ -16,6 +15,7 @@ var gulp = require('gulp'),
   minifyHtml = require('gulp-minify-html'),
   size = require('gulp-size'),
   serveStatic = require('serve-static'),
+  debug = require('gulp-debug'),
   serveIndex = require('serve-index');
 
 /* browserify */
@@ -47,8 +47,6 @@ gulp.task('browserify', function () {
 
 /* styles */
 gulp.task('styles', function () {
-
-
   return gulp.src('app/styles/main.less')
     .pipe(plumber())
     .pipe(less({
@@ -56,6 +54,7 @@ gulp.task('styles', function () {
       precision: 10
     }))
     .pipe(autoprefixer({browsers: ['last 1 version']}))
+    .pipe(debug({title: 'gulp-debug:'}))
     .pipe(gulp.dest('app/styles'));
 
 });
@@ -93,7 +92,6 @@ gulp.task('serve', ['watch'], function () {
 
 /* watch */
 gulp.task('watch', ['connect'], function () {
-
   livereload.listen();
 
   gulp.watch([

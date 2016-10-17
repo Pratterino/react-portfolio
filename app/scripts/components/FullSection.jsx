@@ -1,24 +1,20 @@
 'use strict';
 
-var React = require('react');
-var _     = require('lodash');
-var FullSection;
+const React       = require('react'),
+      classNames  = require('classnames');
 
-module.exports = FullSection = React.createClass({
-  getInitialProps: function () {
-    return {
-      minHeight: "auto"
-    }
-  },
-
-  render: function () {
-    var classesString = this.props.addClass ? "full-section " + this.props.addClass : "full-section";
-        classesString += " " + this.props.type;
+const FullSection = (props) => {
+    var classes = classNames("full-section", props.addClass, props.type);
 
     return (
-      <section className={classesString} style={this.props.styles}>
-        {this.props.children}
+      <section className={classes} style={props.styles}>
+        {props.children}
       </section>
     );
-  }
-});
+};
+
+FullSection.defaultProps = {
+  minHeight: "auto"
+};
+
+module.exports = FullSection;

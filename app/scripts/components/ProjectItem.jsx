@@ -5,39 +5,42 @@ var _ = require('lodash');
 var $ = require('jquery');
 var classNames = require('classnames');
 
-var ProjectItem;
+class ProjectItem extends React.Component {
+  constructor(props) {
+    super(props);
 
-module.exports = ProjectItem = React.createClass({
-  getInitialState: function () {
-    return {
+    this.state = {
       hovering: false
-    }
-  },
+    };
 
-  getTags: function (work) {
+    this.getStyle = this.getStyle.bind(this);
+    this.getTags = this.getTags.bind(this);
+  }
+
+  getTags() {
     var self = this;
-    return _.map(work.tags, function (tag, i) {
+    return this.props.work.tags.map(() => function (tag, i) {
       var classes = classNames({
-        active: !self.props.isActiveTag(tag).inactive
+        active: !this.props.isActiveTag(tag).inactive
       });
 
       return (
         <li key={i}
             className={classes}
-            onClick={self.onClick}
+            onClick={this.onClick.bind(this)}
             title="Klicka för att filtrera med denna kunskap">#{tag}</li>
       );
     });
-  },
+  }
 
-  onClick: function (e) {
+  onClick(e) {
     e.preventDefault();
 
     var tag = $(e.target).text();
     this.props.toggleItem(tag);
-  },
+  }
 
-  renderMusicItems: function () {
+  renderMusicItems() {
     var self = this;
 
     return _.map(self.props.works, function (work, i) {
@@ -50,27 +53,27 @@ module.exports = ProjectItem = React.createClass({
         <MusicItem work={work} key={i} styling={style}/>
       );
     })
-  },
+  }
 
-  getStyle: function () {
-    var bg = {
+  getStyle() {
+    const bg = {
       normal: {
-        background: 'linear-gradient(' + this.props.getTypeFadeColors() + '), url(./images/bg/' + this.props.work.image + ')'
+        background: 'linear-gradient(' + this.props.getTypeFadeColors(this.props.type) + '), url(./images/bg/' + this.props.work.image + ')'
       },
       hover: {
         background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url(./images/bg/' + this.props.work.image + ')'
       }
     };
     return this.state.hovering ? bg.hover : bg.normal;
-  },
+  }
 
-  toggleClass: function (bool) {
+  toggleClass(bool) {
     this.setState({
       hovering: bool
     });
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <a href={this.props.work.link} stopPropagation={true} className='work-item-container'
          onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
@@ -88,7 +91,7 @@ module.exports = ProjectItem = React.createClass({
             </div>
             <div className='item-tags-container'>
               <ul className="item-tags">
-                {this.getTags(this.props.work)}
+                {this.getTags()}
               </ul>
             </div>
           </div>
@@ -96,4 +99,6 @@ module.exports = ProjectItem = React.createClass({
       </a>
     );
   }
-});
+}
+
+module.exports = ProjectItem;

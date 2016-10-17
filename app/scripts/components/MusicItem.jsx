@@ -1,33 +1,30 @@
 'use strict';
 
-var React       = require('react');
-var _           = require('lodash');
-var $           = require('jquery');
-var classNames  = require('classnames');
+const React = require('react');
 
-var MusicItem;
+class MusicItem extends React.Component {
+  constructor(props) {
+    super(props);
 
-module.exports = MusicItem = React.createClass({
-  getInitialState: function () {
-    return {
+    this.state = {
       embedActive: false,
       hovering: false
-    }
-  },
+    };
+  }
 
-  toggleEmbed: function () {
+  toggleEmbed() {
     this.setState({
       embedActive: !this.state.embedActive
     });
-  },
+  };
 
-  toggleClass: function (bool) {
+  toggleClass(bool) {
     this.setState({
       hovering: bool
     });
-  },
+  };
 
-  getStyle: function () {
+  getStyle() {
     var bg = {
       normal: {
         backgroundImage: 'linear-gradient(rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)), url(./images/bg/' + this.props.work.image + ')'
@@ -37,9 +34,9 @@ module.exports = MusicItem = React.createClass({
       }
     };
     return !this.state.hovering ? bg.normal : bg.hover;
-  },
+  };
 
-  render: function () {
+  render() {
     if (this.state.embedActive) {
       return (
         <div className='work-item-container container-music'>
@@ -51,7 +48,8 @@ module.exports = MusicItem = React.createClass({
       );
     } else {
       return (
-        <div onClick={this.toggleEmbed} className='work-item-container container-music cursor' onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
+        <div onClick={this.toggleEmbed} className='work-item-container container-music cursor'
+             onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
           <div className='item-image' style={this.getStyle()}></div>
           <div className='item-header'>
             <h2>
@@ -73,4 +71,6 @@ module.exports = MusicItem = React.createClass({
       );
     }
   }
-});
+}
+
+module.exports = MusicItem;
