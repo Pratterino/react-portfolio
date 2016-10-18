@@ -1,9 +1,8 @@
 # Pratterino/react-portfolio
-
-Download your package manager. Yarn (or npm) is recommended.
+## Installation/development
+Download your package manager. [Yarn](https://yarnpkg.com/) (or [npm](https://www.npmjs.com/)) is recommended.
 
 #### Install the dependencies
-
 ```sh
 $ yarn
 ```
@@ -12,4 +11,10 @@ $ yarn
 ```sh
 $ gulp
 ```
-This will start a server on _http://localhost:9000/_
+This will start a server on http://localhost:9000
+
+
+---
+
+## Deployment
+Push to this master branch will automatically deploy contents of */app/** directly to http://pratterino.se
