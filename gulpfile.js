@@ -95,7 +95,7 @@ gulp.task('watch', ['connect'], function () {
   livereload.listen();
 
   gulp.watch([
-    'app/*.html',
+    '*.html',
     'app/styles/**/*.css',
     'app/scripts/**/*.js',
     'app/images/**/*'
