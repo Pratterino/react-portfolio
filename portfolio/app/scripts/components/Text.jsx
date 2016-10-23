@@ -57,8 +57,8 @@ module.exports = Text = React.createClass({
                         </h2>
                             <span>
                             <ol>
-                                <li>Sitter som Front-endutveklare hos <a href="//comhem.se">Com hem</a> och petar
-                                    mestadels med React, BackboneJS, LESS, Karma/Jasmine-tester.
+                                <li>Sitter som Frontend-utvecklare hos <a href="//comhem.se">Com hem</a> och sysslar
+                                    mestadels med att programmera JavaScript och CSS med React, BackboneJS, LESS, Karma/Jasmine-tester.
                                 </li>
                                 <li>Färdigställer min C-uppsats i medieteknik vid sidan av, som kort sagt handlar om
                                     att identifiera och förutse matvanor som resulterar i glukossvängningar hos
