@@ -31,7 +31,7 @@ const Footer = () => (
       </li>
     </ul>
     <div className="dwarf-container">
-      <div className="dwarf"><img src="app/images/dwarf.png"/></div>
+      <div className="dwarf"><img src="portfolio/app/images/dwarf.png"/></div>
     </div>
   </footer>
 );

@@ -22,7 +22,7 @@ class ProjectView extends React.Component {
 
   componentDidMount() {
     var self = this;
-    $.getJSON("api/work.json", function (data) {
+    $.getJSON("portfolio/api/work.json", function (data) {
       self.setState({
         work: data[self.props.type]
       });

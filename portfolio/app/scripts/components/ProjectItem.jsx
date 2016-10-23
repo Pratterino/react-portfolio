@@ -44,7 +44,7 @@ class ProjectItem extends React.Component {
 
     return this.props.works.map(_.bind(function (work, i) {
       var style = {
-        background: 'linear-gradient(' + colors + '), url(./app/images/bg/' + work.image + ')'
+        background: 'linear-gradient(' + colors + '), url(./portfolio/app/images/bg/' + work.image + ')'
       };
 
       return (
@@ -56,10 +56,10 @@ class ProjectItem extends React.Component {
   getStyle() {
     const bg = {
       normal: {
-        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./app/images/bg/' + this.props.work.image + ')'
+        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./portfolio/app/images/bg/' + this.props.work.image + ')'
       },
       hover: {
-        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(./app/images/bg/' + this.props.work.image + ')'
+        background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(./portfolio/app/images/bg/' + this.props.work.image + ')'
       }
     };
     return this.state.hovering ? bg.hover : bg.normal;
