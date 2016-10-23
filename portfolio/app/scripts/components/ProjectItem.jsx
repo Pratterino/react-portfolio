@@ -73,7 +73,7 @@ class ProjectItem extends React.Component {
 
   render() {
     return (
-      <a href={this.props.work.link} stopPropagation={true} className='work-item-container'
+      <a href={this.props.work.link} className='work-item-container'
          onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
         <div className='item-image' style={this.getStyle()}></div>
         <div className='item-header'>

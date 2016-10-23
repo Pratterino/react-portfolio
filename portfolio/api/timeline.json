@@ -1,96 +1,100 @@
 [
-  {
-    "title": "Medieteknik",
-    "place": "Linnéuniversitetet",
-    "category": "Studier",
-    "link": "//lnu.se",
-    "icon": "fa-graduation-cap",
-    "period": [
-      {
-        "from": "2011-09-01",
-        "to": "2014-06-02"
-      },
-      {
-        "from": "2016-01-18",
-        "to": "2015-06-02"
-      }
-    ],
-    "description": "Interaktiva digitala medier med inriktning mot webbprogrammering.",
-    "courses": [
-      {
-        "title": "Webbprogrammering"
-      }
-    ]
-  },
-  {
-    "title": "Frontend traineeutvecklare",
-    "place": "Cygni",
-    "category": "Arbete",
-    "link": "//cygni.se",
-    "icon": "fa-briefcase",
-    "period": [
-      {
-        "from": "2014-11-03",
-        "to": "*"
-      }
-    ],
-    "description": "Ingen beskrivning.",
-    "courses": [
-      {
-        "title": "Sveriges Bästa Arbetsplats: Medelstora organisationer 2014 & 2015"
-      },
-      {
-        "title": "Europas bästa arbetsplats: små och medelstora 2015"
-      }
-    ]
-  },
-  {
-    "title": "Frontend-utvecklare",
-    "place": "Com hem",
-    "category": "Arbete",
-    "link": "//comhem.se",
-    "icon": "fa-briefcase",
-    "period": [
-      {
-        "from": "2014-12-01",
-        "to": "2015-04-01"
-      },
-      {
-        "from": "2015-10-01",
-        "to": "2016-01-01"
-      }
-    ],
-    "description": "Utvecklade deras interna kundhanteringssystem.",
-    "courses": []
-  },
-  {
-    "title": "Frontend-utvecklare",
-    "place": "Eniro",
-    "category": "Arbete",
-    "link": "//eniro.se",
-    "icon": "fa-briefcase",
-    "period": [
-      {
-        "from": "2015-04-01",
-        "to": "2015-06-01"
-      }
-    ],
-    "description": "Utvecklade deras interna kundhanteringssystem.",
-    "courses": []
-  },
-  {
-    "title": "Frontend-utvecklare",
-    "place": "Telenor",
-    "category": "Arbete",
-    "link": "//telenor.se",
-    "icon": "fa-briefcase",
-    "period": [
-      {
-        "from": "2015-06-01",
-        "to": "2015-10-01"
-      }
-    ],
-    "description": "En kampanjsajt med högt trafikanrop vid lansering av ny produkt.",
-    "courses": []
-  }
+    {
+        "title": "Medieteknik",
+        "place": "Linnéuniversitetet",
+        "category": "Studier",
+        "link": "//lnu.se",
+        "icon": "fa-graduation-cap",
+        "period": [
+            {
+                "from": "2011-09-01",
+                "to": "2014-06-02"
+            },
+            {
+                "from": "2016-01-18",
+                "to": "2015-06-02"
+            }
+        ],
+        "description": "Interaktiva digitala medier med inriktning mot webbprogrammering.",
+        "courses": [
+            {
+                "title": "Webbprogrammering"
+            }
+        ]
+    },
+    {
+        "title": "Frontend traineeutvecklare",
+        "place": "Cygni",
+        "category": "Arbete",
+        "link": "//cygni.se",
+        "icon": "fa-briefcase",
+        "period": [
+            {
+                "from": "2014-11-03",
+                "to": "*"
+            }
+        ],
+        "description": "Ingen beskrivning.",
+        "courses": [
+            {
+                "title": "Sveriges Bästa Arbetsplats: Medelstora organisationer 2014 & 2015"
+            },
+            {
+                "title": "Europas bästa arbetsplats: små och medelstora 2015"
+            }
+        ]
+    },
+    {
+        "title": "Frontend-utvecklare",
+        "place": "Com hem",
+        "category": "Arbete",
+        "link": "//comhem.se",
+        "icon": "fa-briefcase",
+        "period": [
+            {
+                "from": "2014-12-01",
+                "to": "2015-04-01"
+            },
+            {
+                "from": "2015-10-01",
+                "to": "2016-01-01"
+            },
+            {
+                "from": "2016-04-01",
+                "to": "*"
+            }
+        ],
+        "description": "Utvecklade deras interna kundhanteringssystem.",
+        "courses": []
+    },
+    {
+        "title": "Frontend-utvecklare",
+        "place": "Eniro",
+        "category": "Arbete",
+        "link": "//eniro.se",
+        "icon": "fa-briefcase",
+        "period": [
+            {
+                "from": "2015-04-01",
+                "to": "2015-06-01"
+            }
+        ],
+        "description": "Utvecklade deras interna kundhanteringssystem.",
+        "courses": []
+    },
+    {
+        "title": "Frontend-utvecklare",
+        "place": "Telenor",
+        "category": "Arbete",
+        "link": "//telenor.se",
+        "icon": "fa-briefcase",
+        "period": [
+            {
+                "from": "2015-06-01",
+                "to": "2015-10-01"
+            }
+        ],
+        "description": "En kampanjsajt med högt trafikanrop vid lansering av ny produkt.",
+        "courses": []
+    }
 ]

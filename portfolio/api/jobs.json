@@ -1,46 +1,50 @@
 [
-  {
-    "img": "cygni_logo.png",
-    "period": [
-      {
-        "from": "2014-11-03",
-        "to": "aktiv"
-      }
-    ],
-    "place": "Cygni"
-  },
-  {
-    "img": "comhem_logo.png",
-    "period": [
-      {
-        "from": "2014-12-01",
-        "to": "2015-04-01"
-      },
-      {
-        "from": "2015-09-01",
-        "to": "2015-04-01"
-      }
-    ],
-    "place": "Com hem"
-  },
-  {
-    "img": "telenor_logo.png",
-    "period": [
-      {
-        "from": "2015-06-15",
-        "to": "2015-10-01"
-      }
-    ],
-    "place": "Telenor"
-  },
-  {
-    "img": "eniro_logo.png",
-    "period": [
-      {
-        "from": "2015-04-01",
-        "to": "2015-07-01"
-      }
-    ],
-    "place": "Eniro"
-  }
+    {
+        "img": "cygni_logo.png",
+        "period": [
+            {
+                "from": "2014-11-03",
+                "to": ""
+            }
+        ],
+        "place": "Cygni"
+    },
+    {
+        "img": "comhem_logo.png",
+        "period": [
+            {
+                "from": "2014-12-01",
+                "to": "2015-04-01"
+            },
+            {
+                "from": "2015-09-01",
+                "to": "2015-04-01"
+            },
+            {
+                "from": "2016-04-01",
+                "to": ""
+            }
+        ],
+        "place": "Com hem"
+    },
+    {
+        "img": "telenor_logo.png",
+        "period": [
+            {
+                "from": "2015-06-15",
+                "to": "2015-10-01"
+            }
+        ],
+        "place": "Telenor"
+    },
+    {
+        "img": "eniro_logo.png",
+        "period": [
+            {
+                "from": "2015-04-01",
+                "to": "2015-07-01"
+            }
+        ],
+        "place": "Eniro"
+    }
 ]

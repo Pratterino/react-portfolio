@@ -10,6 +10,8 @@ class MusicItem extends React.Component {
       embedActive: false,
       hovering: false
     };
+
+      this.toggleEmbed = this.toggleEmbed.bind(this);
   }
 
   toggleEmbed() {
@@ -63,7 +65,7 @@ class MusicItem extends React.Component {
                 <p>{this.props.work.description}</p>
               </div>
               <div className='item-tags-container'>
-                <ul className="item-tags"></ul>
+                <ul className="item-tags" />
               </div>
             </div>
           </div>
