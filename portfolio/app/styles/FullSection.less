@@ -1,54 +1,51 @@
 .fade {
-  background: radial-gradient(ellipse farthest-corner at center top, @color2 0%, @color3 100%);
+    background: radial-gradient(ellipse farthest-corner at center top, @color2 0%, @color3 100%);
 }
 
 .no-min-height {
-  min-height: 0 !important;
+    min-height: 0 !important;
 }
 
 .full-section {
-  &.web {
-    border-color: @webColor;
-  }
-  &.game {
-    border-color: @gameColor;
-  }
-  &.music {
-    border-color: @musicColor;
-  }
-  &.about {
-    border-color: @color2;
-    background: @color3;
+    &.web {
+        border-color: @webColor;
+    }
+    &.game {
+        border-color: @gameColor;
+    }
+    &.music {
+        border-color: @musicColor;
+    }
+    &.about {
+        border-color: @color2;
+        background: @color3;
 
-    overflow: hidden;
-    background: radial-gradient(rgba(180, 110, 220, 0.5), rgba(35, 50, 120, 0.6)), url(../images/outdoors.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  min-height: 100%;
-  width: 100%;
-  display: flex;
-
-  &.half-sized {
-    min-height: 200px !important;
-  }
-
-  .column {
-    position: relative;
-    display: inline-block;
-    float: left;
-
-    &#about {
-      background: @color_white;
+        overflow: hidden;
+        background-size: cover;
     }
 
-    &.fade {
-      position: relative;
-      top: 0;
-      right: 0;
-      height: 100%;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+
+    &.half-sized {
+        min-height: 200px !important;
     }
-  }
+
+    .column {
+        position: relative;
+        display: inline-block;
+        float: left;
+
+        &#about {
+            background: @color_white;
+        }
+
+        &.fade {
+            position: relative;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+    }
 }

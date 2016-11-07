@@ -706,10 +706,7 @@ footer ul li span {
   border-color: #445787;
   background: #18c4ed;
   overflow: hidden;
-  background: radial-gradient(rgba(180, 110, 220, 0.5), rgba(35, 50, 120, 0.6)), url(../images/outdoors.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
 }
 .full-section.half-sized {
   min-height: 200px !important;

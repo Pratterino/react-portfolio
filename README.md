@@ -1,11 +1,12 @@
-# Pratterino/react-portfolio
-## Installation & development
-Download your package manager. [Yarn](https://yarnpkg.com/) (or [npm](https://www.npmjs.com/)) is recommended.
+# Pratterino/pratterino-react
+
+## Development
+Download your package manager. [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/).
 
 #### Install the dependencies
 ```sh
 $ cd portfolio
-$ yarn
+$ yarn (or npm install)
 ```
 
 #### Start the local server.

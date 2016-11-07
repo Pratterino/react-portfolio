@@ -10,7 +10,22 @@ const React = require('react'),
   NotesAnimation = require('./NotesAnim.jsx');
 
 class MainView extends React.Component {
-  render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            backgroundImage: "portfolio/app/images/outdoors.jpg",
+            language: "sv"
+        };
+    }
+
+    updateBackgroundImage(imageUrl) {
+        this.setState({
+            backgroundImage: imageUrl
+        });
+    }
+
+
+    render() {
     const types = {
       about: "about",
       game: "game",
@@ -21,12 +36,12 @@ class MainView extends React.Component {
     return (
       <div className="page-wrapper">
         <div className="content">
-          <FullSection type={types.about}>
+          <FullSection type={types.about} backgroundImage={this.state.backgroundImage}>
             <Column width={100}>
               <CenteredText type={types.about}>
                 <div>
                   <h3>Pär Strandberg</h3>
-                  <DescText />
+                  <DescText updateBackgroundImage={this.updateBackgroundImage.bind(this)} />
                 </div>
               </CenteredText>
               <NotesAnimation type={types.about}/>

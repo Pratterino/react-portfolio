@@ -2,10 +2,16 @@
 
 var React = require('react');
 
-var Text;
+class Text extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-module.exports = Text = React.createClass({
-    render: function () {
+    setBackgroundImage(imageUrl) {
+        this.props.updateBackgroundImage(imageUrl);
+    }
+
+    render() {
         return (
             <div className="desc-text center">
                 <div className="desc-wrapper" style={{textAlign: 'left'}}>
@@ -15,7 +21,7 @@ module.exports = Text = React.createClass({
 
                     <div className="desc-item">
                         <h2><span>Om mig</span></h2>
-                        <p><span>Frontend-utvecklare från <a href="//static.panoramio.com/photos/large/94439544.jpg">Vännäsby</a>, tre mil utanför <a href="//np3fastigheter.se/wp-content/uploads/2014/10/ume%C3%A5-1110x528.jpg">Umeå</a>, numera bosatt i Stockholm.</span></p>
+                        <p><span>Frontend-utvecklare från <span className="select-bg-image" onClick={this.setBackgroundImage.bind(this, "//static.panoramio.com/photos/large/94439544.jpg")}>Vännäsby</span>, tre mil utanför <span className="select-bg-image" onClick={this.setBackgroundImage.bind(this, "//np3fastigheter.se/wp-content/uploads/2014/10/ume%C3%A5-1110x528.jpg")}>Umeå</span>, numera bosatt i Stockholm.</span></p>
                         <p><span>Älskar speldesign, häftiga JavaScript-ramverk och du hittar mig <u>alltid</u> med en kopp kaffe i handen.</span>
                         </p>
                     </div>
@@ -72,4 +78,6 @@ module.exports = Text = React.createClass({
             </div>
         );
     }
-});
+}
+
+module.exports = Text;
