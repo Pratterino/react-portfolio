@@ -1,26 +1,26 @@
 .web_color {
-  background: #b46edc;
+  background: #5c4b42;
 }
 .web_color h1,
 .web_color h5 {
   color: #FCFFE3 !important;
-  text-shadow: -1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: -1px 1px rgba(193, 169, 171, 0.5);
 }
 .game_color {
-  background: #8a54a9;
+  background: #764831;
 }
 .game_color h1,
 .game_color h5 {
   color: #FCFFE3 !important;
-  text-shadow: -1px 1px rgba(223, 220, 237, 0.5);
+  text-shadow: -1px 1px rgba(214, 157, 162, 0.5);
 }
 .music_color {
-  background: #d1b5e2;
+  background: #a96746;
 }
 .music_color h1,
 .music_color h5 {
   color: #FCFFE3 !important;
-  text-shadow: -1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: -1px 1px rgba(235, 208, 210, 0.5);
 }
 * {
   margin: 0;
@@ -71,7 +71,7 @@ body {
   width: 100%;
 }
 .desc-wrapper a {
-  background: #B46EDC;
+  background: #5C4B42;
   padding: 1px 3px;
   color: #FCFFE3;
   text-decoration: none;
@@ -89,13 +89,16 @@ body {
 }
 .desc-text h2,
 .desc-text h1 {
-  color: #D1B5E2;
+  font-family: 'Amatic SC', cursive;
+  font-size: 33px;
+  color: #F5C7B0;
 }
 .desc-text .desc-item {
   border: 1px dashed rgba(255, 250, 200, 0.8);
   background: none;
   border-left: 0;
   border-right: 0;
+  border-top: 0;
   margin-bottom: 12px;
   width: 100%;
   margin-top: 55px;
@@ -129,7 +132,7 @@ sub {
 }
 .ProjectView {
   padding-top: 6px;
-  background: #4C2E5C;
+  background: #A98979;
 }
 .project-divider {
   min-height: 300px;
@@ -161,16 +164,16 @@ sub {
   background: rgba(255, 255, 255, 0.3);
 }
 .project-wrapper.game .item-tags li {
-  border-color: rgba(138, 84, 169, 0.4);
-  background: rgba(138, 84, 169, 0.4);
+  border-color: rgba(118, 72, 49, 0.4);
+  background: rgba(118, 72, 49, 0.4);
 }
 .project-wrapper.music .item-tags li {
-  border-color: rgba(209, 181, 226, 0.4);
-  background: rgba(209, 181, 226, 0.4);
+  border-color: rgba(169, 103, 70, 0.4);
+  background: rgba(169, 103, 70, 0.4);
 }
 .project-wrapper.web .item-tags li {
-  border-color: rgba(180, 110, 220, 0.4);
-  background: rgba(180, 110, 220, 0.4);
+  border-color: rgba(92, 75, 66, 0.4);
+  background: rgba(92, 75, 66, 0.4);
 }
 .search-view {
   position: relative;
@@ -186,21 +189,21 @@ sub {
 }
 .game {
   border-color: #FFEB00;
-  background: rgba(138, 84, 169, 0.4);
+  background: rgba(118, 72, 49, 0.4);
 }
 .game .project-divider {
   background-size: cover;
 }
 .music {
   border-color: #AAE66B;
-  background: rgba(209, 181, 226, 0.4);
+  background: rgba(169, 103, 70, 0.4);
 }
 .music .project-divider {
   background-size: cover;
 }
 .web {
   border-color: #ff3199;
-  background: rgba(180, 110, 220, 0.4);
+  background: rgba(92, 75, 66, 0.4);
 }
 .web .project-divider {
   background-size: cover;
@@ -220,13 +223,13 @@ sub {
 }
 .tagList:hover {
   cursor: pointer;
-  background: #4C2E5C;
+  background: #A98979;
 }
 .tagList.active {
-  background: #564A5C;
+  background: #764831;
 }
 .tagList.active:hover {
-  background: #D1B5E2;
+  background: #A96746;
 }
 .work-view {
   overflow: hidden;
@@ -268,13 +271,13 @@ sub {
 }
 .work-view .project-header .tags li:hover {
   cursor: pointer;
-  background: #4C2E5C;
+  background: #A98979;
 }
 .work-view .project-header .tags li.active {
-  background: #564A5C;
+  background: #764831;
 }
 .work-view .project-header .tags li.active:hover {
-  background: #D1B5E2;
+  background: #A96746;
 }
 .work-view .bg-image {
   position: absolute;
@@ -312,7 +315,7 @@ sub {
 .work-view .flex-container .work-item-container.container-music {
   flex: 1 1 50%;
   height: 509px !important;
-  background: #4C2E5C;
+  background: #A98979;
 }
 .work-view .flex-container .work-item-container .item-actionbar {
   position: relative;
@@ -326,15 +329,15 @@ sub {
 }
 .work-view .flex-container .work-item-container .item-actionbar button {
   padding: 10px;
-  background-color: #564A5C;
+  background-color: #764831;
   border: none;
   border-radius: 8px;
-  color: #4C2E5C;
+  color: #A98979;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: 800;
-  text-shadow: #D1B5E2 -2px 2px, #4C2E5C 0 0 2px !important;
+  text-shadow: #A96746 -2px 2px, #A98979 0 0 2px !important;
 }
 .work-view .flex-container .work-item-container .item-image {
   position: absolute;
@@ -370,7 +373,7 @@ sub {
 }
 .work-view .flex-container .work-item-container:hover .item-image {
   background-blend-mode: normal;
-  box-shadow: 0 0 40px #4C2E5C;
+  box-shadow: 0 0 40px #A98979;
   background: none;
 }
 .work-view .flex-container .work-item-container .item-tags-container {
@@ -436,19 +439,19 @@ sub {
 }
 .item-tags-container .item-tags li:hover {
   cursor: pointer;
-  background: #4C2E5C;
+  background: #A98979;
 }
 .item-tags-container .item-tags li.active {
-  background: #564A5C;
+  background: #764831;
 }
 .item-tags-container .item-tags li.active:hover {
-  background: #D1B5E2;
+  background: #A96746;
 }
 section#game .item-content .item-tags-container {
-  background: rgba(138, 84, 169, 0.85);
+  background: rgba(118, 72, 49, 0.85);
 }
 section#web .item-content .item-tags-container {
-  background: rgba(180, 110, 220, 0.4);
+  background: rgba(92, 75, 66, 0.4);
 }
 footer {
   position: inherit;
@@ -456,7 +459,7 @@ footer {
   right: 0;
   left: 0;
   width: 100%;
-  background: #564A5C;
+  background: #764831;
   padding: 0 50px;
   min-height: 200pt;
 }
@@ -590,6 +593,9 @@ footer ul li span {
   align-items: center;
   padding: 20px;
 }
+.centered-text p {
+  color: #FCFFE3;
+}
 .centered-text h3 {
   font-family: 'Amatic SC', cursive;
   font-size: 75px;
@@ -600,7 +606,7 @@ footer ul li span {
   width: 100%;
 }
 .fade {
-  background: radial-gradient(ellipse farthest-corner at center top, #564A5C 20%, #D1B5E2 100%);
+  background: radial-gradient(ellipse farthest-corner at center top, #764831 20%, #A96746 100%);
 }
 .no-min-height {
   min-height: 0 !important;
@@ -611,17 +617,17 @@ footer ul li span {
   display: flex;
 }
 .full-section.web {
-  border-color: rgba(180, 110, 220, 0.4);
+  border-color: rgba(92, 75, 66, 0.4);
 }
 .full-section.game {
-  border-color: rgba(138, 84, 169, 0.4);
+  border-color: rgba(118, 72, 49, 0.4);
 }
 .full-section.music {
-  border-color: rgba(209, 181, 226, 0.4);
+  border-color: rgba(169, 103, 70, 0.4);
 }
 .full-section.about {
-  border-color: #564A5C;
-  background: #D1B5E2;
+  border-color: #764831;
+  background: #A96746;
   overflow: hidden;
   background-size: cover;
 }
