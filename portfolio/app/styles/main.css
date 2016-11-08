@@ -521,7 +521,7 @@ footer ul li span {
 .notes-container {
   height: 100%;
   width: 100%;
-  position: static;
+  position: absolute;
   z-index: 1;
   overflow: hidden;
 }
@@ -600,7 +600,7 @@ footer ul li span {
   width: 100%;
 }
 .fade {
-  background: radial-gradient(ellipse farthest-corner at center top, #564A5C 0%, #D1B5E2 100%);
+  background: radial-gradient(ellipse farthest-corner at center top, #564A5C 20%, #D1B5E2 100%);
 }
 .no-min-height {
   min-height: 0 !important;

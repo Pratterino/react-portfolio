@@ -1,97 +1,103 @@
 'use strict';
 
 const React = require('react'),
-      ReactDOM = require('react-dom'),
-      $ = require('jquery');
+    ReactDOM = require('react-dom'),
+    $ = require('jquery');
 
-const NotesAnim = (props) => {
-  var componentDidMount = () => {
-    if ($('body').width() > 1100) {
-      renderBubbles();
-    }
-  };
-
-  var renderBubbles = () => {
-    var $bubbles = $(ReactDOM.findDOMNode(this));
-    var min_bubble_count = 4, // Minimum number of bubbles
-      max_bubble_count = 8, // Maximum number of bubbles
-      min_bubble_size = 2, // Smallest possible bubble diameter (px)
-      max_bubble_size = 8; // Maximum bubble blur amount (px)
-
-    var bubbleCount = min_bubble_count + Math.floor(Math.random() * (max_bubble_count + 1));
-
-    for (var i = 0; i < bubbleCount; i++) {
-      var icon = "";
-      switch (this.props.type) {
-        case "game":
-          icon = "fa fa-gamepad";
-          break;
-        case "music":
-          icon = "fa fa-music";
-          break;
-        case "web":
-          icon = "fa fa-laptop";
-          break;
-        default:
-          icon = "fa fa-star";
-          break;
-      }
-      $bubbles.append('<div class="bubble-container"><div class="bubble"><i class="'+ icon +'" aria-hidden="true" /></div></div>');
+class NotesAnim extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
-    // Now randomise the various bubble elements
-    $bubbles.find('.bubble-container').each(function () {
+    componentDidMount() {
+        if ($('body').width() > 1100) {
+            this.renderBubbles();
+        }
+    }
 
-      // Randomise the bubble positions (0 - 100%)
-      var pos_rand = Math.floor(Math.random() * 101);
+    renderBubbles() {
+        var $bubbles = $(ReactDOM.findDOMNode(this));
+        var min_bubble_count = 4, // Minimum number of bubbles
+            max_bubble_count = 8, // Maximum number of bubbles
+            min_bubble_size = 2, // Smallest possible bubble diameter (px)
+            max_bubble_size = 8; // Maximum bubble blur amount (px)
 
-      // Randomise their size
-      var size_rand = min_bubble_size + Math.floor(Math.random() * (max_bubble_size + 1));
+        var bubbleCount = min_bubble_count + Math.floor(Math.random() * (max_bubble_count + 1));
 
-      // Randomise the time they start rising (0-15s)
-      var delay_rand = Math.floor(Math.random() * 16);
+        for (var i = 0; i < bubbleCount; i++) {
+            var icon = "";
+            switch (this.props.type) {
+                case "game":
+                    icon = "fa fa-gamepad";
+                    break;
+                case "music":
+                    icon = "fa fa-music";
+                    break;
+                case "web":
+                    icon = "fa fa-laptop";
+                    break;
+                default:
+                    icon = "fa fa-star";
+                    break;
+            }
+            $bubbles.append('<div class="bubble-container"><div class="bubble"><i class="' + icon + '" aria-hidden="true" /></div></div>');
+        }
 
-      // Randomise their speed (3-8s)
-      var speed_rand = 20 + Math.floor(Math.random() * 30);
+        // Now randomise the various bubble elements
+        $bubbles.find('.bubble-container').each(function () {
 
-      // Random blur
-      var blur_rand = Math.floor(Math.random() * 2);
+            // Randomise the bubble positions (0 - 100%)
+            var pos_rand = Math.floor(Math.random() * 101);
 
-      // Cache the this selector
-      var $this = $(this);
+            // Randomise their size
+            var size_rand = min_bubble_size + Math.floor(Math.random() * (max_bubble_size + 1));
 
-      // Apply the new styles
-      $this.css({
-        'left': pos_rand + '%',
+            // Randomise the time they start rising (0-15s)
+            var delay_rand = Math.floor(Math.random() * 16);
 
-        '-webkit-animation-duration': speed_rand + 's',
-        '-moz-animation-duration': speed_rand + 's',
-        '-ms-animation-duration': speed_rand + 's',
-        'animation-duration': speed_rand + 's',
+            // Randomise their speed (3-8s)
+            var speed_rand = 20 + Math.floor(Math.random() * 30);
 
-        '-webkit-animation-delay': delay_rand + 's',
-        '-moz-animation-delay': delay_rand + 's',
-        '-ms-animation-delay': delay_rand + 's',
-        'animation-delay': delay_rand + 's',
+            // Random blur
+            var blur_rand = Math.floor(Math.random() * 2);
 
-        '-webkit-filter': 'blur(' + blur_rand + 'px)',
-        '-moz-filter': 'blur(' + blur_rand + 'px)',
-        '-ms-filter': 'blur(' + blur_rand + 'px)',
-        'filter': 'blur(' + blur_rand + 'px)'
-      });
+            // Cache the this selector
+            var $this = $(this);
 
-      $this.children('.bubble').css({
-        'width': size_rand + 'px',
-        'height': size_rand + 'px'
-      });
-    });
-  };
+            // Apply the new styles
+            $this.css({
+                'left': pos_rand + '%',
 
-  return (
-    <div className="notes-container">
-      <div className="bubbles"></div>
-    </div>
-  );
-};
+                '-webkit-animation-duration': speed_rand + 's',
+                '-moz-animation-duration': speed_rand + 's',
+                '-ms-animation-duration': speed_rand + 's',
+                'animation-duration': speed_rand + 's',
+
+                '-webkit-animation-delay': delay_rand + 's',
+                '-moz-animation-delay': delay_rand + 's',
+                '-ms-animation-delay': delay_rand + 's',
+                'animation-delay': delay_rand + 's',
+
+                '-webkit-filter': 'blur(' + blur_rand + 'px)',
+                '-moz-filter': 'blur(' + blur_rand + 'px)',
+                '-ms-filter': 'blur(' + blur_rand + 'px)',
+                'filter': 'blur(' + blur_rand + 'px)'
+            });
+
+            $this.children('.bubble').css({
+                'width': size_rand + 'px',
+                'height': size_rand + 'px'
+            });
+        });
+    }
+
+    render() {
+        return (
+            <div className="notes-container">
+                <div className="bubbles" ></div>
+            </div>
+        );
+    }
+}
 
 module.exports = NotesAnim;
