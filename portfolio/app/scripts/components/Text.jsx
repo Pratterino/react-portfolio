@@ -21,7 +21,7 @@ class Text extends React.Component {
 
                     <div className="desc-item">
                         <h2><span>Om mig</span></h2>
-                        <p><span>Frontend-utvecklare från <span className="select-bg-image" onClick={this.setBackgroundImage.bind(this, "//static.panoramio.com/photos/large/94439544.jpg")}>Vännäsby</span>, tre mil utanför <span className="select-bg-image" onClick={this.setBackgroundImage.bind(this, "//np3fastigheter.se/wp-content/uploads/2014/10/ume%C3%A5-1110x528.jpg")}>Umeå</span>, numera bosatt i Stockholm.</span></p>
+                        <p><span>Frontend-utvecklare från <a onClick={this.setBackgroundImage.bind(this, "//static.panoramio.com/photos/large/94439544.jpg")}>Vännäsby</a>, tre mil utanför <a onClick={this.setBackgroundImage.bind(this, "//np3fastigheter.se/wp-content/uploads/2014/10/ume%C3%A5-1110x528.jpg")}>Umeå</a>, numera bosatt i Stockholm.</span></p>
                         <p><span>Älskar speldesign, häftiga JavaScript-ramverk och du hittar mig <u>alltid</u> med en kopp kaffe i handen.</span>
                         </p>
                     </div>
@@ -62,16 +62,16 @@ class Text extends React.Component {
                             </span>
                         </h2>
                             <span>
-                            <ol>
-                                <li>Sitter som Frontend-utvecklare hos <a href="//comhem.se">Com hem</a> och sysslar
+                            <ul>
+                                <li><span>Sitter som Frontend-utvecklare hos <a href="//comhem.se">Com hem</a> och sysslar
                                     mestadels med att programmera JavaScript och CSS med React, BackboneJS, LESS, Karma/Jasmine-tester.
-                                </li>
-                                <li>Färdigställer min C-uppsats i medieteknik vid sidan av, som kort sagt handlar om
+                                </span></li>
+                                <li><span>Färdigställer min C-uppsats i medieteknik vid sidan av, som kort sagt handlar om
                                     att identifiera och förutse matvanor som resulterar i glukossvängningar hos
-                                    diabetiker med hjälp av en app.
+                                    diabetiker med hjälp av en app.</span>
                                 </li>
-                                <li>Skapar podcast-jinglar.</li>
-                            </ol>
+                                <li><span>Skapar podcast-jinglar.</span></li>
+                            </ul>
                             </span>
                     </div>
                 </div>
