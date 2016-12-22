@@ -191,6 +191,9 @@ sub {
   border-color: rgba(118, 72, 49, 0.4);
   background: rgba(118, 72, 49, 0.4);
 }
+.project-wrapper.music {
+  padding: 10px 0;
+}
 .project-wrapper.music .centered-music {
   width: 70%;
   margin: 0 auto;
@@ -382,6 +385,7 @@ sub {
 }
 .work-view .flex-container.work {
   width: 100%;
+  padding-right: 10px;
 }
 .work-view .flex-container .work-item-container {
   position: relative;
@@ -392,7 +396,7 @@ sub {
   overflow: hidden;
   border: 0;
   margin: 10px;
-  padding: 10px;
+  padding-right: 5px;
   transition: all 0.5s ease;
 }
 .work-view .flex-container .work-item-container:not(:last-of-type) {
@@ -404,7 +408,7 @@ sub {
   background-size: cover;
   min-width: 420px;
   margin: auto;
-  padding: 0;
+  padding: 10px;
   border: 0;
 }
 .work-view .flex-container .work-item-container .item-actionbar {
