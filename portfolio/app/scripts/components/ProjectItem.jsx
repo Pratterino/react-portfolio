@@ -74,7 +74,7 @@ class ProjectItem extends React.Component {
     render() {
         return (
             <div className='work-item-container'
-               onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
+                 onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
                 <div className="computer-item">
                     <div className="background-image">
                         <img src={`./portfolio/app/images/bg/${this.props.work.image}`}/>
@@ -85,16 +85,16 @@ class ProjectItem extends React.Component {
                         <img src="./portfolio/app/images/pc.png"/>
                     </div>
                 </div>
+
                 <div className="item-information">
                     <div className="item-header">
                         <h5>{this.props.work.title}</h5>
                     </div>
 
-                    <div>
+                    <div className="item-description">
                         {this.props.work.description}
                     </div>
 
-                    <a href={this.props.work.link}>Besök</a>
 
                     <div className='item-tags-container'>
                         <ul className="item-tags">

@@ -127,6 +127,31 @@ sub {
 .center {
   text-align: center;
 }
+.visit-btn-container {
+  text-align: center;
+}
+.visit-btn-container .visit-btn {
+  right: 10px;
+  background: rgba(250, 60, 70, 0.2);
+  margin: 6px 0;
+  padding: 6px 12px;
+  border: 2px solid #383E4B;
+  border-radius: 2px 8px;
+  display: inline-block;
+  color: #383E4B;
+  text-decoration: none;
+  z-index: 1000;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.visit-btn-container .visit-btn:hover {
+  border-radius: 8px 2px;
+  border-color: rgba(250, 60, 70, 0.2);
+}
+.visit-btn-container:hover .item-header {
+  top: 10pt;
+  background: transparent;
+}
 .ContactView {
   background: #1EAEDB;
 }
@@ -270,11 +295,9 @@ sub {
 }
 .work-view .item-information {
   display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 212px;
   text-align: left;
   width: calc(100% - 215px);
+  height: 100%;
   padding: 0 16px;
 }
 .work-view .item-information .item-header {
@@ -289,10 +312,6 @@ sub {
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-}
-.work-view .item-information:hover .item-header {
-  top: 10pt;
-  background: transparent;
 }
 .work-view .project-header {
   display: flex;
@@ -422,7 +441,8 @@ sub {
   background: none;
 }
 .work-view .flex-container .work-item-container .item-tags-container {
-  position: absolute;
+  position: inherit;
+  margin-top: 20px;
   width: 100%;
 }
 .work-view .flex-container .work-item-container .item-content {
