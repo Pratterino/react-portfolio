@@ -72,6 +72,64 @@
     z-index: 100;
     min-height: 130pt !important;
 
+    .device-link {
+        visibility: hidden;
+    }
+
+    .computer-item {
+        display: inline-block;
+        width: 212px;
+        height: 146px;
+
+        &:hover .device-link {
+            visibility: visible;
+        }
+
+        .device-image, .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .background-image {
+            clip-path: polygon(8px 9px, 199px 5px, 206px 115px, 11px 118px);
+            img {
+                width: 203px;
+            }
+        }
+        .device-image {
+            z-index: 9000;
+        }
+    }
+
+    .item-information {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 212px;
+        text-align: left;
+        width: calc(~"100% - 215px");
+        padding: 0 16px;
+
+        .item-header {
+            font-weight: 800;
+            font-family: 'Amatic SC', cursive;
+            transition: all 0.4s ease;
+            color: @color_white;
+            font-size: 48px;
+            text-shadow: @color4 -3px 1px 1px;
+            span {
+                padding: 5px 10px;
+                background: rgba(0, 0, 0, .2);
+                border-radius: 5px;
+            }
+        }
+
+        &:hover .item-header {
+            top: @itemPadding;
+            background: transparent;
+        }
+    }
+
     .project-header {
         display: flex;
         align-content: center;
@@ -130,19 +188,27 @@
 
         .work-item-container {
             position: relative;
-            flex: 1 1 50%;
-            min-width: @item-size;
-            text-align: center;
+            flex: 0 0 100%;
+            display: inline-block;
+            width: 100%;
             text-decoration: none;
             overflow: hidden;
-            margin: auto;
-            background-size: cover;
+            border: 0;
+            &:not(:last-of-type) {
+                border-bottom: 2px dashed fade(@borderColor, 25%);
+            }
+            margin: 10px;
+            padding: 10px;
             transition: all 0.5s ease;
 
             &.container-music {
                 flex: 1 1 50%;
                 height: 509px !important;
-                background: @color1;
+                background-size: cover;
+                min-width: @item-size;
+                margin: auto;
+                padding: 0;
+                border: 0;
             }
 
             .item-actionbar {
@@ -185,27 +251,6 @@
                 }
             }
 
-            .item-header {
-                position: absolute;
-                top: calc(53% - @itemPadding);
-                width: 100%;
-                font-weight: 800;
-                font-family: 'Amatic SC', cursive;
-                transition: all 0.4s ease;
-                color: @color_white;
-                font-size: 30px;
-                text-shadow: rgba(2, 250, 250, 0.6) -3px 1px 1px;
-                span {
-                    padding: 5px 10px;
-                    background: rgba(0, 0, 0, .2);
-                    border-radius: 5px;
-                }
-            }
-
-            &:hover .item-header {
-                top: @itemPadding;
-                background: transparent;
-            }
             &:hover .item-image {
                 background-blend-mode: normal;
                 box-shadow: 0 0 40px @color1;
@@ -215,9 +260,6 @@
             .item-tags-container {
                 position: absolute;
                 width: 100%;
-                left: 0;
-                bottom: 0;
-                padding: 10px 5px;
             }
 
             .item-content {

@@ -167,6 +167,10 @@ sub {
   border-color: rgba(118, 72, 49, 0.4);
   background: rgba(118, 72, 49, 0.4);
 }
+.project-wrapper.music .centered-music {
+  width: 70%;
+  margin: 0 auto;
+}
 .project-wrapper.music .item-tags li {
   border-color: rgba(169, 103, 70, 0.4);
   background: rgba(169, 103, 70, 0.4);
@@ -237,6 +241,59 @@ sub {
   z-index: 100;
   min-height: 130pt !important;
 }
+.work-view .device-link {
+  visibility: hidden;
+}
+.work-view .computer-item {
+  display: inline-block;
+  width: 212px;
+  height: 146px;
+}
+.work-view .computer-item:hover .device-link {
+  visibility: visible;
+}
+.work-view .computer-item .device-image,
+.work-view .computer-item .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.work-view .computer-item .background-image {
+  -webkit-clip-path: polygon(8px 9px, 199px 5px, 206px 115px, 11px 118px);
+          clip-path: polygon(8px 9px, 199px 5px, 206px 115px, 11px 118px);
+}
+.work-view .computer-item .background-image img {
+  width: 203px;
+}
+.work-view .computer-item .device-image {
+  z-index: 9000;
+}
+.work-view .item-information {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 212px;
+  text-align: left;
+  width: calc(100% - 215px);
+  padding: 0 16px;
+}
+.work-view .item-information .item-header {
+  font-weight: 800;
+  font-family: 'Amatic SC', cursive;
+  transition: all 0.4s ease;
+  color: #FCFFE3;
+  font-size: 48px;
+  text-shadow: #5C4B42 -3px 1px 1px;
+}
+.work-view .item-information .item-header span {
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.work-view .item-information:hover .item-header {
+  top: 10pt;
+  background: transparent;
+}
 .work-view .project-header {
   display: flex;
   align-content: center;
@@ -303,19 +360,27 @@ sub {
 }
 .work-view .flex-container .work-item-container {
   position: relative;
-  flex: 1 1 50%;
-  min-width: 420px;
-  text-align: center;
+  flex: 0 0 100%;
+  display: inline-block;
+  width: 100%;
   text-decoration: none;
   overflow: hidden;
-  margin: auto;
-  background-size: cover;
+  border: 0;
+  margin: 10px;
+  padding: 10px;
   transition: all 0.5s ease;
+}
+.work-view .flex-container .work-item-container:not(:last-of-type) {
+  border-bottom: 2px dashed rgba(56, 62, 75, 0.25);
 }
 .work-view .flex-container .work-item-container.container-music {
   flex: 1 1 50%;
   height: 509px !important;
-  background: #A98979;
+  background-size: cover;
+  min-width: 420px;
+  margin: auto;
+  padding: 0;
+  border: 0;
 }
 .work-view .flex-container .work-item-container .item-actionbar {
   position: relative;
@@ -351,26 +416,6 @@ sub {
 .work-view .flex-container .work-item-container .item-image:after {
   z-index: -1;
 }
-.work-view .flex-container .work-item-container .item-header {
-  position: absolute;
-  top: calc(43%);
-  width: 100%;
-  font-weight: 800;
-  font-family: 'Amatic SC', cursive;
-  transition: all 0.4s ease;
-  color: #FCFFE3;
-  font-size: 30px;
-  text-shadow: rgba(2, 250, 250, 0.6) -3px 1px 1px;
-}
-.work-view .flex-container .work-item-container .item-header span {
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-.work-view .flex-container .work-item-container:hover .item-header {
-  top: 10pt;
-  background: transparent;
-}
 .work-view .flex-container .work-item-container:hover .item-image {
   background-blend-mode: normal;
   box-shadow: 0 0 40px #A98979;
@@ -379,9 +424,6 @@ sub {
 .work-view .flex-container .work-item-container .item-tags-container {
   position: absolute;
   width: 100%;
-  left: 0;
-  bottom: 0;
-  padding: 10px 5px;
 }
 .work-view .flex-container .work-item-container .item-content {
   position: relative;
@@ -525,7 +567,6 @@ footer ul li span {
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: 1;
   overflow: hidden;
 }
 .bubble-toggle {
@@ -633,8 +674,7 @@ footer ul li span {
 }
 .full-section .column {
   position: relative;
-  display: inline-block;
-  float: left;
+  margin: 0 auto;
 }
 .full-section .column#about {
   background: #FCFFE3;

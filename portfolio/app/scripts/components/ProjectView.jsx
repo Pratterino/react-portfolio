@@ -109,10 +109,9 @@ class ProjectView extends React.Component {
     if (this.props.type === "music") {
       return (
         <section className={classes.parent} id={this.props.type}>
-          <Column width={this.props.width[0]}>
+          <NotesAnimation type={this.props.type}/>
+          <Column width={this.props.width}>
             {this.props.children}
-          </Column>
-          <Column width={this.props.width[1]}>
             <Project
               type={this.props.type}
               works={this.state.work}
@@ -120,13 +119,13 @@ class ProjectView extends React.Component {
               getTypeFadeColors={this.getTypeFadeColors.bind(this)}
             />
           </Column>
-          <NotesAnimation type={this.props.type}/>
         </section>
       );
     } else {
       return (
-        <section className={classes.parent} id={this.props.type}>
-          <Column width={this.props.width[0]}>
+        <section style={{width: "100%"}} className={classes.parent} id={this.props.type}>
+          <NotesAnimation type={this.props.type}/>
+          <Column width={this.props.width}>
             {this.props.children}
             <ProjectSearch
               toggleItem={this.toggleItem.bind(this)}
@@ -134,8 +133,6 @@ class ProjectView extends React.Component {
               isActiveTag={this.isActiveTag.bind(this)}
               activeTags={this.state.tags}
             />
-          </Column>
-          <Column width={this.props.width[1]}>
             <Project
               type={this.props.type}
               toggleItem={this.toggleItem.bind(this)}
@@ -145,7 +142,6 @@ class ProjectView extends React.Component {
               activeTags={this.state.tags}
             />
           </Column>
-          <NotesAnimation type={this.props.type}/>
         </section>
       );
     }
