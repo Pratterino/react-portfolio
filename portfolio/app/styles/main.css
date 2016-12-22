@@ -71,7 +71,7 @@ body {
   width: 100%;
 }
 .desc-wrapper a {
-  background: #5C4B42;
+  background: #546bff;
   padding: 1px 3px;
   color: #FCFFE3;
   text-decoration: none;
@@ -112,7 +112,7 @@ body {
 }
 .desc-text .desc-item:hover span,
 .desc-text .desc-item:hover sub {
-  background-color: rgba(10, 15, 12, 0.35);
+  background-color: rgba(10, 15, 12, 0.12);
   transition: background-color 0.5s ease-in-out;
 }
 sup,
@@ -192,22 +192,22 @@ sub {
   opacity: 1;
 }
 .game {
-  border-color: #FFEB00;
-  background: linear-gradient(to right bottom, rgba(118, 72, 49, 0.4), rgba(0, 0, 0, 0.4));
+  border-color: #905aff;
+  background: linear-gradient(to right bottom, #905aff, #ff97d4);
 }
 .game .project-divider {
   background-size: cover;
 }
 .music {
-  border-color: #AAE66B;
-  background: linear-gradient(to right bottom, rgba(169, 103, 70, 0.4), rgba(22, 43, 18, 0.4));
+  border-color: #546bff;
+  background: linear-gradient(to right bottom, #546bff, #f991ff);
 }
 .music .project-divider {
   background-size: cover;
 }
 .web {
-  border-color: #ff3199;
-  background: linear-gradient(to right bottom, rgba(92, 75, 66, 0.4), rgba(0, 0, 0, 0.4));
+  border-color: #ff3d58;
+  background: linear-gradient(to right bottom, #ff3d58, #fff87a);
 }
 .web .project-divider {
   background-size: cover;
@@ -501,7 +501,7 @@ footer {
   right: 0;
   left: 0;
   width: 100%;
-  background: #764831;
+  background: #211b17;
   padding: 0 50px;
   min-height: 200pt;
 }

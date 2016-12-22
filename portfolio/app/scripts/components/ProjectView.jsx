@@ -88,7 +88,7 @@ class ProjectView extends React.Component {
     var colors = "";
       switch (type) {
         case "web":
-          colors = "rgba(200, 200, 200, 0.5), rgba(193, 233, 231, 0.3)";
+          colors = "#ff3199, #9ea1ff";
           break;
         case "music":
           colors = "rgba(240, 95, 110, 0.5), rgba(255, 100, 100, 0.3)";

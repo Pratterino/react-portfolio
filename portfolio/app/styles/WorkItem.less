@@ -3,7 +3,7 @@
 @borderColor: @color_black;
 
 .getBackgroundFade(@color) {
-    background: linear-gradient(to right bottom, @color, darken(spin(@color, 90), 35%));
+    background: linear-gradient(to right bottom, @color, lighten(spin(@color, 65), 12%));
 }
 
 .visibleOnHoverOnly {
@@ -14,8 +14,8 @@
 }
 
 .game {
-    border-color: #FFEB00;
-    .getBackgroundFade(@gameColor);
+    border-color: #905aff;
+    .getBackgroundFade(#905aff);
 
     .project-divider {
         background-size: cover;
@@ -23,8 +23,8 @@
 }
 
 .music {
-    border-color: #AAE66B;
-    .getBackgroundFade(@musicColor);
+    border-color: #546bff;
+    .getBackgroundFade(#546bff);
 
     .project-divider {
         background-size: cover;
@@ -32,8 +32,8 @@
 }
 
 .web {
-    border-color: #ff3199;
-    .getBackgroundFade(@webColor);
+    border-color: #ff3d58;
+    .getBackgroundFade(#ff3d58);
 
     .project-divider {
         background-size: cover;
