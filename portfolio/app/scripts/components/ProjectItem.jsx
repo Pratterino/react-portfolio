@@ -75,14 +75,19 @@ class ProjectItem extends React.Component {
         return (
             <div className='work-item-container'
                  onMouseEnter={this.toggleClass.bind(this, true)} onMouseLeave={this.toggleClass.bind(this, false)}>
-                <div className="computer-item">
-                    <div className="background-image">
-                        <img src={`./portfolio/app/images/bg/${this.props.work.image}`}/>
-                        <div className="device-link">Besök</div>
-                    </div>
+                <div className="computer-items">
+                    <div className="computer-item">
+                        <div className="background-image">
+                            <img src={`./portfolio/app/images/bg/${this.props.work.image}`}/>
+                            <div className="device-link">Besök</div>
+                        </div>
 
-                    <div className="device-image">
-                        <img src="./portfolio/app/images/pc.png"/>
+                        <div className="device-image">
+                            <img src="./portfolio/app/images/pc.png"/>
+                        </div>
+                    </div>
+                    <div className="visit-btn-container">
+                        <a className="visit-btn" target="_blank" href={this.props.work.link}>Besök</a>
                     </div>
                 </div>
 

@@ -76,33 +76,41 @@
         visibility: hidden;
     }
 
-    .computer-item {
+    .computer-items {
         display: inline-block;
         width: 212px;
-        height: 146px;
+        position: relative;
 
-        &:hover .device-link {
-            visibility: visible;
-        }
+        .computer-item {
+            display: inline-block;
+            width: 212px;
+            height: 146px;
 
-        .device-image, .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .background-image {
-            clip-path: polygon(8px 9px, 199px 5px, 206px 115px, 11px 118px);
-            img {
-                width: 203px;
+            &:hover .device-link {
+                visibility: visible;
             }
-        }
-        .device-image {
-            z-index: 9000;
+
+            .device-image, .background-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .background-image {
+                clip-path: polygon(8px 9px, 199px 5px, 206px 115px, 11px 118px);
+                img {
+                    width: 203px;
+                }
+            }
+            .device-image {
+                z-index: 9000;
+            }
         }
     }
 
     .item-information {
         display: inline-block;
+        position: absolute;
+        top: 4px;
         text-align: left;
         width: calc(~"100% - 215px");
         height: 100%;
